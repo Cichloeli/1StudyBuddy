@@ -4,25 +4,19 @@ Release Plan
 
 
 Team:
-Eric Dunbar,
-Xuya Gao,
-Cecilia Li,
-Liren Wu,
-Saiya Youn,
+Eric Dunbar
+Xuya Gao
+Cecilia Li
+Liren Wu
+Saiya Youn
 
 
 Project Title: 1Study Buddy
-
 Project Owner: Cecilia Li
-
 Product Name: 1Study Buddy
-
 Team Name: 1Study Buddy Team
-
 Release Name: 1Studdy Buddy v1
-
 Revision Number: 1 
-
 Revision Date: 10/9
 
 
