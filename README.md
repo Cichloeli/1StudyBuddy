@@ -1,13 +1,14 @@
 # StudyBuddy
 
-Release Plane
+Release Plan
+
 
 Team:
-Eric Dunbar
-Xuya Gao
-Cecilia Li
-Liren Wu
-Saiya Youn
+Eric Dunbar,
+Xuya Gao,
+Cecilia Li,
+Liren Wu,
+Saiya Youn,
 
 
 Project Title: 1Study Buddy
@@ -26,11 +27,11 @@ Revision Date: 10/9
 
 
 Scrum Masters:
-Eric Dunbar
-Xuya Gao
-Cecilia Li
-Liren Wu
-Saiya Youn
+Eric Dunbar,
+Xuya Gao,
+Cecilia Li,
+Liren Wu,
+Saiya Youn,
 
 High Level Goal:
 Website which helps bring together classmates to form study groups and meet new people. Be able to create profiles and schedules to see when people are free. 
