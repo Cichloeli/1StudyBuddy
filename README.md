@@ -29,19 +29,17 @@ Website which helps bring together classmates to form study groups and meet new 
   
 Sprint 1:  
 8 - As a user I want to log into the website so that I can access the website  
+8 - As a user I want to find my classes so that I can find people in my class.  
 [SPIKE] Learn Node.js  
 [SPIKE] Learn VUE.js  
 [SPIKE] Read about Firebase Authentication  
   
 Sprint 2:  
-8 - As a user I want to find my classes so that I can find people in my class.  
-3 - As a user I want to create my own profile so that other people know who I am.  
-  
-Sprint 3:  
 13 - As a user I want to create a group so that I can meet other people.  
+3 - As a user I want to create my own profile so that other people know who I am.  
 3 - As a user I want to join a group so that I can meet other people.  
   
-Sprint 4:  
+Sprint 3:  
 13 - As a user I want to have a means of communication so that I can communicate.  
 5 - As a user I want to input my schedule so that other people can see when I am available.  
 3 - As a user I want to upload/share information and files so that I can share documents.   
