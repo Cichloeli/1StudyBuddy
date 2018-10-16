@@ -1,3 +1,12 @@
+# Installation 
+
+npm install
+
+npm run dev
+
+It will be running on http://localhost:8010/
+
+
 # StudyBuddy
 
 Release Plan
