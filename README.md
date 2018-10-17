@@ -2,7 +2,7 @@
 
 npm install
 
-npm run dev
+npm start
 
 It will be running on http://localhost:8010/
 
