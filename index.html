@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Vue Webpack Demo</title>
+        <script type="text/javascript" src="/dist/vue.js"></script>
+    </head>
+    <body>
+       
+      <!--   <div id="mainContent">
+            <main-content>
+
+            </main-content>
+        </div> -->
+        
+
+        <div id="loginPage">
+            <h1>1StudyBuddy</h1>
+            <input type="text" name="username" v-model="input.username" placeholder="Username" />
+            <input type="password" name="password" v-model="input.password" placeholder="Password" />
+            <button type="button" v-on:click="login()">Login</button>
+        </div>
+        
+    </body>
+    <script src="/dist/index.js"></script>
+</html>
