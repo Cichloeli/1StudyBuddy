@@ -1,19 +1,25 @@
 <template>
-    <body class = "base" >
-        <div class= "login">
-            <h1>1StudyBuddy</h1>
-            <input type="text" name="username" v-model="input.username" placeholder="Username" />
-            <input type="password" name="password" v-model="input.password" placeholder="Password" />
-            <button type="button" v-on:click="login()">Login</button>
+    <div class= "login-container">
+        <label for="1studdybuddy">1StudyBuddy</label>
+        <div class="form-content">
+            <label for="username">Email</label>
+            <input type="text" name="username" class="form-control" v-model="input.username" />
+        </div>
+        <div class="form-content">
+            <label for="password">Password</label>
+            <input type="text" name="password" class="form-control" v-model="input.password" />
+        </div>
+        <div class="form-content">
+            <button class="btn-login" type="button" v-on:click="login()">Login</button>
+            <router-link to="/register" class="btn btn-link" style="color: #0066cc">Register</router-link>
         </div>
 
+        <!-- <h1>1StudyBuddy</h1>
+        <input id="username" type="text" name="username" v-model="input.username" placeholder="Email" />
+        <input id="password" type="password" name="password" v-model="input.password" placeholder="Password" />
+        <button id="login-button" type="button" v-on:click="login()">Login</button> -->
 
-
-
-
-
-
-    </body>
+    </div>
 </template>
 
 <script>
@@ -46,21 +52,24 @@
 </script>
 
 <style scoped>
-    .wrapper {
-        
-        background-color: #0012E6;
-        height: 100%;
-        width: 100%;
-
+    .login-container {
+        display: grid;
+        justify-content: center;
+        font-size: 18px;
+        margin-top: 100px;
     }
-    .login {
-        width: 500px;
-        border: 1px solid #CCCCCC;
-        background-color: #008AE6;
-        margin: auto;
-        margin-top: 200px;
-        padding: 20px;
+    .form-content {
+        margin: 10px;
     }
-
+    .btn-login {
+        background-color: #0066cc;
+        color: white;
+        border-radius: 4px;
+    }
+    .btn-login:hover {
+        background-color: #0059b3;
+        transition-duration: .4s;
+    }
+   
     
 </style>
