@@ -11,43 +11,41 @@
             <h6>Name:</h6>
             <div class="infoName">
                 {{ name }}
-                <input type="text" name="username" v-model="input.nameIn" placeholder="Name" />
+                <input type="text" name="nameIn" v-model="input.nameIn" placeholder="Name" />
             </div>
 
             <h6>Classes:</h6>
             <div class="infoClasses">
                 {{ classes }}
-                <input type="text" name="username" v-model="input.classesIn" placeholder="Classes" />
+                <input type="text" name="classesIn" v-model="input.classesIn" placeholder="Classes" />
             </div>
                 
             <h6>Major:</h6>   
             <div class="infoMajor">
                 {{ major }}
-                <input type="text" name="username" v-model="input.majorIn" placeholder="Major" />
+                <input type="text" name="majorIn" v-model="input.majorIn" placeholder="Major" />
             </div>           
                       
             <h6>Email:</h6>
             <div class="infoEmail">
                 {{ email }}
-                <input type="text" name="username" v-model="input.emailIn" placeholder="Email" />
+                <input type="text" name="emailIn" v-model="input.emailIn" placeholder="Email" />
             </div>
                      
             <h6>About:</h6>
             <div class="infoAbout">
                 {{ about }}
-                <input type="text" name="username" v-model="input.aboutIn" placeholder="About" />
+                <input type="text" name="aboutIn" v-model="input.aboutIn" placeholder="About" />
             </div>               
                     
-              
-
-            
-
-        
+    
         
         </div>
         
-        <button type="button" v-on:click="update()">Update</button>
-        <router-link class="nav-link" to="/classes">Classes</router-link>
+        <div class="updateButton">
+            <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="update()">Update</button>
+        </div>
+        
     </div>
     
 </template>
@@ -93,6 +91,7 @@ export default {
   border: 1px solid #cccccc;
   padding: 20px;
   margin-top: 10px;
+  
 }
 .title {
   text-align: left;
@@ -110,5 +109,9 @@ export default {
 .infoAbout input {
     padding-bottom: 200px;
     padding-right: 200px;
+}
+.updateButton{
+    max-width: 150px;
+
 }
 </style>

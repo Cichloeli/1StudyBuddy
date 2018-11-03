@@ -13,12 +13,10 @@
             <li class="nav-item">
               <router-link class="nav-link" to="/login">Login</router-link>
             </li>
-            <!-- <li class="nav-item">
-            <router-link class="nav-link" to="/profile">Profile</router-link>
-            </li>
+
             <li class="nav-item">
-             <router-link class="nav-link" to="/classes">Classes</router-link>
-            </li> -->
+              <router-link class="nav-link" to="/dashboard">Dashboard</router-link>
+            </li>
           </ul>
         </div>
         </div>

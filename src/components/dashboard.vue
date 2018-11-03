@@ -1,15 +1,15 @@
 <template>
-    <div id="classes">
-        <h1>Classes</h1>
-        <p>
-            These are the classes
-        </p>
+    <div id="dashboard">
+        <h1>Dashboard</h1>
+        
+        <router-link class="nav-link" to="/profile">Profile</router-link>
+        <router-link class="nav-link" to="/classes">Classes</router-link>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'Classes',
+        name: 'Dashboard',
         data() {
             return {};
         }
