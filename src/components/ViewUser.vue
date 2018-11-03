@@ -1,10 +1,10 @@
 <template>
     <div id="view-users">
-        <ul class="collection with-header"
+        <ul class="col"
         <li class="collection-header"><h4>Users</h4></li>
-        <li v-for="user in users" v-bind:key="user.id" 
+        <li v-for="user in users" v-bind:key="user.user_id" 
         class="collection-item">
-            {{users.name}}
+            {{user.name}}
         </li>
         </ul>
     </div>    
