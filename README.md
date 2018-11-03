@@ -1,24 +1,56 @@
+# Installation 
 
-![image](preview/routing-in-vue.png)
-
-![image](preview/finale-preview.gif)
-
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
-npm run dev
+npm start
 
-# build for production with minification
-npm run build
+It will be running on http://localhost:8010/
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+# StudyBuddy
+
+Release Plan
+  
+Team:  
+Eric Dunbar  
+Xuya Gao  
+Cecilia Li  
+Liren Wu  
+Saiya Youn  
+  
+Project Title: 1Study Buddy  
+Project Owner: Cecilia Li  
+Product Name: 1Study Buddy  
+Team Name: 1Study Buddy Team  
+Release Name: 1Studdy Buddy v1  
+Revision Number: 1  
+Revision Date: 10/9  
+  
+Scrum Masters:  
+Eric Dunbar  
+Xuya Gao  
+Cecilia Li  
+Liren Wu  
+Saiya Youn  
+  
+High Level Goal:  
+Website which helps bring together classmates to form study groups and meet new people. Be able to create profiles and schedules to see when people are free.  
+  
+Sprint 1:  
+8 - As a user I want to log into the website so that I can access the website  
+[SPIKE] Learn Node.js  
+[SPIKE] Learn VUE.js  
+[SPIKE] Read about Firebase Authentication  
+  
+Sprint 2:  
+8 - As a user I want to find my classes so that I can find people in my class.  
+3 - As a user I want to create my own profile so that other people know who I am.  
+  
+Sprint 3:  
+13 - As a user I want to create a group so that I can meet other people.  
+3 - As a user I want to join a group so that I can meet other people.  
+  
+Sprint 4:  
+13 - As a user I want to have a means of communication so that I can communicate.  
+5 - As a user I want to input my schedule so that other people can see when I am available.  
+3 - As a user I want to upload/share information and files so that I can share documents.     

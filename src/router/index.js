@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import home from '@/components/home'
 import login from '@/components/login'
 import profile from '@/components/profile'
-import secure from '@/components/classes'
+import classes from '@/components/classes'
 
 
 Vue.use(Router)
@@ -28,7 +28,7 @@ export default new Router({
     {
       path: '/classes',
       name: 'classes',
-      component: secure
+      component: classes
     },
     {
       path: '/login',
