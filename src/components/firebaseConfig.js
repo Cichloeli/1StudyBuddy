@@ -1,9 +1,9 @@
 // firebase init goes here
 export default {
-    apiKey: "AIzaSyDWF4Pnu3mBt56EqNwJhHhynhTDQJSMudI",
-    authDomain: "studybuddy-4b778.firebaseapp.com",
-    databaseURL: "https://studybuddy-4b778.firebaseio.com",
-    projectId: "studybuddy-4b778",
-    storageBucket: "studybuddy-4b778.appspot.com",
-    messagingSenderId: "627613848052"
+    apiKey: "AIzaSyAtTNO9fCUwweAnOXWbbAaOR39t7X1hdCQ",
+    authDomain: "studybuddy-memo.firebaseapp.com",
+    databaseURL: "https://studybuddy-memo.firebaseio.com",
+    projectId: "studybuddy-memo",
+    storageBucket: "studybuddy-memo.appspot.com",
+    messagingSenderId: "986425946679"
 }
