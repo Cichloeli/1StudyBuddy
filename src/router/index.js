@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import home from '@/components/home'
 import login from '@/components/login'
 import profile from '@/components/profile'
+import Register from '@/components/Register'
 import secure from '@/components/classes'
 
 
