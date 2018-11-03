@@ -3,11 +3,11 @@
         <label for="1studdybuddy">1StudyBuddy</label>
         <div class="form-content">
             <label for="username">Email</label>
-            <input type="text" name="username" class="form-control" v-model="input.username" />
+            <input type="text" name="username" class="form-control" v-model="input.username" style="border-radius:10px;"/>
         </div>
         <div class="form-content">
             <label for="password">Password</label>
-            <input type="text" name="password" class="form-control" v-model="input.password" />
+            <input type="text" name="password" class="form-control" v-model="input.password" style="border-radius:10px;"/>
         </div>
         <div class="form-content">
             <button class="btn-login" type="button" v-on:click="login()">Login</button>
@@ -39,7 +39,6 @@
                     if(this.input.username == "test" && this.input.password == "test") {
                         alert("correct");   
                         this.$router.push({name: 'profile'});
-                        
                     } else {
                         alert("The username and / or password is incorrect");
                     }
@@ -55,6 +54,7 @@
     .login-container {
         display: grid;
         justify-content: center;
+        align-content: center;
         font-size: 18px;
         margin-top: 100px;
     }
