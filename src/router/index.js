@@ -5,6 +5,7 @@ import login from '@/components/login'
 import profile from '@/components/profile'
 import Register from '@/components/Register'
 import secure from '@/components/classes'
+import ViewUser from '@/components/ViewUser'
 
 
 Vue.use(Router)
@@ -40,6 +41,11 @@ export default new Router({
       path: '/register',
       name: 'Register',
       component: Register
+    },
+    {
+      path: '/view-user',
+      name: 'ViewUser',
+      component: ViewUser
     }
   ]
 })
