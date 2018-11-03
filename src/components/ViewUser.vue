@@ -1,7 +1,7 @@
 <template>
     <div id="view-users">
         <ul class="collection with-header"
-        <li class="collection"><h4>Users</h4></li>
+        <li class="collection-header"><h4>Users</h4></li>
         <li v-for="user in users" v-bind:key="user.id" 
         class="collection-item">
             {{users.name}}
@@ -16,7 +16,7 @@ export default {
     name: 'view-users',
     data () {
         return {
-            employees: []
+            users: []
         }
     },
     created () {
@@ -31,7 +31,7 @@ export default {
                     'email': doc.data().email,
                     'classes': doc.data().classes
                 }
-                this.employees.push(data)
+                this.users.push(data)
             })
         })
     }
