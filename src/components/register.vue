@@ -11,24 +11,39 @@
         </div>
         <div class="form-content">
             <label for="email">Email</label>
-            <input type="text"  class="form-control"  style="border-radius:10px;"/>
+            <input type="text"  v-model="email" class="form-control"  style="border-radius:10px;"/>
         </div>
         <div class="form-content">
             <label for="password">Password</label>
-            <input type="password"  class="form-control"  style="border-radius:10px;"/>
+            <input type="password" v-model="password" class="form-control"  style="border-radius:10px;"/>
         </div>
         <div class="form-content">
-            <button class="btn-login" type="button" v-on:click="login()">Register</button>
-            <router-link to="/login" class="btn btn-link" style="color: #0066cc">Cancel</router-link>
+            <button class="btn-login" type="button" v-on:click="register">Register</button>
+            <router-link to="/login" class="btn btn-link" style="color: #e68a00">Cancel</router-link>
         </div>
     </div>
 </template>
 
 <script>
+    import firebase from 'firebase'
     export default {
         name: 'Register',
         data() {
             return {
+                email: '',
+                password: ''
+            }
+        },
+        methods: {
+            register() {
+                firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
+                    (user) => {
+                        this.$router.replace('profile')
+                    },
+                    (err) => {
+                        alert('Oops. Something went Wrong. ' + err.message)
+                    }
+                )
             }
         }
     }
@@ -45,9 +60,10 @@
         margin: 10px;
     }
     .btn-login {
-        background-color: #0066cc;
+        background-color: #e68a00;
         color: white;
         border-radius: 4px;
+        cursor: pointer;
     }
     .btn-login:hover {
         background-color: #0059b3;

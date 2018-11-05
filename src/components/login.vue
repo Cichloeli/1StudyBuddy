@@ -3,14 +3,14 @@
         <label for="1studdybuddy">1StudyBuddy</label>
         <div class="form-content">
             <label for="username">Email</label>
-            <input type="text" name="username" class="form-control"  style="border-radius:10px;"/>
+            <input type="text" v-model="email" name="username" class="form-control"  style="border-radius:10px;"/>
         </div>
         <div class="form-content">
             <label for="password">Password</label>
-            <input type="password" name="password" class="form-control"  style="border-radius:10px;"/>
+            <input type="password" v-model="password" name="password" class="form-control"  style="border-radius:10px;"/>
         </div>
         <div class="form-content">
-            <button class="btn-login" type="button" v-on:click="login()">Login</button>
+            <button class="btn-login" type="button" v-on:click="login">Login</button>
             <router-link to="/register" class="btn btn-link" style="color: #e68a00">Register</router-link>
         </div>
 
@@ -23,14 +23,25 @@
 </template>
 
 <script>
+    import firebase from 'firebase'
     export default {
         name: 'Login',
         data() {
-            return {}
+            return {
+                email: '',
+                password: ''
+            }
         },
         methods: {
             login() {
-                this.$router.replace('profile')
+                firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
+                    (user) => {
+                        this.$router.replace('profile')
+                    },
+                    (err) => {
+                        alert('Oops. Something went Wrong. ' + err.message)
+                    }
+                )
             }
         }
     }
