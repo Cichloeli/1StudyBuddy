@@ -4,6 +4,7 @@ import home from '@/components/home'
 import login from '@/components/login'
 import profile from '@/components/profile'
 import secure from '@/components/classes'
+import ViewUser from '@/components/ViewUser'
 
 
 Vue.use(Router)
@@ -34,6 +35,11 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: login
+    },
+    {
+      path: '/view-user',
+      name: 'ViewUser',
+      component: ViewUser
     }
   ]
 })
