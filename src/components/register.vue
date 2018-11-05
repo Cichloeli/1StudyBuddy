@@ -2,30 +2,32 @@
     <div class= "login-container">
         <label for="1studdybuddy">1StudyBuddy</label>
         <div class="form-content">
-            <label for="username">Email</label>
-            <input type="text" v-model="email" name="username" class="form-control"  style="border-radius:10px;"/>
+            <label for="firstname">First Name</label>
+            <input type="text"  class="form-control"  style="border-radius:10px;"/>
+        </div>
+        <div class="form-content">
+            <label for="lastname">Last Name</label>
+            <input type="text"  class="form-control"  style="border-radius:10px;"/>
+        </div>
+        <div class="form-content">
+            <label for="email">Email</label>
+            <input type="text"  v-model="email" class="form-control"  style="border-radius:10px;"/>
         </div>
         <div class="form-content">
             <label for="password">Password</label>
-            <input type="password" v-model="password" name="password" class="form-control"  style="border-radius:10px;"/>
+            <input type="password" v-model="password" class="form-control"  style="border-radius:10px;"/>
         </div>
         <div class="form-content">
-            <button class="btn-login" type="button" v-on:click="login">Login</button>
-            <router-link to="/register" class="btn btn-link" style="color: #e68a00">Register</router-link>
+            <button class="btn-login" type="button" v-on:click="register">Register</button>
+            <router-link to="/login" class="btn btn-link" style="color: #e68a00">Cancel</router-link>
         </div>
-
-        <!-- <h1>1StudyBuddy</h1>
-        <input id="username" type="text" name="username" v-model="input.username" placeholder="Email" />
-        <input id="password" type="password" name="password" v-model="input.password" placeholder="Password" />
-        <button id="login-button" type="button" v-on:click="login()">Login</button> -->
-
     </div>
 </template>
 
 <script>
     import firebase from 'firebase'
     export default {
-        name: 'Login',
+        name: 'Register',
         data() {
             return {
                 email: '',
@@ -33,8 +35,8 @@
             }
         },
         methods: {
-            login() {
-                firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
+            register() {
+                firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
                     (user) => {
                         this.$router.replace('profile')
                     },
@@ -51,7 +53,6 @@
     .login-container {
         display: grid;
         justify-content: center;
-        align-content: center;
         font-size: 18px;
         margin-top: 100px;
     }

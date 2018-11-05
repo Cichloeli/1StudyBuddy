@@ -4,28 +4,29 @@
         <p>
             {{ name }}
             {{ year }}
-        
-
-
-
-
-
         </p>
         <router-link class="nav-link" to="/classes">Classes</router-link>
+        <button v-on:click="logout">Logout</button>
     </div>
     
 </template>
 
 <script>
+    import firebase from 'firebase'
     export default {
         name: 'profile',
-        
         data() {
-            
             return {
             name: 'John Robert',
             year: 'first',
             };
+        },
+        methods: {
+            logout() {
+                firebase.auth().signOut().then(() => {
+                    this.$router.replace('login')
+                })
+            }
         }
     }
 </script>
