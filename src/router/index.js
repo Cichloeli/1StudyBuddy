@@ -6,6 +6,7 @@ import login from '@/components/login'
 import register from '@/components/register'
 import profile from '@/components/profile'
 import secure from '@/components/classes'
+import ViewUser from '@/components/ViewUser'
 
 import firebase from 'firebase'
 
@@ -50,7 +51,12 @@ let router = new Router({
       component: secure,
       meta: {
         requiresAuth: true
-        }
+      }  
+    },
+    {
+      path: '/view-user',
+      name: 'ViewUser',
+      component: ViewUser
     }
   ]
 })
