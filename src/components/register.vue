@@ -2,24 +2,24 @@
     <div class= "login-container">
         <label for="1studdybuddy">1StudyBuddy</label>
         <div class="form-content">
-            <label for="username">First Name</label>
+            <label for="firstname">First Name</label>
             <input type="text"  class="form-control"  style="border-radius:10px;"/>
         </div>
         <div class="form-content">
-            <label for="password">Last Name</label>
+            <label for="lastname">Last Name</label>
             <input type="text"  class="form-control"  style="border-radius:10px;"/>
         </div>
         <div class="form-content">
-            <label for="password">Email</label>
+            <label for="email">Email</label>
             <input type="text"  class="form-control"  style="border-radius:10px;"/>
         </div>
         <div class="form-content">
             <label for="password">Password</label>
-            <input type="text"  class="form-control"  style="border-radius:10px;"/>
+            <input type="password"  class="form-control"  style="border-radius:10px;"/>
         </div>
         <div class="form-content">
             <button class="btn-login" type="button" v-on:click="login()">Register</button>
-            <router-link to="/home" class="btn btn-link" style="color: #0066cc">Cancel</router-link>
+            <router-link to="/login" class="btn btn-link" style="color: #0066cc">Cancel</router-link>
         </div>
     </div>
 </template>

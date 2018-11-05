@@ -3,11 +3,11 @@
         <label for="1studdybuddy">1StudyBuddy</label>
         <div class="form-content">
             <label for="username">Email</label>
-            <input type="text" name="username" class="form-control" v-model="input.username" style="border-radius:10px;"/>
+            <input type="text" name="username" class="form-control"  style="border-radius:10px;"/>
         </div>
         <div class="form-content">
             <label for="password">Password</label>
-            <input type="text" name="password" class="form-control" v-model="input.password" style="border-radius:10px;"/>
+            <input type="password" name="password" class="form-control"  style="border-radius:10px;"/>
         </div>
         <div class="form-content">
             <button class="btn-login" type="button" v-on:click="login()">Login</button>
@@ -26,25 +26,11 @@
     export default {
         name: 'Login',
         data() {
-            return {
-                input: {
-                    username: "",
-                    password: ""
-                }
-            }
+            return {}
         },
         methods: {
             login() {
-                if(this.input.username != "" && this.input.password != "") {
-                    if(this.input.username == "test" && this.input.password == "test") {
-                        alert("correct");   
-                        this.$router.push({name: 'profile'});
-                    } else {
-                        alert("The username and / or password is incorrect");
-                    }
-                } else {
-                    alert("A username and password must be present");
-                }
+                this.$router.replace('profile')
             }
         }
     }
@@ -65,6 +51,7 @@
         background-color: #e68a00;
         color: white;
         border-radius: 4px;
+        cursor: pointer;
     }
     .btn-login:hover {
         background-color: #0059b3;
