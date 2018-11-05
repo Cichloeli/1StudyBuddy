@@ -11,7 +11,7 @@
         </div>
         <div class="form-content">
             <button class="btn-login" type="button" v-on:click="login()">Login</button>
-            <router-link to="/register" class="btn btn-link" style="color: #0066cc">Register</router-link>
+            <router-link to="/register" class="btn btn-link" style="color: #e68a00">Register</router-link>
         </div>
 
         <!-- <h1>1StudyBuddy</h1>
@@ -62,7 +62,7 @@
         margin: 10px;
     }
     .btn-login {
-        background-color: #0066cc;
+        background-color: #e68a00;
         color: white;
         border-radius: 4px;
     }
