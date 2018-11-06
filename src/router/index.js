@@ -5,6 +5,7 @@ import login from '@/components/login'
 import profile from '@/components/profile'
 import classes from '@/components/classes'
 import dashboard from '@/components/dashboard'
+import viewUser from '@/components/ViewUser'
 
 
 Vue.use(Router)
@@ -40,6 +41,11 @@ export default new Router({
       path: '/dashboard',
       name: 'dashboard',
       component: dashboard
-    }
+    },
+    {
+      path: '/viewUser',
+      name: 'viewUser',
+      component: viewUser
+    },
   ]
 })

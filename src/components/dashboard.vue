@@ -4,6 +4,7 @@
         
         <router-link class="nav-link" to="/profile">Profile</router-link>
         <router-link class="nav-link" to="/classes">Classes</router-link>
+        <router-link class="nav-link" to="/viewUser">View Users</router-link>
     </div>
 </template>
 
