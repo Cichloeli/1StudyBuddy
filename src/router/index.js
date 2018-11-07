@@ -1,22 +1,38 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
 import home from '@/components/home'
 import login from '@/components/login'
+import register from '@/components/register'
 import profile from '@/components/profile'
 import classes from '@/components/classes'
 import dashboard from '@/components/dashboard'
 import viewUser from '@/components/ViewUser'
 import editProfile from '@/components/editProfile'
 
+import firebase from 'firebase'
 
 Vue.use(Router)
 
-export default new Router({
+let router = new Router({
   routes: [
     {
+      path: '*',
+      redirect: '/login'
+    },
+    {
       path: '/',
-      name: 'home',
-      component: home
+      redirect: '/home'
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: login
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: register
     },
     {
       path: '/home',
@@ -31,27 +47,40 @@ export default new Router({
     {
       path: '/profile',
       name: 'profile',
-      component: profile
+      component: profile,
+      meta: {
+          requiresAuth: true
+      }
     },
     {
       path: '/classes',
       name: 'classes',
-      component: classes
+      component: classes,
+      meta: {
+        requiresAuth: true
+      }  
     },
     {
-      path: '/login',
-      name: 'login',
-      component: login
+      path: '/view-user',
+      name: 'viewUser',
+      component: viewUser
     },
     {
       path: '/dashboard',
       name: 'dashboard',
       component: dashboard
-    },
-    {
-      path: '/viewUser',
-      name: 'viewUser',
-      component: viewUser
-    },
+    }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+    let currentUser = firebase.auth().currentUser;
+    let requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+
+    if (requiresAuth && !currentUser) next('login')
+    // where the login takes you
+    else if (!requiresAuth && currentUser) next('profile')
+    else next()
+})
+
+export default router

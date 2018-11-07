@@ -4,7 +4,11 @@ npm install
 
 npm start
 
+<<<<<<< HEAD
 It will be running on http://localhost:8010/
+=======
+It will be running on http://localhost:8080/
+>>>>>>> 6cb99bbc9d72865a13add905e7f3f876164c5041
 
 
 # StudyBuddy

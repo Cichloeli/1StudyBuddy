@@ -34,7 +34,8 @@
             <div class="infoAbout">
                 {{ about }}
             </div>               
-                    
+
+              <button v-on:click="logout">Logout</button>      
         
         </div>
         
@@ -44,6 +45,7 @@
 </template>
 
 <script>
+
 import db from './firebaseinit';
 
 var usersDB = db.collection('users').doc("3aL2IlN8NbPjQVZhZJe3");
@@ -69,6 +71,11 @@ export default {
     
 
     methods: {
+        logout() {
+                firebase.auth().signOut().then(() => {
+                    this.$router.replace('login')
+                })
+            }
         
     },
 
@@ -92,6 +99,7 @@ export default {
 
         
         
+
     }
 
   
