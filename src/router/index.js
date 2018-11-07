@@ -6,6 +6,7 @@ import profile from '@/components/profile'
 import classes from '@/components/classes'
 import dashboard from '@/components/dashboard'
 import viewUser from '@/components/ViewUser'
+import editProfile from '@/components/editProfile'
 
 
 Vue.use(Router)
@@ -21,6 +22,11 @@ export default new Router({
       path: '/home',
       name: 'home',
       component: home
+    },
+    {
+      path: '/editProfile',
+      name: 'editProfile',
+      component: editProfile
     },
     {
       path: '/profile',

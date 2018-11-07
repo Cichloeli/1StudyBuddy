@@ -5,23 +5,28 @@
             <li v-for="user in users" v-bind:key="user.user_id" 
             class="collection-item">
             {{user.name}}:{{user.major}}
+
+            {{email}}
+         
         </li>
         </ul>
     </div>    
 </template>
 
+
 <script>
 import db from './firebaseinit'
+
 export default {
     name: 'view-users',
     data () {
         return {
-            users: []
+            users: [],
+            
         }
     },
     created () {
-        db.collection('users').get().
-        then(querySnapshot => {
+        db.collection('users').get().then(querySnapshot => {
             querySnapshot.forEach(doc => {
                 const data = {
                     'id': doc.id,

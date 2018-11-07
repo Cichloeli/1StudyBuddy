@@ -6,78 +6,98 @@
         <div class="title">
             <h1>Profile</h1>
         </div>
-        
+
+        <router-link class="editLink" to="/editProfile">Edit Profile</router-link>
+
         <div class="info">
             <h6>Name:</h6>
             <div class="infoName">
                 {{ name }}
-                <input type="text" name="nameIn" v-model="input.nameIn" placeholder="Name" />
             </div>
 
             <h6>Classes:</h6>
             <div class="infoClasses">
                 {{ classes }}
-                <input type="text" name="classesIn" v-model="input.classesIn" placeholder="Classes" />
             </div>
                 
             <h6>Major:</h6>   
             <div class="infoMajor">
                 {{ major }}
-                <input type="text" name="majorIn" v-model="input.majorIn" placeholder="Major" />
             </div>           
                       
             <h6>Email:</h6>
             <div class="infoEmail">
                 {{ email }}
-                <input type="text" name="emailIn" v-model="input.emailIn" placeholder="Email" />
             </div>
                      
             <h6>About:</h6>
             <div class="infoAbout">
                 {{ about }}
-                <input type="text" name="aboutIn" v-model="input.aboutIn" placeholder="About" />
             </div>               
                     
-    
         
         </div>
         
-        <div class="updateButton">
-            <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="update()">Update</button>
-        </div>
         
     </div>
     
 </template>
 
 <script>
-export default {
-  name: "profile",
+import db from './firebaseinit';
 
+var usersDB = db.collection('users').doc("3aL2IlN8NbPjQVZhZJe3");
+
+export default {
+
+  name: "profile",
+  
   data() {
     return {
-      input: {
-        nameIn: "",
-        classesIn: "",
-        majorIn: "",
-        aboutIn: "",
-        emailIn: ""
-      },
-      name: "John",
-      classes: "cmps115",
-      major: "cs",
-      about: "student at ucsc",
-      email: "@ucsc.edu",
+      
+      users: [],
+
+      name: null,
+      classes: null,
+      major: null,
+      about: null,
+      email: null,
+
       header: require("../assets/images/p2.jpg"),
     };
   },
+    
 
-  methods: {
-    update() {
-      this.name = this.input.nameIn;
+    methods: {
+        
+    },
+
+    
+
+    created () {
+        
+        db.collection('users').where('id','==', "3aL2IlN8NbPjQVZhZJe3").get().then(querySnapshot => {
+            querySnapshot.forEach(doc => {
+                
+                    id = doc.id,
+                    userID = doc.data().user_id
+                    this.name = doc.data().name
+                    this.major = doc.data().major
+                    this.email = doc.data().email
+                    this.classes = doc.data().classes
+                    this.about = doc.data().about
+                
+            })
+        })
+
+        
+        
     }
-  }
+
+  
 };
+
+
 </script>
 
 <style scoped>
@@ -89,7 +109,7 @@ export default {
   
   background-color: #ffffff;
   border: 1px solid #cccccc;
-  padding: 20px;
+  padding: 30px;
   margin-top: 10px;
   
 }
@@ -101,9 +121,11 @@ export default {
   text-align: left;
   padding-right: 300px;
 }
-.infoName input {
-    text-align: center;
-    margin-left: 200px;
+.editLink {
+    max-width: 50px;
+    padding-left: 90%;
+  
+   
 
 }
 .infoAbout input {
@@ -112,6 +134,6 @@ export default {
 }
 .updateButton{
     max-width: 150px;
-
+    
 }
 </style>
