@@ -35,7 +35,7 @@
                 {{ about }}
             </div>               
 
-              <button v-on:click="logout">Logout</button>      
+              <button v-on:click="logout()">Logout</button>      
         
         </div>
         
@@ -47,6 +47,7 @@
 <script>
 
 import db from './firebaseinit';
+import firebase from 'firebase'
 
 var usersDB = db.collection('users').doc("3aL2IlN8NbPjQVZhZJe3");
 
@@ -68,18 +69,13 @@ export default {
       header: require("../assets/images/p2.jpg"),
     };
   },
-    
-
-    methods: {
-        logout() {
-                firebase.auth().signOut().then(() => {
-                    this.$router.replace('login')
-                })
-            }
-        
-    },
-
-    
+  methods: {
+    logout() {
+        firebase.auth().signOut().then(() => {
+            this.$router.replace('login')
+        })
+    }
+  },
 
     created () {
         
