@@ -1,19 +1,39 @@
 <template>
     <div id="classes">
-        <h1>Classes</h1>
-        <p>
-            These are the classes
-        </p>
-    </div>
+        <ul class="col">
+        <li class="collection-header"><h4>Classes</h4></li>
+        <li v-for="course in courses" v-bind:key="course.course_id" 
+        class="collection-item">
+            {{course.name}}:{{course.About}}
+        </li>
+        </ul>
+    </div>    
 </template>
 
 <script>
-    export default {
-        name: 'Classes',
-        data() {
-            return {};
+import db from './firebaseinit'
+export default {
+    name: 'view-courses',//doesn't matter
+    data () {
+        return {
+            courses: []
         }
+    },
+    created () {
+        db.collection('courses').get().
+        then(querySnapshot => {
+            querySnapshot.forEach(doc => {
+                const data = {
+                    'name': doc.id,
+                    'course_id': doc.data().course_id,
+                    'About': doc.data().About,
+                    'email': doc.data().email,
+                }
+                this.courses.push(data)
+            })
+        })
     }
+}
 </script>
 
 <style scoped>
@@ -24,3 +44,4 @@
         margin-top: 10px;
     }
 </style>
+

@@ -42,7 +42,10 @@ let router = new Router({
     {
       path: '/editProfile',
       name: 'editProfile',
-      component: editProfile
+      component: editProfile,
+      meta: {
+        requiresAuth: true
+    }
     },
     {
       path: '/profile',
@@ -63,12 +66,18 @@ let router = new Router({
     {
       path: '/view-user',
       name: 'viewUser',
-      component: viewUser
+      component: viewUser,
+      meta: {
+        requiresAuth: true
+    }
     },
     {
       path: '/dashboard',
       name: 'dashboard',
-      component: dashboard
+      component: dashboard,
+      meta: {
+        requiresAuth: true
+    }
     }
   ]
 })
