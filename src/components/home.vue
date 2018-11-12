@@ -1,42 +1,62 @@
 <template>
   <div class="home">
-    <h1>{{title}}</h1>
-    <div class="row">
-      <div class="col-md-4 col-lg4" v-for="(data,index) in products" :key="index">
-        <img :src="data.image" class="img-fluid">
-         <a :href="goTodetail(index)" @click="doSomething" style="color: #0066cc">{{data.productTitle}}</a>
+    <div class="containerOne">
+      <div class="header">
+        1StudyBuddy
+      </div>
+      <div class="icon-container">
+        <div class="icons">
+          <a href="#containerTwo">
+            <img src="../assets/icons/connect.svg" alt="Connect" class="connect-icon">
+          </a>
+          <div class="description">
+            Connect
+          </div>
+        </div>
+        <div class="icons">
+          <a href="#containerThree">
+            <img src="../assets/icons/growth.svg" alt="Study" class="study-icon">
+          </a>
+          <div class="description">
+            Study
+          </div>
+        </div>
+        <div class="icons">
+          <a href="#containerFour">
+            <img src="../assets/icons/idea.svg" alt="Excel" class="excel-icon"> 
+          </a>
+          <div class="description">
+            Excel
+          </div>
+        </div>
       </div>
     </div>
-    <p>
-      1StudyBuddy allows classmates to meet and form study groups. 
-    </p>
-    <div class="showing detail" v-for="(data,index) in details" :key="index">
-      <div class = "showing details 0" id = "0" v-if = "index == 0">
-        <p><b>{{data.detailSpace}}</b></p>
-        <p><b>{{data.detailSpace}}</b></p>
-        <p><b>{{data.detailTitle}}</b></p>
-        <p><b>{{data.detailStuff1}}</b></p>
-        <p><b>{{data.detailStuff2}}</b></p>
-        <p><b>{{data.detailStuff3}}</b></p>
-        <p><b>{{data.detailStuff4}}</b></p>
+    <div class="containerTwo" id="containerTwo">
+      <div class="icon-header">
+        Connect
+        <div class="icon-description">
+          1StudyBuddy lets you connect with other students in your class. Letting you enroll in your current classes
+          1StuddyBuddy matches you together with real people in your current class allowing you to connect with them and form study groups.
+        </div>
       </div>
-      <div class = "showing details 1" id = "1" v-if = "index == 1">
-        <p><b>{{data.detailSpace}}</b></p>
-        <p><b>{{data.detailSpace}}</b></p>
-        <p><b>{{data.detailTitle}}</b></p>
-        <p><b>{{data.detailStuff1}}</b></p>
-        <p><b>{{data.detailStuff2}}</b></p>
-        <p><b>{{data.detailStuff3}}</b></p>
-        <p><b>{{data.detailStuff4}}</b></p>
+    </div>
+    <div class="containerThree" id="containerThree">
+      <div class="icon-header">
+        Study
+        <div class="icon-description">
+          1StudyBuddy gives you the proper tools to study. Never again will you not have another classmate there for questions. Instead of 
+          being in a class where you know no one, you will be in a class where you can easily ask questions and get them answered by your
+          new study mates.
+        </div>
       </div>
-      <div class = "showing details 2" id = "2" v-if = "index == 2">
-        <p><b>{{data.detailSpace}}</b></p>
-        <p><b>{{data.detailSpace}}</b></p>
-        <p><b>{{data.detailTitle}}</b></p>
-        <p><b>{{data.detailStuff1}}</b></p>
-        <p><b>{{data.detailStuff2}}</b></p>
-        <p><b>{{data.detailStuff3}}</b></p>
-        <p><b>{{data.detailStuff4}}</b></p>
+    </div>
+    <div class="containerFour" id="containerFour">
+      <div class="icon-header">
+        Excel
+        <div class="icon-description">
+          Now that you have unlimited help at your finger tips nothing is holding you back from being the best student you can be.
+          You will start to excel in all your classes becoming a master Study Buddy.
+        </div>
       </div>
     </div>
   </div>
@@ -48,97 +68,88 @@ export default {
   name: 'home',
   data () {
     return {
-      title: '1StudyBuddy',
-      products:[
-      {
-        productTitle:"Connect",
-        image       : require('../assets/images/product1.jpg'),
-        productId:1
-      },
-      {
-        productTitle:"Learn",
-        image       : require('../assets/images/product2.jpg'),
-        productId:2
-      },
-      {
-        productTitle:"Excel",
-        image       : require('../assets/images/product3.jpg'),
-        productId:3
-      }/* ,
-      {
-        productTitle:"EFG",
-        image       : require('../assets/images/product4.png'),
-        productId:4
-      },
-      {
-        productTitle:"MLI",
-        image       : require('../assets/images/product5.png'),
-        productId:5
-      },
-      {
-        productTitle:"Banans",
-        image       : require('../assets/images/product6.png'),
-        productId:6
-      } */
-      ],
-      details:[
-        {
-          detailSpace: "",
-          detailTitle: "connect",
-          detailStuff1: "C sentence1",
-          detailStuff2: "C sentence2",
-          detailStuff3: "C sentence3",
-          detailStuff4: "C sentence4"
-        },
-        {
-          detailSpace: "",
-          detailTitle: "learn",
-          detailStuff1: "L sentence1",
-          detailStuff2: "L sentence2",
-          detailStuff3: "L sentence3",
-          detailStuff4: "L sentence4"
-        },
-        {
-          detailSpace: "",
-          detailTitle: "excel",
-          detailStuff1: "E sentence1",
-          detailStuff2: "E sentence2",
-          detailStuff3: "E sentence3",
-          detailStuff4: "E sentence4"
-        }
-      ]
     }
-  },
-  methods:{
-  goTodetail(prodId) {
-    return "#"+prodId
-  }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.row img{
-  max-height: 15em;
-  width: 100%;
 
+.home {
+  display: grid;
+  grid-template-areas: "icons"
+                       "connect"
+                       "study"
+                       "excel"
+                       "footer";
+  grid-template-rows: repeat(4, 500px);
+          
 }
-.row h3{
-  cursor:pointer;
+.containerOne {
+  grid-area: icons;
 }
-p b{
-		color:#e68a00;
-		display:inline-block;
-		padding:5px 10px;
-		/*background-color:#c4d7e0;*/
-		border-radius:2px;
-		text-transform:uppercase;
-		font-size:18px;
-    margin: 0 auto;
-    position:relative;
-    top: 50%;
-	}
+.containerTwo {
+  grid-area: connect;
+}
+.containerThree {
+  grid-area: study;
+}
+.containerFour {
+  grid-area: excel;
+}
+.header {
+  font-size: 64px;
+}
+.description {
+  margin-top: 15px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.icon-container {
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 100px;
+}
+.connect-icon {
+  width: 100px;
+  height: 100px;
+}
+.study-icon {
+  width: 100px;
+  height: 100px;
+}
+.excel-icon {
+  width: 100px;
+  height: 100px;
+}
+.connect-icon:hover {
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+}
+.study-icon:hover {
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+}
+.excel-icon:hover {
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+}
+.icon-header {
+  color: #e68a00;
+  font-size: 64px;
+  font-weight: bold;
+}
+.icon-description {
+  color: black;
+  font-size: 24px;
+  font-weight: normal;
+  margin-top: 35px;
+}
 
 </style>
 
