@@ -11,7 +11,9 @@
 </template>
 
 <script>
-import db from './firebaseinit'
+import realDB from 'firebase';
+
+//import db from './firebaseinit';
 export default {
     name: 'view-courses',//doesn't matter
     data () {
@@ -20,14 +22,14 @@ export default {
         }
     },
     created () {
-        db.collection('courses').get().
+        realDB.firestore().collection('courses').get().
         then(querySnapshot => {
             querySnapshot.forEach(doc => {
                 const data = {
                     'name': doc.id,
                     'course_id': doc.data().course_id,
                     'About': doc.data().About,
-                    'email': doc.data().email,
+                    //'email': doc.data().email,
                 }
                 this.courses.push(data)
             })

@@ -10,7 +10,11 @@ with open(FILEINPUT, 'r') as fileinput:
     for line in lines:
         entry = {}
         line = line.split(" ")
-        entry[line[0]] = "information:","studygroups:"
+        info = {}
+        info["information"]=""
+        info["groups"]=""
+        info["students"]=""
+        entry[line[0]] = info
         data.update(entry)
 
 fileinput.close()
