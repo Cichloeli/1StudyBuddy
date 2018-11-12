@@ -3,6 +3,7 @@ import json
 FILEINPUT   = 'classes.txt'
 FILEOUTPUT  = 'courses.json'
 
+data1 = {}
 data = {}
 
 with open(FILEINPUT, 'r') as fileinput:
@@ -15,7 +16,8 @@ with open(FILEINPUT, 'r') as fileinput:
         info["groups"]=""
         info["students"]=""
         entry[line[0]] = info
-        data.update(entry)
+        data1.update(entry)
+    data['classes']=data1
 
 fileinput.close()
 

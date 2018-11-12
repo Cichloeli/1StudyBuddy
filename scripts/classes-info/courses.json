@@ -1,172 +1,174 @@
 {
-    "cmps166a": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps111": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps183": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps104a": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps180": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps5j": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps112": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps185": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps280l": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps223": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps266a": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps201": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps278": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps160l": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps128": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps102": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps101": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps115": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps217": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps109": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps290s": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps121": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps130": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps12m": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps12l": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps280s": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps242": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps280d": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps200": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps160": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps12a": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps142": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps260": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
-    }, 
-    "cmps12b": {
-        "students": "", 
-        "information": "", 
-        "groups": ""
+    "classes": {
+        "cmps166a": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps111": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps183": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps104a": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps180": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps5j": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps112": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps185": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps280l": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps223": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps266a": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps201": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps278": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps160l": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps128": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps102": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps101": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps115": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps217": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps109": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps290s": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps121": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps130": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps12m": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps12l": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps280s": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps242": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps280d": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps200": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps160": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps12a": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps142": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps260": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }, 
+        "cmps12b": {
+            "students": "", 
+            "information": "", 
+            "groups": ""
+        }
     }
 }

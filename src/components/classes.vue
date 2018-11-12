@@ -7,13 +7,16 @@
             {{course.name}}:{{course.About}}
         </li>
         </ul>
+
+        <div class="updateButton">
+            <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="info()">Info</button>
+        </div>
     </div>    
 </template>
 
 <script>
-import realDB from 'firebase';
-
-//import db from './firebaseinit';
+import db from './firebaseinit';
+import firebase from 'firebase'
 export default {
     name: 'view-courses',//doesn't matter
     data () {
@@ -21,15 +24,27 @@ export default {
             courses: []
         }
     },
+    methods: {
+        info(){
+            firebase.database().ref().on("value", function(snapshot) {
+            console.log(snapshot.val());
+            }, function (error) {
+            console.log("Error: " + error.code);
+            });
+                
+                
+                
+        }
+    },
     created () {
-        realDB.firestore().collection('courses').get().
+        firebase.firestore().collection('courses').get().
         then(querySnapshot => {
             querySnapshot.forEach(doc => {
                 const data = {
                     'name': doc.id,
                     'course_id': doc.data().course_id,
                     'About': doc.data().About,
-                    //'email': doc.data().email,
+                    'email': doc.data().email,
                 }
                 this.courses.push(data)
             })
@@ -46,4 +61,3 @@ export default {
         margin-top: 10px;
     }
 </style>
-
