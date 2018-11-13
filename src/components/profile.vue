@@ -15,10 +15,10 @@
                 {{ name }}
             </div> -->
 
-            <h6>Classes:</h6>
-            <div class="infoClasses">
+            <h6>Classes: {{ classes }}</h6>
+            <!-- <div class="infoClasses">
                 {{ classes }}
-            </div>
+            </div> -->
                 
             <h6>Major: {{ major }}</h6>   
             <!-- <div class="infoMajor">
