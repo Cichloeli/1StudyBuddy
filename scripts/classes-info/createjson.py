@@ -14,7 +14,7 @@ with open(FILEINPUT, 'r') as fileinput:
         info = {}
         info["information"]=""
         info["groups"]=""
-        info["students"]=""
+        # info["students"]=""
         entry[line[0]] = info
         data1.update(entry)
     data['classes']=data1
