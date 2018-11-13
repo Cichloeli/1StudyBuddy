@@ -4,9 +4,14 @@
             <li class="collection-header">
                 <h4>Users</h4>
             </li>
-            <li v-for="user in users" v-bind:key="user.user_id" 
+            <li v-for="user in users" v-bind:key="user.id" 
                 class="collection-item">
-                {{user.name}}:{{user.major}}
+                {{user.id}}:{{user.major}}
+
+                <router-link class="secondary-content"
+                v-bind:to="{name: 'profile', params: {name: user.name}}">
+                <i class="fa fa-eye"></i>
+                </router-link>
             </li>
         </ul>
     </div>    

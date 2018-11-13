@@ -10,30 +10,30 @@
         <router-link class="editLink" to="/editProfile">Edit Profile</router-link>
 
         <div class="info">
-            <h6>Name:</h6>
-            <div class="infoName">
+            <h6>Name: {{ name }}</h6>
+            <!-- <div class="infoName">
                 {{ name }}
-            </div>
+            </div> -->
 
             <h6>Classes:</h6>
             <div class="infoClasses">
                 {{ classes }}
             </div>
                 
-            <h6>Major:</h6>   
-            <div class="infoMajor">
+            <h6>Major: {{ major }}</h6>   
+            <!-- <div class="infoMajor">
                 {{ major }}
-            </div>           
+            </div>            -->
                       
-            <h6>Email:</h6>
-            <div class="infoEmail">
+            <h6>Email: {{ email }}</h6>
+            <!-- <div class="infoEmail">
                 {{ email }}
-            </div>
+            </div> -->
                      
-            <h6>About:</h6>
-            <div class="infoAbout">
+            <h6>About: {{ about }}</h6>
+            <!-- <div class="infoAbout">
                 {{ about }}
-            </div>               
+            </div>                -->
 
               <button v-on:click="logout()">Logout</button>      
         
@@ -57,9 +57,6 @@ export default {
   
   data() {
     return {
-      
-      users: [],
-
       name: null,
       classes: null,
       major: null,
@@ -69,34 +66,61 @@ export default {
       header: require("../assets/images/p2.jpg"),
     };
   },
+  beforeRouteEnter (to, from, next) {
+      db.collection('users').where('name', '==', to.params.name).get()
+      .then(querySnapshot => {
+          querySnapshot.forEach(doc => {
+              next(vm => {
+                  vm.id = doc.id
+                  vm.name = doc.data().name
+                  vm.email = doc.data().email
+                  vm.major = doc.data().major
+                  vm.classes = doc.data().classes
+                  vm.about = doc.data().about
+              })
+          })
+      })
+  },
   methods: {
     logout() {
         firebase.auth().signOut().then(() => {
             this.$router.replace('login')
         })
-    }
-  },
-
-    created () {
-        
-        db.collection('users').where('id','==', "3aL2IlN8NbPjQVZhZJe3").get().then(querySnapshot => {
+    },
+    fetchData () {
+        db.collection('users').where
+        ('name', '==', this.$route.params.name).get()
+        .then(querySnapshot => {
             querySnapshot.forEach(doc => {
-                
-                    id = doc.id,
-                    userID = doc.data().user_id
-                    this.name = doc.data().name
-                    this.major = doc.data().major
-                    this.email = doc.data().email
-                    this.classes = doc.data().classes
-                    this.about = doc.data().about
-                
+                this.id = doc.id
+                this.name = doc.data().name
+                this.email = doc.data().email
+                this.major = doc.data().major
+                this.classes = doc.data().classes
+                this.about = doc.data().about
             })
         })
-
-        
-        
-
     }
+  },
+  watch: {
+      '$route': 'fetchData'
+  }
+  
+    // created () {        
+    //     db.collection('users').where('id','==', "3aL2IlN8NbPjQVZhZJe3").get().then(querySnapshot => {
+    //         querySnapshot.forEach(doc => {
+                
+    //                 id = doc.id,
+    //                 userID = doc.data().user_id
+    //                 this.name = doc.data().name
+    //                 this.major = doc.data().major
+    //                 this.email = doc.data().email
+    //                 this.classes = doc.data().classes
+    //                 this.about = doc.data().about
+                
+    //         })
+    //     })
+    
 
   
 };
