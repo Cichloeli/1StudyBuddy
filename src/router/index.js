@@ -9,6 +9,7 @@ import classes from '@/components/classes'
 import dashboard from '@/components/dashboard'
 import viewUser from '@/components/ViewUser'
 import editProfile from '@/components/editProfile'
+import createGroup from '@/components/createGroup'
 
 import firebase from 'firebase'
 
@@ -72,13 +73,21 @@ let router = new Router({
     }
     },
     {
+      path: '/createGroup',
+      name: 'create_a_Group',
+      component: createGroup,
+      meta: {
+        requiresAuth: true
+    }
+    },
+    {
       path: '/dashboard',
       name: 'dashboard',
       component: dashboard,
       meta: {
         requiresAuth: true
     }
-    }
+    },
   ]
 })
 
