@@ -184,6 +184,7 @@ export default {
     
 
     created () {
+        currentUser = firebase.auth().currentUser,
         db.collection('users').get().then(querySnapshot => {
             querySnapshot.forEach(doc => {
                 const data = {

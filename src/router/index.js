@@ -8,7 +8,7 @@ import register from '@/components/register'
 import profile from '@/components/profile'
 import classes from '@/components/classes'
 import dashboard from '@/components/dashboard'
-import viewUser from '@/components/ViewUser'
+import ViewUser from '@/components/ViewUser'
 import editProfile from '@/components/editProfile'
 
 import firebase from 'firebase'
@@ -73,9 +73,9 @@ let router = new Router({
       }  
     },
     {
-      path: '/view-user',
-      name: 'viewUser',
-      component: viewUser,
+      path: '/ViewUser',
+      name: 'ViewUser',
+      component: ViewUser,
       meta: {
         requiresAuth: true
     }

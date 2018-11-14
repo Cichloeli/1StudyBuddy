@@ -1,12 +1,17 @@
 <template>
-    <div id="view-users">
+    <div id="ViewUsers">
         <ul class="col">
             <li class="collection-header">
                 <h4>Users</h4>
             </li>
-            <li v-for="user in users" v-bind:key="user.user_id" 
+            <li v-for="user in users" v-bind:key="user.uid" 
                 class="collection-item">
-                {{user.name}}:{{user.major}}
+                {{user.name}}
+
+                <router-link class="secondary-content"
+                v-bind:to="{name: 'profile', params: {uid: user.uid}}">
+                <i class="fa fa-eye"></i>
+                </router-link>
             </li>
         </ul>
     </div>    
@@ -15,7 +20,7 @@
 <script>
 import db from './firebaseinit'
 export default {
-    name: 'view-users',
+    name: 'ViewUsers',
     data () {
         return {
             users: []
@@ -27,7 +32,7 @@ export default {
             querySnapshot.forEach(doc => {
                 const data = {
                     'id': doc.id,
-                    'user_id': doc.data().user_id,
+                    'uid': doc.data().uid,
                     'name': doc.data().name,
                     'major': doc.data().major,
                     'email': doc.data().email,
