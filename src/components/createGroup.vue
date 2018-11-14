@@ -5,7 +5,7 @@
   <div class = "createGroup">
     <!-- the 'heading' is in the class 'createGroup' but not in the 'body' -->
     <div class = "heading">
-      <h3 style="color : #0066cc">create group</h3>
+      <h3 style="color : #0066cc">Create Your Group</h3>
     </div>
     <div class = "body">
       <form id = "form" class = "init form" v-on:submit.prevent="addingGroup">
@@ -13,7 +13,21 @@
           <label for = "classtitle">Choose a Class:</label>
           <input type = "text" id = "classtitle" class = "form-control" v-model="newgroup.classname" placeholder="eg: cmps115">
         </div>
-        <input type = "submit" class = "button-to-submit" value = "add group">
+        <input type = "submit" class = "button-to-submit" value = "Create Group">
+      </form>
+    </div>
+  </div>
+  <div class = "chooseGroup">
+    <div class = "heading_for_choose">
+       <h3 style="color : #0066cc">Join Your Group</h3>
+     </div>
+     <div class = "body_for_choose">
+      <form id = "form_for_choose" class = "init form_for_choose" v-on:submit.prevent="choosingGroup">
+       <div class = "form-group-choose">
+        <label for = "classtitle_choose">Choose a Class:</label>
+        <input type = "text" id = "classtitle_choose" class = "form-control-choose" v-model="choose_a_class" placeholder="eg: cmps115">
+       </div>
+       <input type = "submit" class = "button-to-submit-choose" value = "Search Group">
       </form>
     </div>
   </div>
@@ -36,6 +50,7 @@ let firebaseApp = firebase.initializeApp(config, "realtime");
 let database = firebaseApp.database();
 let courseref = database.ref('classes');
 var Keys = null
+var GroupKeys = null
 courseref.once('value', getdata, error)
 
 function getdata(data){
@@ -60,12 +75,14 @@ export default {
       newgroup:{
         classname: ''
       },
+      choose_a_class:'',
       user:{
         userID: '',
         userInfo1: '',
         userInfo2: '',
       },
       message: 'Hello',
+      test: Keys
     }
   },
   methods: {
@@ -83,7 +100,7 @@ export default {
         this.user.userID = 'userID is';
         this.user.userInfo1 = 'info1';
         this.user.userInfo2 = 'info2';
-        var group_master = this.user
+        var group_master = this.user; 
         database.ref('classes/'+this.newgroup.classname+'/groups').push({
           classname: this.newgroup.classname,
           group_master
@@ -91,6 +108,21 @@ export default {
         this.newgroup.classname = '';
       }else{
         alert('The class '+this.newgroup.classname+' does not exist');
+      }
+    },
+    choosingGroup: function(){
+      var joinRef = database.ref('classes/'+this.choose_a_class+'/groups');
+      console.log(this.choose_a_class)
+      joinRef.once("value", getGroup, errGroup)
+      function getGroup(group_ID){
+      console.log(group_ID.val());
+      var group_array = group_ID.val();
+      GroupKeys = Object.keys(group_array)
+        console.log(GroupKeys);
+      }
+      function errGroup(err_ID){
+        console.log('error!test');
+        console.log(err_ID)
       }
     }
   }
