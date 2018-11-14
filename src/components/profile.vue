@@ -7,7 +7,7 @@
             <h1>Profile</h1>
         </div>
 
-        <router-link class="editLink" to="/editProfile">Edit Profile</router-link>
+        <!-- <router-link class="editLink" to="/editProfile">Edit Profile</router-link> -->
 
         <div class="info">
             <h6>Name: {{ name }}</h6>
@@ -48,6 +48,7 @@
 
 import db from './firebaseinit';
 import firebase from 'firebase'
+var database = firebase.data()
 
 var usersDB = db.collection('users').doc("3aL2IlN8NbPjQVZhZJe3");
 
