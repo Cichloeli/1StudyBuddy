@@ -1,0 +1,3947 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr">
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="shortcut icon" href="https://courses.soe.ucsc.edu/sites/all/themes/bsoev3/favicon.ico" type="image/vnd.microsoft.icon" />
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ['tex2jax.js'],
+  jax: ['input/TeX','output/HTML-CSS'],
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true,
+    processClass: 'tex2jax',
+    ignoreClass: 'html'
+  },
+  showProcessingMessages: false,
+  messageStyle: 'none'
+});
+</script><meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+  <title>Schedule of Classes: Computer Science: 2018-2019 | Course Web Pages</title>
+  <style type="text/css" media="all">
+@import url("https://courses.soe.ucsc.edu/modules/system/system.base.css?ph84xl");
+@import url("https://courses.soe.ucsc.edu/modules/system/system.menus.css?ph84xl");
+@import url("https://courses.soe.ucsc.edu/modules/system/system.messages.css?ph84xl");
+@import url("https://courses.soe.ucsc.edu/modules/system/system.theme.css?ph84xl");
+</style>
+<style type="text/css" media="all">
+@import url("https://courses.soe.ucsc.edu/modules/field/theme/field.css?ph84xl");
+@import url("https://courses.soe.ucsc.edu/modules/node/node.css?ph84xl");
+@import url("https://courses.soe.ucsc.edu/modules/user/user.css?ph84xl");
+</style>
+<style type="text/css" media="all">
+@import url("https://courses.soe.ucsc.edu/sites/default/modules/soe_classes/soe_classes.css?ph84xl");
+</style>
+<style type="text/css" media="all">
+@import url("https://courses.soe.ucsc.edu/sites/all/themes/bsoev3/bsoev3.css?ph84xl");
+</style>
+  <script type="text/javascript" src="https://courses.soe.ucsc.edu/misc/jquery.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://courses.soe.ucsc.edu/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://courses.soe.ucsc.edu/misc/drupal.js?ph84xl"></script>
+<script type="text/javascript" src="https://courses.soe.ucsc.edu/sites/all/modules/mathjax/mathjax.js?ph84xl"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript" src="https://courses.soe.ucsc.edu/sites/all/themes/bsoev3/bsoev3.js?ph84xl"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"bsoev3","theme_token":"mHUMTdNa5SkfTTjy3lcz82f_bsHc8FA3dV28TTgvkaI","js":{"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/mathjax\/mathjax.js":1,"https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/mathjax\/2.7.0\/MathJax.js?config=TeX-AMS-MML_HTMLorMML":1,"sites\/all\/themes\/bsoev3\/bsoev3.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/user\/user.css":1,"sites\/default\/modules\/soe_classes\/soe_classes.css":1,"sites\/all\/themes\/bsoev3\/bsoev3.css":1}}});
+//--><!]]>
+</script>
+</head>
+<body class="html not-front not-logged-in one-sidebar sidebar-first page-courses page-courses-cmps" >
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    
+<!-- begin page -->
+<div id="site-wrapper">
+<div id="header">
+<div id="header-logo">
+<a href="https://www.soe.ucsc.edu/"><img src="https://courses.soe.ucsc.edu/sites/all/themes/bsoev3/logo.png"></a>
+</div>
+<div id="header-name-and-slogan">
+<div id="header-name">
+<a href="/">Course Web Pages</a>
+</div>
+<div id="header-slogan">
+</div>
+</div>
+</div>
+<div id="middle-wrapper">
+<div id="navigation-button-wrapper">
+<div id="navigation-button">
+Navigation
+</div>
+</div>
+<div id="navigation-wrapper">
+  <div class="region region-menu">
+    <div id="block-menu-block-1" class="block block-menu-block">
+<div class="content">
+<div class="menu-block-wrapper menu-block-1 menu-name-main-menu parent-mlid-727 menu-level-1">
+  <ul class="menu"><li class="first leaf menu-mlid-729"><a href="/courses/ams">Applied Mathematics &amp; Statistics</a></li>
+<li class="leaf menu-mlid-730"><a href="/courses/bme">Biomolecular Engineering</a></li>
+<li class="leaf menu-mlid-877"><a href="/courses/cmpm">Computational Media</a></li>
+<li class="leaf menu-mlid-731"><a href="/courses/cmpe">Computer Engineering</a></li>
+<li class="leaf active-trail active menu-mlid-732"><a href="/courses/cmps" class="active-trail active">Computer Science</a></li>
+<li class="leaf menu-mlid-734"><a href="/courses/ee">Electrical Engineering</a></li>
+<li class="leaf menu-mlid-735"><a href="/courses/game">Games and Playable Media</a></li>
+<li class="leaf menu-mlid-736"><a href="/courses/ism">Information Systems Management</a></li>
+<li class="last leaf menu-mlid-738"><a href="/courses/tim">Technology &amp; Information Management</a></li>
+</ul></div>
+</div>
+</div>
+  </div>
+  <div class="region region-sidebar-first">
+    <div id="block-soe-google-cse-soe-google-cse" class="block block-soe-google-cse">
+<div class="content">
+<form action="//www.google.com/cse" id="soe-google-cse-box">
+<div>
+<input type="hidden" name="cx" value="006624592689429442921:cwwqopww-z8" />
+<input type="hidden" name="ie" value="UTF-8" />
+<input type="text" name="q" size="31" id="soe-google-cse-input" />
+<input type="submit" name="sa" value="Search" id="soe-google-cse-submit" />
+</div>
+</form>
+</div>
+</div>
+  </div>
+</div>
+<div id="body-wrapper">
+<div class="breadcrumb"><a href="/courses">Courses</a></div><h1>Schedule of Classes: Computer Science: 2018-2019</h1>
+<div id="content">
+<div id="content-tabs">
+</div>
+  <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+<div class="content">
+<div class="soe-classes-department-notes">
+<p style="text-align: center;"><span style="font-family: Calibri, sans-serif;"><span style="font-size: 15px;"><strong><span style="color: #ff0000;">*****COURSES ARE SUBJECT TO CHANGE*****</span></strong></span></span></p>
+</div>
+<p>Click on the section name to visit the web page for that section, or the course name to see all offerings of the course.</p>
+<p><strong>Please note that the course schedule and offerings are subject to change.</strong></p>
+<p align="center">
+<a href="/courses/cmps?year=2017" class="active">&laquo; Back to 2017-2018</a></p>
+<table class="soe-classes-schedule" width="100%">
+<tr> 
+<td colspan="4" class="plain"><strong>Lower-Division</strong></td>
+</tr>
+<tr>
+<th width="25%"><nobr>Fall 2018</nobr></th>
+<th width="25%"><nobr>Winter 2019</nobr></th>
+<th width="25%"><nobr>Spring 2019</nobr></th>
+<th width="25%"><nobr>Summer 2019</nobr></th>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps5c">CMPS5C: Introduction to Programming in C/C++</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps5j">CMPS5J: Introduction to Programming in Java</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps5j/Fall18/01">Section 01</a><br />
+Adam M. Smith (amsmith)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps5j/Winter19/01">Section 01</a><br />
+David Harrison (dcharris)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps5j/Spring19/01">Section 01</a><br />
+Faisal Nawab (fnawab)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps5p">CMPS5P: Introduction to Programming in Python</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps5p/Winter19/01">Section 01</a><br />
+Peter Alvaro (palvaro)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps5p/Spring19/01">Section 01</a><br />
+Staff<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps10">CMPS10: Introduction to Computer Science</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps11">CMPS11: Intermediate Programming</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps11/Spring19/01">Section 01</a><br />
+Narges Norouzi (nanorouz)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps12a">CMPS12A: Introduction to Programming (Accelerated)</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps12a/Fall18/01">Section 01</a><br />
+Narges Norouzi (nanorouz)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps12a/Winter19/01">Section 01</a><br />
+Charles Mc Dowell (mcdowell)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps12a/Spring19/01">Section 01</a><br />
+Cormac A Flanagan (cormac)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps12b">CMPS12B: Introduction to Data Structures</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps12b/Fall18/01">Section 01</a><br />
+C. Seshadhri (sesh)<br />
+</li>
+<li>
+<a href="/courses/cmps12b/Fall18/02">Section 02</a><br />
+Nina T Bhatti (ntbhatti)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps12b/Winter19/01">Section 01</a><br />
+Nina T Bhatti (ntbhatti)<br />
+</li>
+<li>
+<a href="/courses/cmps12b/Winter19/02">Section 02</a><br />
+Patrick Tantalo (ptantalo)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps12b/Spring19/01">Section 01</a><br />
+Patrick Tantalo (ptantalo)<br />
+</li>
+<li>
+<a href="/courses/cmps12b/Spring19/02">Section 02</a><br />
+Staff<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps12l">CMPS12L: Computer Programming Laboratory</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps12l/Fall18/01">Section 01</a><br />
+Narges Norouzi (nanorouz)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps12l/Winter19/01">Section 01</a><br />
+Charles Mc Dowell (mcdowell)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps12l/Spring19/01">Section 01</a><br />
+Cormac A Flanagan (cormac)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps12m">CMPS12M: Data Structures Laboratory</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps12m/Fall18/01">Section 01</a><br />
+C. Seshadhri (sesh)<br />
+</li>
+<li>
+<a href="/courses/cmps12m/Fall18/02">Section 02</a><br />
+Nina T Bhatti (ntbhatti)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps12m/Winter19/01">Section 01</a><br />
+Nina T Bhatti (ntbhatti)<br />
+</li>
+<li>
+<a href="/courses/cmps12m/Winter19/02">Section 02</a><br />
+Patrick Tantalo (ptantalo)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps12m/Spring19/01">Section 01</a><br />
+Patrick Tantalo (ptantalo)<br />
+</li>
+<li>
+<a href="/courses/cmps12m/Spring19/02">Section 02</a><br />
+Staff<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps13h">CMPS13H: Introduction to Programming and Data Structures (Honors)</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps13l">CMPS13L: Introduction to Programming and Data Structures Laboratory</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps17">CMPS17: Social Networks</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps20">CMPS20: Game Design Experience</a></a><br />
+<em><strong>Note:</strong> Renamed CMPM 20 as of Winter 15- See CMPM 20 for schedule</em><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps25">CMPS25: Introduction to Computer Graphics: 3D Modeling</a></a><br />
+<em><strong>Note:</strong> Renamed CMPM 25 as of Fall 14- See CMPM 25 for schedule</em><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps26">CMPS26: Introduction to Computer Graphics:  3D Animation</a></a><br />
+<em><strong>Note:</strong> Renamed CMPM 26 as of Spring 15- See CMPM 26 for schedule</em><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps60m">CMPS60M: Scientific Computation with Matlab and Maple</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps80b">CMPS80B: Systems and Simulation</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps80g">CMPS80G: Introduction to Unix</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps80j">CMPS80J: Technology Targeted at Social Issues</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps80k">CMPS80K: Foundations of Interactive Game Design</a></a><br />
+<em><strong>Note:</strong> Renamed CMPM 80K as of Spring 15- See CMPM 80K for schedule</em><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps80l">CMPS80L: Social Data Analytics and Visualization</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps80s">CMPS80S: From Software Innovation to Social Entrepreneurship</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps80v">CMPS80V: Creating Virtual Worlds on the Web</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="plain" colspan="5">&nbsp;</td>
+</tr>
+<tr> 
+<td colspan="4" class="plain"><strong>Upper-Division</strong></td>
+</tr>
+<tr>
+<th width="25%"><nobr>Fall 2018</nobr></th>
+<th width="25%"><nobr>Winter 2019</nobr></th>
+<th width="25%"><nobr>Spring 2019</nobr></th>
+<th width="25%"><nobr>Summer 2019</nobr></th>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps101">CMPS101: Algorithms and Abstract Data Types</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps101/Fall18/01">Section 01</a><br />
+C. Seshadhri (sesh)<br />
+</li>
+<li>
+<a href="/courses/cmps101/Fall18/02">Section 02</a><br />
+Patrick Tantalo (ptantalo)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps101/Winter19/01">Section 01</a><br />
+Sheldon J Finkelstein (shel)<br />
+</li>
+<li>
+<a href="/courses/cmps101/Winter19/02">Section 02</a><br />
+Delbert D. Bailey (ddbailey)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps101/Spring19/01">Section 01</a><br />
+Patrick Tantalo (ptantalo)<br />
+</li>
+<li>
+<a href="/courses/cmps101/Spring19/02">Section 02</a><br />
+Staff<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps102">CMPS102: Introduction to Analysis of Algorithms</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps102/Fall18/01">Section 01</a><br />
+Abhradeep Guha Thakurta (aguhatha)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps102/Winter19/01">Section 01</a><br />
+David Helmbold (dph)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps102/Spring19/01">Section 01</a><br />
+Allen Van Gelder (avg)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps104a">CMPS104A: Fundamentals of Compiler Design I</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps104a/Fall18/01">Section 01</a><br />
+Wesley Mackey (wmackey)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps104a/Spring19/01">Section 01</a><br />
+Wesley Mackey (wmackey)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps104b">CMPS104B: Fundamentals of Compiler Design II</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps105">CMPS105: Systems Programming</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps107">CMPS107: Open Source Programming</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps107/Winter19/01">Section 01</a><br />
+Carlos Maltzahn (carlosm)<br />
+</li>
+<li>
+<a href="/courses/cmps107/Winter19/50">Section 50</a><br />
+Carlos Maltzahn (carlosm)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps109">CMPS109: Advanced Programming</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps109/Fall18/01">Section 01</a><br />
+David Harrison (dcharris)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps109/Winter19/01">Section 01</a><br />
+Wesley Mackey (wmackey)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps109/Spring19/01">Section 01</a><br />
+Wesley Mackey (wmackey)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps111">CMPS111: Introduction to Operating Systems</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps111/Fall18/01">Section 01</a><br />
+Faisal Nawab (fnawab)<br />
+</li>
+<li>
+<a href="/courses/cmps111/Fall18/02">Section 02</a><br />
+Darrell Long (darrell)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps111/Winter19/01">Section 01</a><br />
+David Harrison (dcharris)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps111/Spring19/01">Section 01</a><br />
+David Harrison (dcharris)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps112">CMPS112: Comparative Programming Languages</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps112/Fall18/01">Section 01</a><br />
+Wesley Mackey (wmackey)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps112/Winter19/01">Section 01</a><br />
+Wesley Mackey (wmackey)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps112/Spring19/01">Section 01</a><br />
+Owen Arden (oarden)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps115">CMPS115: Introduction to Software Engineering</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps115/Fall18/01">Section 01</a><br />
+Richard K Jullig (rjullig)<br />
+</li>
+<li>
+<a href="/courses/cmps115/Fall18/02">Section 02</a><br />
+Richard K Jullig (rjullig)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps116">CMPS116: Software Design Project</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps116/Winter19/01">Section 01</a><br />
+Richard K Jullig (rjullig)<br />
+</li>
+<li>
+<a href="/courses/cmps116/Winter19/02">Section 02</a><br />
+Richard K Jullig (rjullig)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps117">CMPS117: Software Design Project II</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps117/Spring19/01">Section 01</a><br />
+Richard K Jullig (rjullig)<br />
+</li>
+<li>
+<a href="/courses/cmps117/Spring19/02">Section 02</a><br />
+Richard K Jullig (rjullig)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps119">CMPS119: Software for Society</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps121">CMPS121: Mobile Applications</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps121/Fall18/01">Section 01</a><br />
+Narges Norouzi (nanorouz)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps121/Spring19/01">Section 01</a><br />
+Staff<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps122">CMPS122: Computer Security</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps122/Winter19/01">Section 01</a><br />
+Owen Arden (oarden)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps122/Spring19/01">Section 01</a><br />
+David Harrison (dcharris)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps128">CMPS128: Distributed Systems: File Sharing, Online Gaming, and More</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps128/Fall18/01">Section 01</a><br />
+Peter Alvaro (palvaro)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps128/Spring19/01">Section 01</a><br />
+Lindsey Kuper (lkuper)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps129">CMPS129: Data Storage Systems</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps130">CMPS130: Computational Models</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps130/Fall18/01">Section 01</a><br />
+Delbert D. Bailey (ddbailey)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps130/Winter19/01">Section 01</a><br />
+C. Seshadhri (sesh)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps130/Spring19/01">Section 01</a><br />
+Delbert D. Bailey (ddbailey)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps132">CMPS132: Computability and Computational Complexity</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps132/Winter19/01">Section 01</a><br />
+Allen Van Gelder (avg)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps132w">CMPS132W: Computability and Computational Complexity</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps132w/Winter19/01">Section 01</a><br />
+Allen Van Gelder (avg)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps140">CMPS140: Artificial Intelligence</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps140/Winter19/01">Section 01</a><br />
+Yang Liu (yangliu)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps140/Spring19/01">Section 01</a><br />
+Staff<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps142">CMPS142: Machine Learning and Data Mining</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps142/Fall18/01">Section 01</a><br />
+Snigdha Chaturvedi (snchatur)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps143">CMPS143: Introduction to Natural Language Processing</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps143/Winter19/01">Section 01</a><br />
+Marilyn A Walker (mawalker)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps144">CMPS144: Applied Machine Learning</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps144/Winter19/01">Section 01</a><br />
+Narges Norouzi (nanorouz)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps146">CMPS146: Game AI</a></a><br />
+<em><strong>Note:</strong> Renamed CMPM 146 as of Spring 15- See CMPM 146 for schedule</em><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps148">CMPS148: Interactive Narrative</a></a><br />
+<em><strong>Note:</strong> Renamed CMPM 148 as of Spring 15- See CMPM 148 for schedule</em><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps153">CMPS153: Functional Programming</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps160">CMPS160: Introduction to Computer Graphics</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps160/Fall18/01">Section 01</a><br />
+James E Davis (davisje)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps160/Spring19/01">Section 01</a><br />
+James E Davis (davisje)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps160l">CMPS160L: Introduction to Computer Graphics Laboratory</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps160l/Fall18/01">Section 01</a><br />
+James E Davis (davisje)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps160l/Spring19/01">Section 01</a><br />
+James E Davis (davisje)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps161">CMPS161: Introduction to Data Visualization</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps161/Winter19/01">Section 01</a><br />
+Alex Pang (pang)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps161l">CMPS161L: Data Visualization Lab</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps161l/Winter19/01">Section 01</a><br />
+Alex Pang (pang)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps162">CMPS162: Advanced Computer Graphics and Animation</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps162l">CMPS162L: Advanced Computer Graphics and Animation Lab</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps164">CMPS164: Game Engines</a></a><br />
+<em><strong>Note:</strong> Renamed CMPM 164 as of Spring 15- See CMPM 164 for schedule</em><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps164l">CMPS164L: Game Engines Lab</a></a><br />
+<em><strong>Note:</strong> Renamed CMPM 164L as of Spring 15- See CMPM 164L for schedule</em><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps165">CMPS165: Data Programming for Visualization</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps166a">CMPS166A: Game Theory and Applications I</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps166a/Fall18/01">Section 01</a><br />
+Staff<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps166b">CMPS166B: Game Theory and Applications II</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps168">CMPS168: Introduction to Augmented Reality and Virtual Reality</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps170">CMPS170: Game Design Studio I</a></a><br />
+<em><strong>Note:</strong> Renamed CMPM 170 as of Fall 14- See CMPM 170 for schedule</em><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps171">CMPS171: Games Design Studio II</a></a><br />
+<em><strong>Note:</strong> Renamed CMPM 171 as of Winter 15- See CMPM 171 for schedule</em><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps172">CMPS172: Game Design Studio III</a></a><br />
+<em><strong>Note:</strong> Renamed CMPM 172 as of Spring 15- See CMPM 172 for schedule</em><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps177">CMPS177: Creative Strategies for Designing Interactive Media</a></a><br />
+<em><strong>Note:</strong> Renamed CMPM 177 as of Fall 14- See CMPM 177 for schedule</em><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps178">CMPS178: Human-Centered Design Research</a></a><br />
+<em><strong>Note:</strong> Renamed CMPM 178 of Winter 15- See CMPM 178 for schedule</em><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps179">CMPS179: Game Design Practicum</a></a><br />
+<em><strong>Note:</strong> Renamed CMPM 179 as of Spring 15- See CMPM 179 for schedule</em><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps180">CMPS180: Database Systems I</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps180/Fall18/01">Section 01</a><br />
+Sheldon J Finkelstein (shel)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps180/Winter19/01">Section 01</a><br />
+Sheldon J Finkelstein (shel)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps180w">CMPS180W: Database Systems</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps181">CMPS181: Database Systems II</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps181/Spring19/01">Section 01</a><br />
+Sheldon J Finkelstein (shel)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps182">CMPS182: Introduction to Database Management Systems</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps182/Spring19/01">Section 01</a><br />
+Sheldon J Finkelstein (shel)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps183">CMPS183: Web Applications</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps183/Fall18/01">Section 01</a><br />
+Luca de Alfaro (luca)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps183/Spring19/01">Section 01</a><br />
+Luca de Alfaro (luca)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps184">CMPS184: Data Wrangling and Web Scraping</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps184/Spring19/01">Section 01</a><br />
+Suresh Kumar Lodha (lodha)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps185">CMPS185: Technical Writing and Communication in Computer Science</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps185/Fall18/01">Section 01</a><br />
+David Harrison (dcharris)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps185/Spring19/01">Section 01</a><br />
+Phokion Kolaitis (kolaitis)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps190x">CMPS190X: Methods of Cryptography</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps191">CMPS191: Computer Science and Technology Seminar</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps194">CMPS194: Group Tutorial</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="plain" colspan="5">&nbsp;</td>
+</tr>
+<tr> 
+<td colspan="4" class="plain"><strong>Graduate</strong></td>
+</tr>
+<tr>
+<th width="25%"><nobr>Fall 2018</nobr></th>
+<th width="25%"><nobr>Winter 2019</nobr></th>
+<th width="25%"><nobr>Spring 2019</nobr></th>
+<th width="25%"><nobr>Summer 2019</nobr></th>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps200">CMPS200: Research and Teaching in Computer Science and Engineering</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps200/Fall18/01">Section 01</a><br />
+Alex Pang (pang)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps201">CMPS201: Analysis of Algorithms</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps201/Fall18/01">Section 01</a><br />
+Patrick Tantalo (ptantalo)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps201/Winter19/01">Section 01</a><br />
+Staff<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps203">CMPS203: Programming Languages</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps203/Spring19/01">Section 01</a><br />
+Cormac A Flanagan (cormac)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps204">CMPS204: Compiler Design</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps210">CMPS210: Computational Models and Complexity</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps211">CMPS211: Combinatorial Algorithms</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps211/Winter19/01">Section 01</a><br />
+Allen Van Gelder (avg)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps217">CMPS217: Logic in Computer Science</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps217/Fall18/01">Section 01</a><br />
+Phokion Kolaitis (kolaitis)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps218">CMPS218: Foundations of Data Science</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps218/Spring19/01">Section 01</a><br />
+Yang Liu (yangliu)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps221">CMPS221: Advanced Operating Systems</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps223">CMPS223: Advanced Computer Security</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps223/Fall18/01">Section 01</a><br />
+Owen Arden (oarden)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps229">CMPS229: Storage Systems</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps229/Spring19/01">Section 01</a><br />
+Carlos Maltzahn (carlosm)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps232">CMPS232: Distributed Systems</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps232/Spring19/01">Section 01</a><br />
+Peter Alvaro (palvaro)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps236">CMPS236: Understanding Cryptography</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps240">CMPS240: Artificial Intelligence</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps240/Winter19/01">Section 01</a><br />
+Narges Norouzi (nanorouz)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps241">CMPS241: Knowledge Engineering</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps242">CMPS242: Machine Learning</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps242/Fall18/01">Section 01</a><br />
+David Helmbold (dph)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps242/Spring19/01">Section 01</a><br />
+Narges Norouzi (nanorouz)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps244">CMPS244: Artificial Intelligence in Games</a></a><br />
+<em><strong>Note:</strong> Renamed CMPM 244 as of Fall 14-See CMPM 244 for schedule</em><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps245">CMPS245: Computational Models of Discourse and Dialogue</a></a><br />
+<em><strong>Note:</strong> Renamed CMPM 245 as of Winter 15- See CMPM 245 for schedule</em><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps245/Spring19/01">Section 01</a><br />
+Marilyn A Walker (mawalker)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps247">CMPS247: AI:  Problem Solving and Intelligent Search</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps248">CMPS248: Interactive Narrative</a></a><br />
+<em><strong>Note:</strong> Renamed CMPM 248 as of Spring 15- See CMPM 248 for schedule</em><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps250">CMPS250: Introduction to Information Theory</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps250/Spring19/01">Section 01</a><br />
+Yu Zhang (yzhan419)<br />
+<em>Cross-listed with EE 253</em><br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps253">CMPS253: Advanced Programming Languages</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps260">CMPS260: Computer Graphics</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps260/Fall18/01">Section 01</a><br />
+James E Davis (davisje)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps261">CMPS261: Advanced Visualization</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps261/Winter19/01">Section 01</a><br />
+Alex Pang (pang)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps262">CMPS262: Computer Animation</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps263">CMPS263: Data Driven Discovery and Visualization</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps265">CMPS265: Generative Methods</a></a><br />
+<em><strong>Note:</strong> Renamed CMPM 265 as of Winter 15- See CMPM 265 for schedule</em><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps266a">CMPS266A: Data Visualization and Statistical Programming in R</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps266a/Fall18/01">Section 01</a><br />
+Staff<br />
+<em>Cross-listed with AMS 266A</em><br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps266b">CMPS266B: Advanced Statistical Programming in R</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps266c">CMPS266C: Introduction to Data Wrangling</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps272">CMPS272: Evolutionary Game Theory</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps276">CMPS276: Software Engineering</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps277">CMPS277: Principles of Database Systems</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps277/Winter19/01">Section 01</a><br />
+Faisal Nawab (fnawab)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps278">CMPS278: Design and Implementation of Database Systems</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps278/Fall18/01">Section 01</a><br />
+Sheldon J Finkelstein (shel)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps279">CMPS279: Software Reuse and Component-Based Software Engineering</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps280a">CMPS280A: Seminar in Computer Science Research</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps280d">CMPS280D: Seminar in Database Systems</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps280d/Fall18/01">Section 01</a><br />
+Peter Alvaro (palvaro)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps280d/Winter19/01">Section 01</a><br />
+Peter Alvaro (palvaro)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps280d/Spring19/01">Section 01</a><br />
+Peter Alvaro (palvaro)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps280g">CMPS280G: Seminar on Software Engineering</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps280h">CMPS280H: Seminar in Human Computation Systems</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps280j">CMPS280J: Seminar on Computer Graphics</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps280l">CMPS280L: Seminar on Logic in Computer Science</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps280l/Fall18/01">Section 01</a><br />
+Phokion Kolaitis (kolaitis)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps280l/Winter19/01">Section 01</a><br />
+Phokion Kolaitis (kolaitis)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps280l/Spring19/01">Section 01</a><br />
+Phokion Kolaitis (kolaitis)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps280m">CMPS280M: Seminar on Machine Learning</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps280m/Winter19/01">Section 01</a><br />
+Staff<br />
+</li>
+<li>
+<a href="/courses/cmps280m/Winter19/02">Section 02</a><br />
+Lise Getoor (getoor)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps280m/Spring19/01">Section 01</a><br />
+Staff<br />
+</li>
+<li>
+<a href="/courses/cmps280m/Spring19/02">Section 02</a><br />
+Lise Getoor (getoor)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps280s">CMPS280S: Seminar on Computer Systems</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps280s/Fall18/01">Section 01</a><br />
+Carlos Maltzahn (carlosm)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps280s/Winter19/01">Section 01</a><br />
+Carlos Maltzahn (carlosm)<br />
+</li>
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps280s/Spring19/01">Section 01</a><br />
+Carlos Maltzahn (carlosm)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps280w">CMPS280W: Seminar in Digital Media</a></a><br />
+<em><strong>Note:</strong> Renamed CMPM 280W as of Spring 15- See CMPM 280W for schedule</em><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps280x">CMPS280X: Seminar on Expressive AI</a></a><br />
+<em><strong>Note:</strong> Renamed CMPM 280X as of Fall 14-See CMPM 280X for schedule</em><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps280z">CMPS280Z: Seminar in Natural Language Processing and Dialogue</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps280z/Winter19/01">Section 01</a><br />
+Marilyn A Walker (mawalker)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps290a">CMPS290A: Topics in Algorithms and Complexity Theory: Probabilistic Algorithms and Average Case Analysis</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps290b">CMPS290B: Advanced Topics in Computer Graphics</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps290c">CMPS290C: Advanced Topics in Machine Learning</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps290d">CMPS290D: Neural Computation</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps290e">CMPS290E: Object-Oriented Programming Methodology</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps290f">CMPS290F: Applications of Combinatorics</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps290g">CMPS290G: Topics in Software Engineering</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps290h">CMPS290H: Topics in Database Systems</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps290i">CMPS290I: Internet Technology and Policy</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps290j">CMPS290J: Playable Media</a></a><br />
+<em><strong>Note:</strong> Renamed CMPM 290J as of Winter 15-See CMPM 290J for schedule</em><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps290l">CMPS290L: Topics in Crowdsourcing and Collaboration</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps290p">CMPS290P: Data Privacy via Machine Learning, and Back</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps290q">CMPS290Q: Topics in Programming Languages</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps290s">CMPS290S: Advanced Topics in Computer Systems</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class">
+<ul class="schedule">
+<li>
+<a href="/courses/cmps290s/Fall18/01">Section 01</a><br />
+Lindsey Kuper (lkuper)<br />
+</li>
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps290t">CMPS290T: Topics in Computing for Society</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps290x">CMPS290X: Cryptography and Computer Security</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="course-name" colspan="5">
+<a href="/courses/cmps290y">CMPS290Y: Quantum Computing</a></a><br />
+</td>
+</tr>
+<tr>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+<td class="class inactive">
+<ul class="schedule">
+</ul>
+</td>
+</tr>
+<tr>
+<td class="plain" colspan="5">&nbsp;</td>
+</tr>
+</table>
+</div>
+</div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer-wrapper">
+<div id="footer">
+<div id="footer-left">
+<a href="http://www.ucsc.edu/">UCSC</a></div>
+<div id="footer-center">
+<p id="footer-contact">This site is maintained by: <a href="mailto:web-notifications@soe.ucsc.edu">web-notifications@soe.ucsc.edu</a></p><p id="footer-address">UC Santa Cruz, 1156 High Street, Santa Cruz, CA 95064</a></p><p id="footer-copyright">Copyright &copy; 2018 The Regents of the University of California. All rights reserved.</p></div>
+<div id="footer-right">
+  <div class="region region-footer">
+    <div id="block-block-1" class="block block-block">
+<div class="content">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-23699662-14', 'auto');
+  ga('send', 'pageview');
+</script>
+</div>
+</div>
+<div id="block-soe-log-in-0" class="block block-soe-log-in">
+<div class="content">
+<a href="/user/login?destination=courses/cmps" rel="nofollow">Log In</a>
+</div>
+</div>
+  </div>
+</div>
+</div>
+</div>
+<!-- end page -->
+  </body>
+</html>
