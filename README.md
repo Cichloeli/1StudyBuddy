@@ -4,11 +4,7 @@ npm install
 
 npm start
 
-<<<<<<< HEAD
 It will be running on http://localhost:8010/
-=======
-It will be running on http://localhost:8080/
->>>>>>> 6cb99bbc9d72865a13add905e7f3f876164c5041
 
 
 # StudyBuddy
@@ -53,6 +49,7 @@ Sprint 2:
 Sprint 3:  
 13 - As a user I want to create a group so that I can meet other people.  
 3 - As a user I want to join a group so that I can meet other people.  
+3 - As a user I want to to see my homepage and have it be a list of my classes
   
 Sprint 4:  
 13 - As a user I want to have a means of communication so that I can communicate.  
