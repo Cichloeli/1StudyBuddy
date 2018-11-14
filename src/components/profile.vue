@@ -68,7 +68,7 @@ export default {
     };
   },
   beforeRouteEnter (to, from, next) {
-      db.collection('users').where('uid', '==', curUser.uid).get()
+      firebase.firestore().collection('users').where('uid', '==', curUser.uid).get()
       .then(querySnapshot => {
           querySnapshot.forEach(doc => {
               next(vm => {
@@ -83,6 +83,10 @@ export default {
           })
       })
   },
+    created () {
+        curUser = firebase.auth().currentUser
+       
+    },
   methods: {
     logout() {
         firebase.auth().signOut().then(() => {
@@ -90,8 +94,8 @@ export default {
         })
     },
     fetchData () {
-        db.collection('users').where
-        ('uid', '==', this.$route.params.uid).get()
+        firebase.firestore().collection('users').where
+        ('uid', '==', this.$route.curUser.uid).get()
         .then(querySnapshot => {
             querySnapshot.forEach(doc => {
                 this.id = doc.id
