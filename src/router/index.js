@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+import welcome from '@/components/welcome'
 import home from '@/components/home'
 import login from '@/components/login'
 import register from '@/components/register'
@@ -9,6 +10,7 @@ import classes from '@/components/classes'
 import dashboard from '@/components/dashboard'
 import viewUser from '@/components/ViewUser'
 import editProfile from '@/components/editProfile'
+import createGroup from '@/components/createGroup'
 
 import firebase from 'firebase'
 
@@ -22,7 +24,7 @@ let router = new Router({
     },
     {
       path: '/',
-      redirect: '/home'
+      redirect: '/welcome'
     },
     {
       path: '/login',
@@ -35,9 +37,17 @@ let router = new Router({
       component: register
     },
     {
+      path: '/welcome',
+      name: 'welcome',
+      component: welcome
+    },
+    {
       path: '/home',
       name: 'home',
-      component: home
+      component: home,
+      meta: {
+        requiresAuth: true
+    }
     },
     {
       path: '/editProfile',
@@ -72,13 +82,21 @@ let router = new Router({
     }
     },
     {
+      path: '/createGroup',
+      name: 'create_a_Group',
+      component: createGroup,
+      meta: {
+        requiresAuth: true
+    }
+    },
+    {
       path: '/dashboard',
       name: 'dashboard',
       component: dashboard,
       meta: {
         requiresAuth: true
     }
-    }
+    },
   ]
 })
 
@@ -88,7 +106,7 @@ router.beforeEach((to, from, next) => {
 
     if (requiresAuth && !currentUser) next('login')
     // where the login takes you
-    else if (!requiresAuth && currentUser) next('profile')
+    else if (!requiresAuth && currentUser) next('home')
     else next()
 })
 
