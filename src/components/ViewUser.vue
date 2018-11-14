@@ -4,7 +4,7 @@
             <li class="collection-header">
                 <h4>Users</h4>
             </li>
-            <li v-for="user in users" v-bind:key="user.id" 
+            <li v-for="user in users" v-bind:key="user.uid" 
                 class="collection-item">
                 {{user.name}}
 

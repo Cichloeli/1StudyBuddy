@@ -105,25 +105,7 @@ export default {
   },
   watch: {
       '$route': 'fetchData'
-  }
-  
-    // created () {        
-    //     db.collection('users').where('id','==', "3aL2IlN8NbPjQVZhZJe3").get().then(querySnapshot => {
-    //         querySnapshot.forEach(doc => {
-                
-    //                 id = doc.id,
-    //                 userID = doc.data().user_id
-    //                 this.name = doc.data().name
-    //                 this.major = doc.data().major
-    //                 this.email = doc.data().email
-    //                 this.classes = doc.data().classes
-    //                 this.about = doc.data().about
-                
-    //         })
-    //     })
-    
-
-  
+  } 
 };
 
 
