@@ -3,11 +3,11 @@
         <label for="1studdybuddy">1StudyBuddy</label>
         <div class="form-content">
             <label for="firstname">First Name</label>
-            <input type="text"  class="form-control"  style="border-radius:10px;"/>
+            <input type="text" v-model="firstName" class="form-control"  style="border-radius:10px;"/>
         </div>
         <div class="form-content">
             <label for="lastname">Last Name</label>
-            <input type="text"  class="form-control"  style="border-radius:10px;"/>
+            <input type="text" v-model="lastName" class="form-control"  style="border-radius:10px;"/>
         </div>
         <div class="form-content">
             <label for="email">Email</label>
@@ -31,13 +31,31 @@
         data() {
             return {
                 email: '',
-                password: ''
+                password: '',
+                firstName:'',
+                lastName:'',
             }
         },
         methods: {
             register() {
                 firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
                     (user) => {
+                        user = firebase.auth().currentUser;
+                        firebase.firestore().collection('users').doc(user.uid).set({
+                            name: this.firstName + " " + this.lastName,
+                            email: this.email,
+                            uid: user.uid,
+
+                            classes: '',
+                            major: '',
+                            about: '',
+
+                            checkedName: true,
+                            checkedClasses: true,
+                            checkedMajor: true,
+                            checkedEmail: true,
+                            checkedAbout: true,
+                        }),
                         this.$router.replace('home')
                     },
                     (err) => {

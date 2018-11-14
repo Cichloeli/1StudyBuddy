@@ -68,6 +68,9 @@
         <div class="updateButton">
             <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="update()">Update</button>
         </div>
+        <div class="updateButton">
+            <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="info()">Info</button>
+        </div>
         
     </div>
     
@@ -75,7 +78,9 @@
 
 <script>
 import db from './firebaseinit';
+import firebase from 'firebase';
 
+var currentUser = firebase.auth().currentUser;
 
 export default {
 
@@ -84,11 +89,11 @@ export default {
   data() {
     return {
       input: {
-        nameIn: "",
-        classesIn: "",
-        majorIn: "",
-        aboutIn: "",
-        emailIn: "",
+        nameIn: null,
+        classesIn: null,
+        majorIn: null,
+        aboutIn: null,
+        emailIn: null,
 
         
       },
@@ -113,27 +118,67 @@ export default {
 
     methods: {
         update() {
-             
-            db.collection('users').add({
-                
+            console.log("test");
+
+            if (this.input.nameIn!=null ) {
+                firebase.firestore().collection('users').doc(currentUser.uid).update({
                 name: this.input.nameIn,
-                classes: this.input.classesIn,
-                email: this.input.emailIn,
-                major: this.input.majorIn,
-                about: this.input.aboutIn,
-
                 checkedName: this.checkedName,
-                checkedClasses: this.checkedClasses,
-                checkedMajor: this.checkedMajor,
-                checkedEmail: this.checkedEmail,
-                checkedAbout: this.checkedAbout,
+                })
+            }
 
-                
-            })
-              
-            this.$router.go(0);
+            if (this.input.classesIn!=null) {
+                firebase.firestore().collection('users').doc(currentUser.uid).update({
+                classes: this.input.classesIn,
+                checkedClasses: this.checkedClasses,
+                })
+            }
+
+            if (this.input.emailIn!=null) {
+                firebase.firestore().collection('users').doc(currentUser.uid).update({
+                email: this.input.emailIn,
+                checkedEmail: this.checkedEmail,
+                })
+            }
+
+            if (this.input.majorIn!=null) {
+                firebase.firestore().collection('users').doc(currentUser.uid).update({
+                major: this.input.majorIn,
+                checkedMajor: this.checkedMajor,
+                })
+            }
+
+            if (this.input.aboutIn!=null) {
+                firebase.firestore().collection('users').doc(currentUser.uid).update({
+                about: this.input.aboutIn,
+                checkedAbout: this.checkedAbout,
+                })
+            }
+            
+            
+            this.$router.replace('profile')
         
-        }
+        },
+        info(){
+                
+                console.log("test");
+                firebase.firestore().collection("users").doc(currentUser.uid)
+                .get().then(function(doc) {
+                    if (doc.exists) {
+                        console.log("Document data:", doc.data());
+                        //this.name = doc.data().name;
+                        //console.log("name:", doc.data().name);
+                        //this.name.push(doc.data().name);
+
+                    } else {
+                    // doc.data() will be undefined in this case
+                    console.log("No such document!");
+                    }
+                }).catch(function(error) {
+                    console.log("Error getting document:", error);
+                });  
+                
+            }
     },
 
     
