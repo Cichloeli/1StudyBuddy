@@ -6,7 +6,7 @@
             </li>
             <li v-for="user in users" v-bind:key="user.id" 
                 class="collection-item">
-                {{user.id}}: {{user.major}}
+                {{user.name}}: {{user.major}}
 
                 <router-link class="secondary-content"
                 v-bind:to="{name: 'profile', params: {name: user.name}}">

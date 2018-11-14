@@ -48,9 +48,7 @@
 
 import db from './firebaseinit';
 import firebase from 'firebase'
-var database = firebase.data()
 
-var usersDB = db.collection('users').doc("3aL2IlN8NbPjQVZhZJe3");
 
 export default {
 
