@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+import welcome from '@/components/welcome'
 import home from '@/components/home'
 import login from '@/components/login'
 import register from '@/components/register'
@@ -23,7 +24,7 @@ let router = new Router({
     },
     {
       path: '/',
-      redirect: '/home'
+      redirect: '/welcome'
     },
     {
       path: '/login',
@@ -36,9 +37,17 @@ let router = new Router({
       component: register
     },
     {
+      path: '/welcome',
+      name: 'welcome',
+      component: welcome
+    },
+    {
       path: '/home',
       name: 'home',
-      component: home
+      component: home,
+      meta: {
+        requiresAuth: true
+    }
     },
     {
       path: '/editProfile',
@@ -97,7 +106,7 @@ router.beforeEach((to, from, next) => {
 
     if (requiresAuth && !currentUser) next('login')
     // where the login takes you
-    else if (!requiresAuth && currentUser) next('profile')
+    else if (!requiresAuth && currentUser) next('home')
     else next()
 })
 
