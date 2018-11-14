@@ -1,17 +1,11 @@
 <template>
     <div id="classes">
-        <ul class="col">
-        <li class="collection-header"><h4>Classes</h4></li>
-        <li v-for="course in courses" v-bind:key="course.course_id" 
-        class="collection-item">
-            {{classNames}}
-        </li>
-        </ul>
-
-        <div class="updateButton">
-            <!-- <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="info()">Info</button> -->
+        Classes
+        <div class="container">
+            <div id = "classest"></div>
         </div>
     </div>    
+    
 </template>
 
 <script>
@@ -20,18 +14,97 @@ import firebase from 'firebase';
 //myCar = Object();
 export default {
     name: 'view-courses',//doesn't matter
+    mounted: function() {
+            this.getClasses()
+        },
     data () {
         return {
             courses: [],
-            classNames,
-            info : [],
+            //info : [],
+            classNames: '',
         }
     },
     methods: {
+        // add() {
+        //     console.log("here");
+        //     firebase.auth().onAuthStateChanged((user) => {
+        //         if (user) {
+        //             var userID = user.uid;
+        //             firebase.database().ref('/users/' + userID).update({
+        //                 class1: classnum
+        //             })
+        //         }
+        //     });
+        // },
+
+        getClasses: function() {
+                let courseref = firebase.database().ref('classes');
+                var Keys = null;
+                courseref.once('value',getdata,error);
+
+                function test() {
+                    console.log("here");
+                    firebase.auth().onAuthStateChanged((user) => {
+                        if (user) {
+                            var userID = user.uid;
+                            firebase.database().ref('/users/' + userID).update({
+                                class1: classnum
+                            })
+                        }
+                    });
+                }
+
+                function getdata(data){
+                    var classes = data.val();
+                    Keys = Object.keys(classes)
+                    console.log(Keys);
+
+                    var str = '<ul>'
+                    
+                    Keys.forEach(function(key){
+                        str += '<li>' + key + '</li>' + ' <button onclick="test()">Add</button>';
+                    });
+
+                    str += '</ul>'
+
+                    // console.log(str)
+                    document.getElementById("classest").innerHTML = str;
+
+                };
+                function error(err){
+                    console.log("error");
+                }
+
+                
+
+                
+
+                // listItems=Keys.reduce((result,item) => {
+                //     result += `<li>${item}</li>`;
+                //     return result
+                // },'');
+                // console.log(listItems);
+                // resultElement = document.getElementById('classes');
+                // resultElement.innerHTML = listItems;
+
+                
+            },
+        myFunction(){
+            firebase.database().ref().on("value", function(snapshot) {
+            //this.classNames= snapshot.child("classes").val();
+            //console.log(classNames);
+            //console.log(snapshot.val());
+            }, function (error) {
+            console.log("Error: " + error.code);
+            });
+                
+                
+                
+        },
         info(){
             firebase.database().ref().on("value", function(snapshot) {
-            classNames= snapshot.child("classes").val();
-            console.log(classNames);
+            //this.classNames= snapshot.child("classes").val();
+            //console.log(classNames);
             //console.log(snapshot.val());
             }, function (error) {
             console.log("Error: " + error.code);
@@ -44,10 +117,10 @@ export default {
     created () {
         firebase.database().ref().on("value", function(snapshot) {
             var classNames= snapshot.child("classes").val();
-            console.log(classNames);
+            //console.log(classNames);
             //console.log(snapshot.val());
             }, function (error) {
-            console.log("Error: " + error.code);
+            //console.log("Error: " + error.code);
             //console.log(snapshot.val());
             //myCar = snapshot.val();
             //comment=snapshot.val().get('classes').val();
@@ -92,6 +165,10 @@ export default {
 </script>
 
 <style scoped>
+    #li {
+        list-style-type: none;
+    }
+
     #classes {
         background-color: #FFFFFF;
         border: 1px solid #CCCCCC;
