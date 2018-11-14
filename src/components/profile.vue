@@ -66,11 +66,12 @@ export default {
     };
   },
   beforeRouteEnter (to, from, next) {
-      db.collection('users').where('name', '==', to.params.name).get()
+      db.collection('users').where('uid', '==', to.params.uid).get()
       .then(querySnapshot => {
           querySnapshot.forEach(doc => {
               next(vm => {
                   vm.id = doc.id
+                  vm.uid = doc.data().uid
                   vm.name = doc.data().name
                   vm.email = doc.data().email
                   vm.major = doc.data().major
@@ -88,10 +89,11 @@ export default {
     },
     fetchData () {
         db.collection('users').where
-        ('name', '==', this.$route.params.name).get()
+        ('uid', '==', this.$route.params.uid).get()
         .then(querySnapshot => {
             querySnapshot.forEach(doc => {
                 this.id = doc.id
+                this.uid = doc.data().uid
                 this.name = doc.data().name
                 this.email = doc.data().email
                 this.major = doc.data().major

@@ -6,10 +6,10 @@
             </li>
             <li v-for="user in users" v-bind:key="user.id" 
                 class="collection-item">
-                {{user.name}}: {{user.major}}
+                {{user.name}}
 
                 <router-link class="secondary-content"
-                v-bind:to="{name: 'profile', params: {name: user.name}}">
+                v-bind:to="{name: 'profile', params: {uid: user.uid}}">
                 <i class="fa fa-eye"></i>
                 </router-link>
             </li>
@@ -32,7 +32,7 @@ export default {
             querySnapshot.forEach(doc => {
                 const data = {
                     'id': doc.id,
-                    'user_id': doc.data().user_id,
+                    'uid': doc.data().uid,
                     'name': doc.data().name,
                     'major': doc.data().major,
                     'email': doc.data().email,
