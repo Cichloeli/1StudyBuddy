@@ -17,6 +17,9 @@
             <li class="nav-item">
               <router-link class="nav-link" to="/dashboard">Dashboard</router-link>
             </li>
+            <li class="nav-item">
+              <button v-on:click="logout()">Logout</button>   
+            </li>
           </ul>
         </div>
         </div>
@@ -32,8 +35,19 @@
 </template>
 
 <script>
+import firebase from "firebase";
 export default {
-  name: 'App'
+
+  name: 'App',
+
+  methods: {
+    logout() {
+        firebase.auth().signOut().then(() => {
+            this.$router.replace('login')
+        })
+    }
+
+  }
 }
 </script>
 

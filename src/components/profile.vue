@@ -67,11 +67,12 @@ export default {
       header: require("../assets/images/p2.jpg"),
     };
   },
-  beforeRouteEnter (to, from, next) {
-      firebase.firestore().collection('users').where('uid', '==', curUser.uid).get()
-      .then(querySnapshot => {
-          querySnapshot.forEach(doc => {
-              next(vm => {
+    beforeRouteEnter (to, from, next) {
+        curUser = firebase.auth().currentUser,
+        firebase.firestore().collection('users').where('uid', '==', curUser.uid).get()
+        .then(querySnapshot => {
+            querySnapshot.forEach(doc => {
+                next(vm => {
                   vm.id = doc.id
                   vm.uid = doc.data().uid
                   vm.name = doc.data().name
@@ -79,13 +80,13 @@ export default {
                   vm.major = doc.data().major
                   vm.classes = doc.data().classes
                   vm.about = doc.data().about
-              })
-          })
-      })
-  },
+                })
+            })
+        })
+    }, 
     created () {
         curUser = firebase.auth().currentUser
-       
+        
     },
   methods: {
     logout() {
