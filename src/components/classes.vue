@@ -44,196 +44,207 @@
 </template>
 
 <script>
- function error2(err){
-    console.log("error");
-    }
-import db from './firebaseinit';
-import firebase from 'firebase';
-var count=0;
+function error2(err) {
+  console.log("error");
+}
+import db from "./firebaseinit";
+import firebase from "firebase";
+var count = 0;
 //myCar = Object();
 export default {
-    name: 'view-courses',//doesn't matter
-    mounted: function() {
-            this.getClasses()
-        },
-    data () {
-        return {
-            courses: [],
-            //info : [],
-            classNames: '',
+  name: "view-courses", //doesn't matter
+  mounted: function() {
+    this.getClasses();
+  },
+  data() {
+    return {
+      courses: [],
+      //info : [],
+      classNames: ""
+    };
+  },
+  methods: {
+    test(classnum) {
+      console.log("here");
+      firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+          var userID = user.uid;
+          //console.log((firebase.database().ref('/classes/' + classnum +'/' +userID)).user)
+
+          // firebase.database().ref('/users/' + userID +'/class' + count).update({
+          //     class: classnum
+          // });
+          // firebase.database().ref('/classes/' + classnum +'/' +userID).update({
+          //     user: userID
+          // });
+
+          user = firebase.auth().currentUser;
+
+          var ref = firebase.database().ref("classes/" + classnum);
+          ref.once("value").then(function(snapshot) {
+            var a = snapshot.exists(); // true
+            var b = snapshot.child(user.uid).exists(); // true
+            if (a == true) console.log("class exist");
+            if (b == true) console.log("user exist");
+            else {
+              firebase
+                .database()
+                .ref("/users/" + userID + "/class" + count)
+                .update({
+                  class: classnum
+                });
+              firebase
+                .database()
+                .ref("/classes/" + classnum + "/" + userID)
+                .update({
+                  user: userID
+                });
+              console.log("user added");
+            }
+          });
+          //             return firebase.database().ref('/classes/' + classnum).once('value').then(function(snapshot) {
+          //                 // var class1 = (snapshot.val() && snapshot.val().class1) || 'No Class';
+          //                 // document.getElementById("class1").innerHTML = class1.class;
+          //                 //napshot.userID.user.val()
+          //                 var check = (snapshot.val() && snapshot.val().userID)
+          //                 check.user
+          //                 console.log(snapshot.val())
+          // });
+
+          // var test = {};
+          // test[classnum]='';
+          // firebase.database().ref('/classes/' + classnum).update({
+          //     test
+          // });
         }
+      });
+      count = count + 1;
     },
-    methods: {
-        test(classnum) {
-                    console.log("here");
-                    firebase.auth().onAuthStateChanged((user) => {
-                        if (user) {
-                            var userID = user.uid;
-                            //console.log((firebase.database().ref('/classes/' + classnum +'/' +userID)).user)
-                            
-                            // firebase.database().ref('/users/' + userID +'/class' + count).update({
-                            //     class: classnum
-                            // });
-                            // firebase.database().ref('/classes/' + classnum +'/' +userID).update({
-                            //     user: userID
-                            // });
+    add1() {
+      console.log("here");
+    },
+    // add() {
+    //     console.log("here");
+    //     firebase.auth().onAuthStateChanged((user) => {
+    //         if (user) {
+    //             var userID = user.uid;
+    //             firebase.database().ref('/users/' + userID).update({
+    //                 class1: classnum
+    //             })
+    //         }
+    //     });
+    // },
 
-                            user = firebase.auth().currentUser;
-                    
-                            var ref = firebase.database().ref("classes/"+classnum);
-                            ref.once("value")
-                            .then(function(snapshot) {
-                            var a = snapshot.exists();  // true
-                            var b = snapshot.child(user.uid).exists(); // true
-                            if (a == true) 
-                                console.log("class exist");
-                            if (b == true) 
-                                console.log("user exist");
-                                else{
-                                    firebase.database().ref('/users/' + userID +'/class' + count).update({
-                                    class: classnum
-                                    });
-                                    firebase.database().ref('/classes/' + classnum +'/' +userID).update({
-                                    user: userID
-                                     });
-                                    console.log("user added");
-                                }
-                             });
-                //             return firebase.database().ref('/classes/' + classnum).once('value').then(function(snapshot) {
-                //                 // var class1 = (snapshot.val() && snapshot.val().class1) || 'No Class';
-                //                 // document.getElementById("class1").innerHTML = class1.class;
-                //                 //napshot.userID.user.val()
-                //                 var check = (snapshot.val() && snapshot.val().userID)
-                //                 check.user
-                //                 console.log(snapshot.val())
-                // });
-                            
-                            // var test = {};
-                            // test[classnum]='';
-                            // firebase.database().ref('/classes/' + classnum).update({
-                            //     test
-                            // });
-                        }
-                    });
-                    count = count+1
-                },
-        add1() {    
-            console.log("here");
-            
-            
-        },
-        // add() {
-        //     console.log("here");
-        //     firebase.auth().onAuthStateChanged((user) => {
-        //         if (user) {
-        //             var userID = user.uid;
-        //             firebase.database().ref('/users/' + userID).update({
-        //                 class1: classnum
-        //             })
-        //         }
-        //     });
-        // },
+    getClasses: function() {
+      let courseref = firebase.database().ref("classes");
+      var Keys = null;
+      courseref.once("value", getdata);
 
-        getClasses: function() {
-                let courseref = firebase.database().ref('classes');
-                var Keys = null;
-                courseref.once('value',getdata);
+      function test() {
+        console.log("here");
+        firebase.auth().onAuthStateChanged(user => {
+          if (user) {
+            var userID = user.uid;
+            firebase
+              .database()
+              .ref("/users/" + userID)
+              .update({
+                class1: classnum
+              });
+          }
+        });
+      }
 
-                function test() {
-                    console.log("here");
-                    firebase.auth().onAuthStateChanged((user) => {
-                        if (user) {
-                            var userID = user.uid;
-                            firebase.database().ref('/users/' + userID).update({
-                                class1: classnum
-                            })
-                        }
-                    });
-                }
+      function getdata(data) {
+        var classes = data.val();
+        Keys = Object.keys(classes);
+        console.log(Keys);
 
-                function getdata(data){
-                    var classes = data.val();
-                    Keys = Object.keys(classes)
-                    console.log(Keys);
+        var str = " <ul>";
+        //var funct1 = '"'+'add1()'+'"';
 
-                    var str = ' <ul>';
-                    //var funct1 = '"'+'add1()'+'"';
-                    
-                    Keys.forEach(function(key){
-                        var err = 'abc';
-                        str += '<li>' + key + '</li>' + '<button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test(' + key +')">Add</button>';
-                    });
+        Keys.forEach(function(key) {
+          var err = "abc";
+          str +=
+            "<li>" +
+            key +
+            "</li>" +
+            '<button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test(' +
+            key +
+            ')">Add</button>';
+        });
 
-                    str += '</ul>'
+        str += "</ul>";
 
-                    console.log(str)
-                    //document.getElementById("classest").innerHTML = str;
+        console.log(str);
+        //document.getElementById("classest").innerHTML = str;
+      }
+      function error(err) {
+        console.log("error");
+      }
 
-                };
-                function error(err){
-                    console.log("error");
-                }
-
-                
-
-                
-
-                // listItems=Keys.reduce((result,item) => {
-                //     result += `<li>${item}</li>`;
-                //     return result
-                // },'');
-                // console.log(listItems);
-                // resultElement = document.getElementById('classes');
-                // resultElement.innerHTML = listItems;
-
-                
-            },
-        myFunction(){
-            firebase.database().ref().on("value", function(snapshot) {
+      // listItems=Keys.reduce((result,item) => {
+      //     result += `<li>${item}</li>`;
+      //     return result
+      // },'');
+      // console.log(listItems);
+      // resultElement = document.getElementById('classes');
+      // resultElement.innerHTML = listItems;
+    },
+    myFunction() {
+      firebase
+        .database()
+        .ref()
+        .on(
+          "value",
+          function(snapshot) {
             //this.classNames= snapshot.child("classes").val();
             //console.log(classNames);
             //console.log(snapshot.val());
-            }, function (error) {
+          },
+          function(error) {
             console.log("Error: " + error.code);
-            });
-                
-                
-                
-        },
-        info(){
-            firebase.database().ref().on("value", function(snapshot) {
-            }, function (error) {
-            console.log("Error: " + error.code);
-            });
-                
-                
-                
-        }
+          }
+        );
     },
-    created () {
-        firebase.database().ref().on("value", function(snapshot) {
-            var classNames= snapshot.child("classes").val();
-            //console.log(classNames);
-            //console.log(snapshot.val());
-            }, function (error) {
-            //console.log("Error: " + error.code);
-            //console.log(snapshot.val());
-            //myCar = snapshot.val();
-            //comment=snapshot.val().get('classes').val();
-            //const timestamp = snapshot.get('classes');
-            //comment = timestamp.toDate();
-            //info = snapshot.val();
-           // console.log(myCar);
-           
-            
+    info() {
+      firebase
+        .database()
+        .ref()
+        .on(
+          "value",
+          function(snapshot) {},
+          function(error) {
+            console.log("Error: " + error.code);
+          }
+        );
+    }
+  },
+  created() {
+    firebase
+      .database()
+      .ref()
+      .on(
+        "value",
+        function(snapshot) {
+          var classNames = snapshot.child("classes").val();
+          //console.log(classNames);
+          //console.log(snapshot.val());
+        },
+        function(error) {
+          //console.log("Error: " + error.code);
+          //console.log(snapshot.val());
+          //myCar = snapshot.val();
+          //comment=snapshot.val().get('classes').val();
+          //const timestamp = snapshot.get('classes');
+          //comment = timestamp.toDate();
+          //info = snapshot.val();
+          // console.log(myCar);
+        }
+      );
 
-             });
-
-
-
-
-        //var classes= new Firebase('https://studybuddy-memo.firebaseio.com/classes');
-            /* var returnArr = [];
+    //var classes= new Firebase('https://studybuddy-memo.firebaseio.com/classes');
+    /* var returnArr = [];
 
     
          firebase.database().ref().on("value", function(snapshot) {
@@ -244,8 +255,8 @@ export default {
             returnArr.push(item);
     });
         },  */
-        //firebase.firestore().collection('courses').get().
-        /* then(querySnapshot => {
+    //firebase.firestore().collection('courses').get().
+    /* then(querySnapshot => {
             querySnapshot.forEach(doc => {
                 const data = {
                     'name': doc.key,
@@ -256,19 +267,19 @@ export default {
                 this.courses.push(data)
             })
         }) */
-    }
-}
+  }
+};
 </script>
 
 <style scoped>
-    #li {
-        list-style-type: none;
-    }
+#li {
+  list-style-type: none;
+}
 
-    #classes {
-        background-color: #FFFFFF;
-        border: 1px solid #CCCCCC;
-        padding: 20px;
-        margin-top: 10px;
-    }
+#classes {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  padding: 20px;
+  margin-top: 10px;
+}
 </style>
