@@ -1,8 +1,11 @@
 <template>
     <div id="classes">
-        Classes
+      <h1>
+          Add your class
+        </h1>
         <div class="container">
-            <div id><ul><li>cmps101</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test('cmps101')">Add</button>
+            <div class = "classSet"><ul>
+                <li>cmps101</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test('cmps101')">Add</button>
                 <li>cmps102</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test('cmps102')">Add</button>
                 <li>cmps104a</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test('cmps104a')">Add</button>
                 <li>cmps109</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test('cmps109')">Add</button>
@@ -85,7 +88,7 @@ export default {
             var a = snapshot.exists(); // true
             var b = snapshot.child(user.uid).exists(); // true
             if (a == true) console.log("class exist");
-            if (b == true) console.log("user exist");
+            if (b == true) {console.log("user exist");alert('You are already in the class')}
             else {
               firebase
                 .database()
@@ -100,6 +103,7 @@ export default {
                   user: userID
                 });
               console.log("user added");
+              alert('Class added')
             }
           });
           //             return firebase.database().ref('/classes/' + classnum).once('value').then(function(snapshot) {
@@ -135,7 +139,7 @@ export default {
     //     });
     // },
 
-    getClasses: function() {
+    getClasses: function() { 
       let courseref = firebase.database().ref("classes");
       var Keys = null;
       courseref.once("value", getdata);
@@ -272,7 +276,7 @@ export default {
 </script>
 
 <style scoped>
-#li {
+ul {
   list-style-type: none;
 }
 
@@ -281,5 +285,11 @@ export default {
   border: 1px solid #cccccc;
   padding: 20px;
   margin-top: 10px;
+}
+
+.classSet {
+    
+    font-size:30px;
+
 }
 </style>
