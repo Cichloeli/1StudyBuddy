@@ -2,15 +2,54 @@
     <div id="classes">
         Classes
         <div class="container">
-            <div id = "classest"></div>
+            <div id><ul><li>cmps101</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test('cmps101')">Add</button>
+                <li>cmps102</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test('cmps102')">Add</button>
+                <li>cmps104a</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test('cmps104a')">Add</button>
+                <li>cmps109</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test('cmps109')">Add</button>
+                <li>cmps111</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test('cmps111')">Add</button>
+                <li>cmps112</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test('cmps112')">Add</button>
+                <li>cmps115</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test(cmps115)">Add</button>
+                <li>cmps121</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test(cmps121)">Add</button>
+                <li>cmps128</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test()">Add</button>
+                <li>cmps12a</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test()">Add</button>
+                <li>cmps12b</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test()">Add</button>
+                <li>cmps12l</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test()">Add</button>
+                <li>cmps12m</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test()">Add</button>
+                <li>cmps130</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test()">Add</button>
+                <li>cmps142</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test()">Add</button>
+                <li>cmps160</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test()">Add</button>
+                <li>cmps160l</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test()">Add</button>
+                <li>cmps166a</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test()">Add</button>
+                <li>cmps180</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test()">Add</button>
+                <li>cmps183</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test()">Add</button>
+                <li>cmps185</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test()">Add</button>
+                <li>cmps200</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test()">Add</button>
+                <li>cmps201</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test()">Add</button>
+                <li>cmps217</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test()">Add</button>
+                <li>cmps223</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test()">Add</button>
+                <li>cmps242</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test()">Add</button>
+                <li>cmps260</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test()">Add</button>
+                <li>cmps266a</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test()">Add</button>
+                <li>cmps278</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test()">Add</button>
+                <li>cmps280d</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test()">Add</button>
+                <li>cmps280l</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test()">Add</button>
+                <li>cmps280s</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test()">Add</button>
+                <li>cmps290s</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test()">Add</button>
+                <li>cmps5j</li> <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="test()">Add</button>
+            </ul>
+        </div>
         </div>
     </div>    
     
 </template>
 
 <script>
+ function error2(err){
+    console.log("error");
+    }
 import db from './firebaseinit';
 import firebase from 'firebase';
+var count=0;
 //myCar = Object();
 export default {
     name: 'view-courses',//doesn't matter
@@ -25,6 +64,32 @@ export default {
         }
     },
     methods: {
+        test(classnum) {
+                    console.log("here");
+                    firebase.auth().onAuthStateChanged((user) => {
+                        if (user) {
+                            var userID = user.uid;
+                            //console.log(firebase.database().ref('/classes/' + classnum +'/' +userID))
+                            firebase.database().ref('/users/' + userID +'/class' + count).update({
+                                class: classnum
+                            });
+                            firebase.database().ref('/classes/' + classnum +'/' +userID).update({
+                                user: userID
+                            });
+                            // var test = {};
+                            // test[classnum]='';
+                            // firebase.database().ref('/classes/' + classnum).update({
+                            //     test
+                            // });
+                        }
+                    });
+                    count = count+1
+                },
+        add1() {    
+            console.log("here");
+            
+            
+        },
         // add() {
         //     console.log("here");
         //     firebase.auth().onAuthStateChanged((user) => {
@@ -40,7 +105,7 @@ export default {
         getClasses: function() {
                 let courseref = firebase.database().ref('classes');
                 var Keys = null;
-                courseref.once('value',getdata,error);
+                courseref.once('value',getdata);
 
                 function test() {
                     console.log("here");
@@ -59,16 +124,18 @@ export default {
                     Keys = Object.keys(classes)
                     console.log(Keys);
 
-                    var str = '<ul>'
+                    var str = ' <ul>';
+                    //var funct1 = '"'+'add1()'+'"';
                     
                     Keys.forEach(function(key){
-                        str += '<li>' + key + '</li>' + ' <button onclick="test()">Add</button>';
+                        var err = 'abc';
+                        str += '<li>' + key + '</li>' + ' <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click=' + '"'+'add1()'+'"' + '>Add</button>';
                     });
 
                     str += '</ul>'
 
-                    // console.log(str)
-                    document.getElementById("classest").innerHTML = str;
+                    console.log(str)
+                    //document.getElementById("classest").innerHTML = str;
 
                 };
                 function error(err){
