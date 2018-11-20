@@ -1,7 +1,6 @@
 
 <template>
 <div id="create_a_Group">
-  <p>{{message}}</p>
   <div class = "createGroup">
     <!-- the 'heading' is in the class 'createGroup' but not in the 'body' -->
     <div class = "heading">
@@ -10,17 +9,18 @@
     <div class = "body">
       <form id = "form" class = "init form" v-on:submit.prevent="addingGroup">
         <div class = "form-group">
-          <label for = "classtitle">Choose a Class:</label>
+          <label style="font-size: 20px" for = "classtitle">Choose a Class:</label>
           <input type = "text" id = "classtitle" class = "form-control" v-model="newgroup.classname" placeholder="eg: cmps115">
         </div>
         <div>
-          <h3>Enter a group name</h3>
+          <h4 style="font-size: 20px">Enter a group name</h4>
             <input v-model="newgroup.groupname">
           </div>
         <input type = "submit" class = "button-to-submit" value = "Create Group">
       </form>  
     </div>
   </div>
+
   <!-- The code above is creating a group, the code below is joining a group --> 
   <div class = "chooseGroup">
     <div class = "heading_for_choose">
@@ -29,19 +29,21 @@
      <div class = "body_for_choose">
       <form id = "form_for_choose" class = "init form_for_choose" v-on:submit.prevent="choosingGroup">
        <div class = "form-group-choose">
-        <label for = "classtitle_choose">Choose a Class:</label>
-        <input type = "text" id = "classtitle_choose" class = "form-control-choose" v-model="choose_a_class" placeholder="eg: cmps115">
+         <p>1. Enter the name of the class you want to find groups in then select search group</p>
+        <label style="font-size: 18px;margin-left: 22px" for = "classtitle_choose">Choose a Class:</label>
+        <input type = "text" style="padding: 5px; margin-left: 5px"id = "classtitle_choose" class = "form-control-choose" v-model="choose_a_class" placeholder="eg: cmps115">
        </div>
-       <input type = "submit" class = "button-to-submit-choose" value = "Search Group">
+       <input type = "submit" style="margin-top: 10px; margin-bottom: 10px; margin-left: 22px"class = "button-to-submit-choose" value = "Search Group">
       </form>
+      <p>2. Select the group you would like to join then click the join button</p>
       <!-- The code above is finding a group, the code below is joining a group --> 
-        <select v-model="selected">
+        <select style="margin-left: 22px; padding: 5px"v-model="selected">
           <option v-for="groupname in currGroup" :key="groupname.id">
             {{groupname}}
           </option>
         </select>
       <div>
-        <button v-on:click="joiningGroup(selected)">Join</button>
+        <button style="margin-top: 10px;margin-bottome: 40px;margin-left: 22px"v-on:click="joiningGroup(selected)">Join</button>
       </div>
     </div>
   </div>
@@ -192,7 +194,39 @@ export default {
 
 <style>
 #create_a_group{
-  margin-top: 60px;
-  text-align: center;
+  margin-top: 80px;
+  text-align: left;
+  margin-bottom: 80px;
+}
+
+.body{
+  text-align: left;
+  margin-top: 10px;
+}
+
+.button-to-submit{
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.createGroup{
+  border-style: solid;
+  border-color: white;
+  border-bottom-width: 5px;
+  border-bottom-color: lightgrey;
+}
+
+/* This is css code for the join your group section */
+.chooseGroup{
+  margin-top: 30px;
+}
+.heading_for_choose{
+  margin-bottom: 20px;
+}
+.body_for_choose{
+  text-align: left;
+}
+p{
+  font-size: 20px;
 }
 </style>
