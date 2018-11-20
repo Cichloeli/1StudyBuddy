@@ -13,10 +13,15 @@
           <label for = "classtitle">Choose a Class:</label>
           <input type = "text" id = "classtitle" class = "form-control" v-model="newgroup.classname" placeholder="eg: cmps115">
         </div>
+        <div>
+          <h3>Enter a group name</h3>
+            <input v-model="newgroup.groupname">
+          </div>
         <input type = "submit" class = "button-to-submit" value = "Create Group">
-      </form>
+      </form>  
     </div>
   </div>
+  <!-- The code above is creating a group, the code below is joining a group --> 
   <div class = "chooseGroup">
     <div class = "heading_for_choose">
        <h3 style="color : #0066cc">Join Your Group</h3>
@@ -29,8 +34,18 @@
        </div>
        <input type = "submit" class = "button-to-submit-choose" value = "Search Group">
       </form>
+      <!-- The code above is finding a group, the code below is joining a group --> 
+        <select v-model="selected">
+          <option v-for="groupname in currGroup" :key="groupname.id">
+            {{groupname}}
+          </option>
+        </select>
+      <div>
+        <button v-on:click="joiningGroup(selected)">Join</button>
+      </div>
     </div>
   </div>
+  <!-- The code above is joing a group -->
 </div>
 </template>
 
@@ -51,6 +66,11 @@ let database = firebaseApp.database();
 let courseref = database.ref('classes');
 var Keys = null
 var GroupKeys = null
+var Grouplist = []
+var groupName = []
+var Namelist = []
+var counter = 0
+var counter_again = 0
 courseref.once('value', getdata, error)
 
 function getdata(data){
@@ -58,8 +78,22 @@ function getdata(data){
   var classes = data.val();
   Keys = Object.keys(classes)
   console.log(Keys);
+  for(var n = 0; n< Keys.length; n++){
+    var groupref = database.ref('classes/'+Keys[n]+'/groups');
+    groupref.once('value', getGroupData, getGroupErr);
+    function getGroupData(groupData){
+      if(groupData.val()!=null){
+        GroupKeys = Object.keys(groupData.val());
+      }
+      Grouplist[counter] = GroupKeys;
+      counter = counter + 1;
+    }
+    function getGroupErr(errData){
+      console.log('errData!');
+      console.log(errData);
+    }
+  }
 }
-
 function error(err){
   console.log('error!');
   console.log(err)
@@ -73,16 +107,13 @@ export default {
   data () {
     return {
       newgroup:{
-        classname: ''
+        classname: '',
+        groupname: ''
       },
       choose_a_class:'',
-      user:{
-        userID: '',
-        userInfo1: '',
-        userInfo2: '',
-      },
       message: 'Hello',
-      test: Keys
+      currGroup: '',
+      selected: '',
     }
   },
   methods: {
@@ -92,37 +123,58 @@ export default {
       console.log(this.newgroup.classname)
       for(var i = 0; i< Keys.length; i++){
         if(this.newgroup.classname == Keys[i]){
+            this.currGroup = Grouplist[i]
+          }
+        if(this.newgroup.classname == Keys[i]){
           ID = 1;
         }
       }
       if(ID == 1){
         console.log(ID)
-        this.user.userID = 'userID is';
-        this.user.userInfo1 = 'info1';
-        this.user.userInfo2 = 'info2';
-        var group_master = this.user; 
-        database.ref('classes/'+this.newgroup.classname+'/groups').push({
-          classname: this.newgroup.classname,
-          group_master
-        });
+        var masterID = '122';
+        var group_name = this.newgroup.groupname;
+        var checker = 1;
+        for(var NAME= 0; NAME<this.currGroup.length; NAME++){
+          if (group_name == this.currGroup[NAME]){
+            checker = 0;
+          }
+        }
+        if(checker == 1){
+          database.ref('classes/'+this.newgroup.classname+'/groups/'+group_name+"/"+masterID).set({
+            Identity: "master",
+          });
+          location.reload();
+        }else{
+          alert("Group Already Exist!")
+        }
         this.newgroup.classname = '';
       }else{
         alert('The class '+this.newgroup.classname+' does not exist');
       }
     },
     choosingGroup: function(){
-      var joinRef = database.ref('classes/'+this.choose_a_class+'/groups');
       console.log(this.choose_a_class)
-      joinRef.once("value", getGroup, errGroup)
-      function getGroup(group_ID){
-      console.log(group_ID.val());
-      var group_array = group_ID.val();
-      GroupKeys = Object.keys(group_array)
-        console.log(GroupKeys);
+      if(this.choose_a_class == ''){
+        alert('Please choose a class first')
+      }else{
+        for(var index =0; index < Keys.length; index++){
+          if(this.choose_a_class == Keys[index]){
+            this.currGroup = Grouplist[index]
+          }
+        }
       }
-      function errGroup(err_ID){
-        console.log('error!test');
-        console.log(err_ID)
+    },
+    joiningGroup: function(groupID){ 
+      var group_member_ID = '125';
+      console.log(this.choose_a_class);
+      console.log(groupID);
+      if(groupID == ''){
+        alert('Please choose a group first')
+      }else{
+        database.ref('classes/'+this.choose_a_class+'/groups/'+groupID+"/"+group_member_ID).set({
+          Identity: 'member',
+        });
+        location.reload();
       }
     }
   }
