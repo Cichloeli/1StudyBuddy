@@ -71,7 +71,6 @@ var groupName = []
 var Namelist = []
 var counter = 0
 var counter_again = 0
-var size = 0
 courseref.once('value', getdata, error)
 
 function getdata(data){
@@ -112,11 +111,6 @@ export default {
         groupname: ''
       },
       choose_a_class:'',
-      user:{
-        userID: '',
-        userInfo1: '',
-        userInfo2: '',
-      },
       message: 'Hello',
       currGroup: '',
       selected: '',
@@ -137,10 +131,7 @@ export default {
       }
       if(ID == 1){
         console.log(ID)
-        this.user.userID = 'userID is    hahaha';
-        this.user.userInfo1 = 'info1';
-        this.user.userInfo2 = 'info2';
-        var group_master = this.user;
+        var masterID = '122';
         var group_name = this.newgroup.groupname;
         var checker = 1;
         for(var NAME= 0; NAME<this.currGroup.length; NAME++){
@@ -149,10 +140,10 @@ export default {
           }
         }
         if(checker == 1){
-          database.ref('classes/'+this.newgroup.classname+'/groups/'+group_name).set({
-            classname: this.newgroup.classname,
-            group_master,
+          database.ref('classes/'+this.newgroup.classname+'/groups/'+group_name+"/"+masterID).set({
+            Identity: "master",
           });
+          location.reload();
         }else{
           alert("Group Already Exist!")
         }
@@ -180,10 +171,10 @@ export default {
       if(groupID == ''){
         alert('Please choose a group first')
       }else{
-        console.log(groupID.length+"size")
-        database.ref('classes/'+this.choose_a_class+'/groups/'+groupID+'/group_member'+group_member_ID).set({
-          group_member_ID
+        database.ref('classes/'+this.choose_a_class+'/groups/'+groupID+"/"+group_member_ID).set({
+          Identity: 'member',
         });
+        location.reload();
       }
     }
   }
