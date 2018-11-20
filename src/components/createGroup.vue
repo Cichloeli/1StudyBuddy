@@ -29,13 +29,13 @@
      <div class = "body_for_choose">
       <form id = "form_for_choose" class = "init form_for_choose" v-on:submit.prevent="choosingGroup">
        <div class = "form-group-choose">
-         <p>1. Enter the name of the class you want to find groups in, then select search group</p>
+         <p>1. Enter the name of the class you want to find groups in, then click Search Group</p>
         <label style="font-size: 18px;margin-left: 22px" for = "classtitle_choose">Choose a Class:</label>
         <input type = "text" style="padding: 5px; margin-left: 5px"id = "classtitle_choose" class = "form-control-choose" v-model="choose_a_class" placeholder="eg: cmps115">
        </div>
        <input type = "submit" style="margin-top: 10px; margin-bottom: 10px; margin-left: 22px"class = "button-to-submit-choose" value = "Search Group">
       </form>
-      <p>2. Select the group you would like to join, then click the join button</p>
+      <p>2. Select the group you would like to join</p>
       <!-- The code above is finding a group, the code below is joining a group --> 
         <select style="margin-left: 22px; padding: 5px"v-model="selected">
           <option v-for="groupname in currGroup" :key="groupname.id">
