@@ -98,6 +98,10 @@
         <div class="updateScheduleButton">
             <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="updateSchedule()">Update Schedule</button>
         </div>
+
+        <div class="updateAllButton">
+            <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="updateAll()">Update All</button>
+        </div>
         <!-- <div class="updateButton">
             <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="info()">Info</button>
         </div> -->
@@ -165,6 +169,89 @@ export default {
     methods: {
         test() {
             console.log("test")
+        },
+        updateAll() {
+            if (this.input.nameIn!=null ) {
+                firebase.firestore().collection('users').doc(currentUser.uid).update({
+                name: this.input.nameIn,
+                checkedName: this.checkedName,
+                })
+            }
+
+            if (this.input.classesIn!=null) {
+                firebase.firestore().collection('users').doc(currentUser.uid).update({
+                classes: this.input.classesIn,
+                checkedClasses: this.checkedClasses,
+                })
+            }
+
+            if (this.input.emailIn!=null) {
+                firebase.firestore().collection('users').doc(currentUser.uid).update({
+                email: this.input.emailIn,
+                checkedEmail: this.checkedEmail,
+                })
+            }
+
+            if (this.input.majorIn!=null) {
+                firebase.firestore().collection('users').doc(currentUser.uid).update({
+                major: this.input.majorIn,
+                checkedMajor: this.checkedMajor,
+                })
+            }
+
+            if (this.input.aboutIn!=null) {
+                firebase.firestore().collection('users').doc(currentUser.uid).update({
+                about: this.input.aboutIn,
+                checkedAbout: this.checkedAbout,
+                })
+            }
+
+            
+            if (this.input.sundayIn!=null ) {
+                firebase.firestore().collection('users').doc(currentUser.uid).update({
+                sunday: this.input.sundayIn,
+                })
+            }
+
+            if (this.input.mondayIn!=null) {
+                firebase.firestore().collection('users').doc(currentUser.uid).update({
+                monday: this.input.mondayIn,
+               
+                })
+            }
+
+            if (this.input.tuesdayIn!=null) {
+                firebase.firestore().collection('users').doc(currentUser.uid).update({
+                tuesday: this.input.tuesdayIn,
+                })
+            }
+
+            if (this.input.wednesdayIn!=null) {
+                firebase.firestore().collection('users').doc(currentUser.uid).update({
+                wednesday: this.input.wednesdayIn,
+                })
+            }
+
+            if (this.input.thursdayIn!=null) {
+                firebase.firestore().collection('users').doc(currentUser.uid).update({
+                thursday: this.input.thursdayIn,
+                })
+            }
+
+            if (this.input.fridayIn!=null) {
+                firebase.firestore().collection('users').doc(currentUser.uid).update({
+                friday: this.input.fridayIn,
+                })
+            }
+
+            if (this.input.saturdayIn!=null) {
+                firebase.firestore().collection('users').doc(currentUser.uid).update({
+                saturday: this.input.saturdayIn,
+                })
+            }
+            
+            
+            this.$router.replace('profile')
         },
         update() {
             console.log("update");
@@ -382,6 +469,12 @@ export default {
 .updateScheduleButton{
     max-width: 200px;
     margin-left: 80%;
+}
+
+.updateAllButton {
+    max-width: 200px;
+    padding: 20px;
+    margin-left: 40%;
 }
 
 .sunday {
