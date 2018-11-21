@@ -8,17 +8,19 @@
       <h3 style="color : #0066cc">Create Your Group</h3>
     </div>
     <div class = "body">
-      <form id = "form" class = "init form" v-on:submit.prevent="addingGroup">
-        <div class = "form-group">
-          <label for = "classtitle">Choose a Class:</label>
-          <input type = "text" id = "classtitle" class = "form-control" v-model="newgroup.classname" placeholder="eg: cmps115">
+      <button id = "Begin" class = "init" v-on:click="searchingClass()">choose your class</button>
+        <div class = "Begin-group">
+          <select v-model="newgroup.classname">
+          <option v-for="classname in currClass" :key="classname.id">
+            {{classname}}
+          </option>
+        </select>
         </div>
         <div>
           <h3>Enter a group name</h3>
             <input v-model="newgroup.groupname">
           </div>
-        <input type = "submit" class = "button-to-submit" value = "Create Group">
-      </form>  
+        <button id = "submit" v-on:click="addingGroup()">Create Group</button>
     </div>
   </div>
   <!-- The code above is creating a group, the code below is joining a group --> 
@@ -27,13 +29,7 @@
        <h3 style="color : #0066cc">Join Your Group</h3>
      </div>
      <div class = "body_for_choose">
-      <form id = "form_for_choose" class = "init form_for_choose" v-on:submit.prevent="choosingGroup">
-       <div class = "form-group-choose">
-        <label for = "classtitle_choose">Choose a Class:</label>
-        <input type = "text" id = "classtitle_choose" class = "form-control-choose" v-model="choose_a_class" placeholder="eg: cmps115">
-       </div>
-       <input type = "submit" class = "button-to-submit-choose" value = "Search Group">
-      </form>
+      <button id = "form_for_choose" class = "init form_for_choose" v-on:click="choosingGroup()">Choose group</button>
       <!-- The code above is finding a group, the code below is joining a group --> 
         <select v-model="selected">
           <option v-for="groupname in currGroup" :key="groupname.id">
@@ -69,6 +65,8 @@ var GroupKeys = null
 var Grouplist = []
 var groupName = []
 var Namelist = []
+var userKey = []
+var userList = []
 var counter = 0
 var counter_again = 0
 courseref.once('value', getdata, error)
@@ -92,6 +90,19 @@ function getdata(data){
       console.log('errData!');
       console.log(errData);
     }
+    var classRef = database.ref('classes/'+Keys[n]);
+    classRef.once('value', classData, classErr);
+    function classData(class_ID){
+      if(class_ID.val()!= null){
+        userKey = Object.keys(class_ID.val());
+      }
+      userList[counter_again] = userKey;
+      counter_again = counter_again+1;
+    }
+    function classErr(errclass){
+      console.log('errClass!');
+      console.log(errclass)
+    }
   }
 }
 function error(err){
@@ -99,8 +110,6 @@ function error(err){
   console.log(err)
 }
 
-var The_user = firebase.auth().currentUser;
-console.log(The_user+'!');
 
 export default {
   name: 'create_a_Group',
@@ -114,9 +123,28 @@ export default {
       message: 'Hello',
       currGroup: '',
       selected: '',
+      currClass: [],
     }
   },
   methods: {
+    searchingClass:function(){
+      var The_user = firebase.auth().currentUser;
+      var User_ID = The_user.uid;
+      var curr_class_list = [];
+      var printList = [];
+      console.log(userList);
+      for(var u =0; u<Keys.length; u++){
+        curr_class_list = userList[u];
+        if (curr_class_list!= ''){
+          for(var u_name = 0; u_name<curr_class_list.length; u_name++){
+            if(User_ID == curr_class_list[u_name]){
+              this.currClass.push(Keys[u])
+            }
+          }
+        }
+      }
+      console.log(this.currClass)
+    },
     addingGroup: function (){
       var ID = 0;
       console.log(Keys)
@@ -131,7 +159,8 @@ export default {
       }
       if(ID == 1){
         console.log(ID)
-        var masterID = '122';
+        var The_user = firebase.auth().currentUser;
+        var masterID = The_user.uid;
         var group_name = this.newgroup.groupname;
         var checker = 1;
         for(var NAME= 0; NAME<this.currGroup.length; NAME++){
@@ -144,6 +173,7 @@ export default {
             Identity: "master",
           });
           location.reload();
+          this.currGroup = [];
         }else{
           alert("Group Already Exist!")
         }
@@ -153,19 +183,19 @@ export default {
       }
     },
     choosingGroup: function(){
-      console.log(this.choose_a_class)
-      if(this.choose_a_class == ''){
+      if(this.newgroup.classname == ''){
         alert('Please choose a class first')
       }else{
         for(var index =0; index < Keys.length; index++){
-          if(this.choose_a_class == Keys[index]){
+          if(this.newgroup.classname == Keys[index]){
             this.currGroup = Grouplist[index]
           }
         }
       }
     },
     joiningGroup: function(groupID){ 
-      var group_member_ID = '125';
+      var The_user = firebase.auth().currentUser;
+      var group_member_ID = The_user.uid;
       console.log(this.choose_a_class);
       console.log(groupID);
       if(groupID == ''){
