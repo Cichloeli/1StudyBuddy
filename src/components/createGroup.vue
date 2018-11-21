@@ -196,12 +196,11 @@ export default {
     joiningGroup: function(groupID){ 
       var The_user = firebase.auth().currentUser;
       var group_member_ID = The_user.uid;
-      console.log(this.choose_a_class);
       console.log(groupID);
       if(groupID == ''){
         alert('Please choose a group first')
       }else{
-        database.ref('classes/'+this.choose_a_class+'/groups/'+groupID+"/"+group_member_ID).set({
+        database.ref('classes/'+this.newgroup.classname+'/groups/'+groupID+"/"+group_member_ID).set({
           Identity: 'member',
         });
         location.reload();
