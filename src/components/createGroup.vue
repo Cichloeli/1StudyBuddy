@@ -45,9 +45,11 @@
 </div>
 </template>
 
+
 <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
 <script>
 import firebase from "firebase";
+import db from './firebaseinit';
   // Initialize Firebase
 let config ={
   apiKey: "AIzaSyAtTNO9fCUwweAnOXWbbAaOR39t7X1hdCQ",
@@ -58,8 +60,10 @@ let config ={
   messagingSenderId: "986425946679"
 }
 let firebaseApp = firebase.initializeApp(config, "realtime");
+let cloud = firebase.firestore();
 let database = firebaseApp.database();
 let courseref = database.ref('classes');
+//set var for methods
 var Keys = null
 var GroupKeys = null
 var Grouplist = []
@@ -69,8 +73,10 @@ var userKey = []
 var userList = []
 var counter = 0
 var counter_again = 0
+var group_Already_In = []
 courseref.once('value', getdata, error)
 
+//get group, classes information and store them in array
 function getdata(data){
   console.log(data.val());
   var classes = data.val();
@@ -132,6 +138,12 @@ export default {
       var User_ID = The_user.uid;
       var curr_class_list = [];
       var printList = [];
+     
+      cloud.collection("users").where('uid', '==', User_ID).get().then(querySnapshot => {
+            querySnapshot.forEach(doc => {
+              group_Already_In = doc.data().group
+            })
+        });
       console.log(userList);
       for(var u =0; u<Keys.length; u++){
         curr_class_list = userList[u];
@@ -172,7 +184,12 @@ export default {
           database.ref('classes/'+this.newgroup.classname+'/groups/'+group_name+"/"+masterID).set({
             Identity: "master",
           });
-          location.reload();
+          var curr_length = group_Already_In.length;
+          group_Already_In[curr_length] = group_name;
+          var addGroupRef = cloud.collection("users").doc(masterID);
+          addGroupRef.update({
+            group: group_Already_In
+          });
           this.currGroup = [];
         }else{
           alert("Group Already Exist!")
@@ -181,6 +198,7 @@ export default {
       }else{
         alert('The class '+this.newgroup.classname+' does not exist');
       }
+      location.reload();
     },
     choosingGroup: function(){
       if(this.newgroup.classname == ''){
@@ -197,14 +215,25 @@ export default {
       var The_user = firebase.auth().currentUser;
       var group_member_ID = The_user.uid;
       console.log(groupID);
+      var group_checker = 1;
+      if(group_Already_In!=''){
+        for(var c =0; c<group_Already_In.length; c++){
+          if(groupID == group_Already_In[c]){
+            group_checker = 0;
+          }
+        }
+      }
       if(groupID == ''){
         alert('Please choose a group first')
-      }else{
+      }else if(group_checker == 0){
+        alert('You already in this group')
+      }
+      else{
         database.ref('classes/'+this.newgroup.classname+'/groups/'+groupID+"/"+group_member_ID).set({
           Identity: 'member',
         });
-        location.reload();
       }
+      location.reload();
     }
   }
 }
