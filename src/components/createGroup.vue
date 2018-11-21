@@ -151,9 +151,6 @@ export default {
       console.log(this.newgroup.classname)
       for(var i = 0; i< Keys.length; i++){
         if(this.newgroup.classname == Keys[i]){
-            this.currGroup = Grouplist[i]
-          }
-        if(this.newgroup.classname == Keys[i]){
           ID = 1;
         }
       }
@@ -163,9 +160,12 @@ export default {
         var masterID = The_user.uid;
         var group_name = this.newgroup.groupname;
         var checker = 1;
-        for(var NAME= 0; NAME<this.currGroup.length; NAME++){
-          if (group_name == this.currGroup[NAME]){
-            checker = 0;
+        for (var G = 0; G<Keys.length; G++){
+          this.currGroup = Grouplist[G]
+          for(var NAME= 0; NAME<this.currGroup.length; NAME++){
+            if (group_name == this.currGroup[NAME]){
+              checker = 0;
+            }
           }
         }
         if(checker == 1){
