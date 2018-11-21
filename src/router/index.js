@@ -11,6 +11,7 @@ import dashboard from '@/components/dashboard'
 import ViewUser from '@/components/ViewUser'
 import editProfile from '@/components/editProfile'
 import createGroup from '@/components/createGroup'
+import profile_other from '@/components/profile_other'
 
 import firebase from 'firebase'
 
@@ -61,6 +62,14 @@ let router = new Router({
       path: '/profile',
       name: 'profile',
       component: profile,
+      meta: {
+          requiresAuth: true
+      }
+    },
+    {
+      path: '/profile_other',
+      name: 'profile_other',
+      component: profile_other,
       meta: {
           requiresAuth: true
       }

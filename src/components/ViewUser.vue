@@ -9,7 +9,7 @@
                 {{user.name}}
 
                 <router-link class="secondary-content"
-                v-bind:to="{name: 'profile', params: {uid: user.uid}}">
+                v-bind:to="{name: 'profile_other', params: {uid: user.uid}}">
                 <i class="fa fa-eye"></i>
                 </router-link>
             </li>
@@ -44,3 +44,10 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+ul {
+  list-style-type: none;
+}
+
+</style>
