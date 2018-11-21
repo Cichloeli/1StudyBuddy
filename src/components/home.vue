@@ -57,13 +57,13 @@
                 var userId = firebase.auth().currentUser.uid;
                 return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
                     var class1 = (snapshot.val() && snapshot.val().class1) || 'No Class';
-                    document.getElementById("class1").innerHTML = class1;
+                    document.getElementById("class1").innerHTML = class1.class;
 
                     var class2 = (snapshot.val() && snapshot.val().class2) || 'No Class';
-                    document.getElementById("class2").innerHTML = class2;
+                    document.getElementById("class2").innerHTML = class2.class;
 
                     var class3 = (snapshot.val() && snapshot.val().class3) || 'No Class';
-                    document.getElementById("class3").innerHTML = class3;
+                    document.getElementById("class3").innerHTML = class3.class;
                 });
             }
         }

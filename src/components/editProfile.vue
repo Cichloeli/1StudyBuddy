@@ -117,8 +117,11 @@ export default {
     
 
     methods: {
+        test() {
+            console.log("test")
+        },
         update() {
-            console.log("test");
+            console.log("update");
 
             if (this.input.nameIn!=null ) {
                 firebase.firestore().collection('users').doc(currentUser.uid).update({
@@ -160,8 +163,8 @@ export default {
         
         },
         info(){
-                
-                console.log("test");
+                test();
+                console.log("info");
                 firebase.firestore().collection("users").doc(currentUser.uid)
                 .get().then(function(doc) {
                     if (doc.exists) {

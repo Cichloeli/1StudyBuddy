@@ -1,7 +1,6 @@
 
 <template>
 <div id="create_a_Group">
-  <p>{{message}}</p>
   <div class = "createGroup">
     <!-- the 'heading' is in the class 'createGroup' but not in the 'body' -->
     <div class = "heading">
@@ -17,12 +16,13 @@
         </select>
         </div>
         <div>
-          <h3>Enter a group name</h3>
+          <h4 style="font-size: 20px">Enter a group name</h4>
             <input v-model="newgroup.groupname">
           </div>
         <button id = "submit" v-on:click="addingGroup()">Create Group</button>
     </div>
   </div>
+
   <!-- The code above is creating a group, the code below is joining a group --> 
   <div class = "chooseGroup">
     <div class = "heading_for_choose">
@@ -31,13 +31,13 @@
      <div class = "body_for_choose">
       <button id = "form_for_choose" class = "init form_for_choose" v-on:click="choosingGroup()">Choose group</button>
       <!-- The code above is finding a group, the code below is joining a group --> 
-        <select v-model="selected">
+        <select style="margin-left: 22px; padding: 5px" v-model="selected">
           <option v-for="groupname in currGroup" :key="groupname.id">
             {{groupname}}
           </option>
         </select>
       <div>
-        <button v-on:click="joiningGroup(selected)">Join</button>
+        <button style="margin-top: 10px;margin-bottome: 40px;margin-left: 22px" v-on:click="joiningGroup(selected)">Join</button>
       </div>
     </div>
   </div>
@@ -212,8 +212,39 @@ export default {
 </script>
 
 <style>
-#create_a_group{
-  margin-top: 60px;
-  text-align: center;
+#create_a_Group{
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.body{
+  text-align: left;
+  margin-top: 10px;
+}
+
+.button-to-submit{
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.createGroup{
+  border-style: solid;
+  border-color: white;
+  border-bottom-width: 5px;
+  border-bottom-color: lightgrey;
+}
+
+/* This is css code for the join your group section */
+.chooseGroup{
+  margin-top: 30px;
+}
+.heading_for_choose{
+  margin-bottom: 20px;
+}
+.body_for_choose{
+  text-align: left;
+}
+p{
+  font-size: 20px;
 }
 </style>
