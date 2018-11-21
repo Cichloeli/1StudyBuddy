@@ -50,6 +50,14 @@
                             major: '',
                             about: '',
 
+                            sunday: '',
+                            monday: '',
+                            tuesday: '',
+                            wednesday: '',
+                            thursday: '',
+                            friday: '',
+                            saturday: '',
+
                             checkedName: true,
                             checkedClasses: true,
                             checkedMajor: true,

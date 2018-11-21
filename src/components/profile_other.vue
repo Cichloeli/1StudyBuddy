@@ -1,5 +1,5 @@
 <template>
-    <div id="profile">
+    <div id="profile_other">
         <div class="banner">
             <img :src="header" />
         </div>
@@ -7,7 +7,6 @@
             <h1>Profile</h1>
         </div>
 
-        <router-link class="editLink" to="/editProfile">Edit Profile</router-link>
 
         <div class="info">
             <h6>Name: {{ name }}</h6>
@@ -34,7 +33,8 @@
             <!-- <div class="infoAbout">
                 {{ about }}
             </div>                -->
-
+    
+        
         </div>
 
         <div class="schedule">
@@ -66,7 +66,7 @@ var curUser = firebase.auth().currentUser;
 
 export default {
 
-  name: "profile",
+  name: "profile_other",
   
   data() {
     return {
@@ -89,7 +89,7 @@ export default {
   },
     beforeRouteEnter (to, from, next) {
         curUser = firebase.auth().currentUser,
-        firebase.firestore().collection('users').where('uid', '==', curUser.uid).get()
+        firebase.firestore().collection('users').where('uid', '==', to.params.uid).get()
         .then(querySnapshot => {
             querySnapshot.forEach(doc => {
                 next(vm => {
@@ -124,7 +124,7 @@ export default {
     },
     fetchData () {
         firebase.firestore().collection('users').where
-        ('uid', '==', this.$route.curUser.uid).get()
+        ('uid', '==', this.$route.params.uid).get()
         .then(querySnapshot => {
             querySnapshot.forEach(doc => {
                 this.id = doc.id
@@ -155,7 +155,7 @@ export default {
 </script>
 
 <style scoped>
-#profile {
+#profile_other {
 
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -175,15 +175,13 @@ export default {
   text-align: left;
   padding-right: 300px;
 }
-.schedule {
-    text-align: left;
-}
 .editLink {
     max-width: 50px;
     padding-left: 90%;
-  
-   
 
+}
+.schedule {
+    text-align: left;
 }
 .infoAbout input {
     padding-bottom: 200px;
