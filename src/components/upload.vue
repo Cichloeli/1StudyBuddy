@@ -24,9 +24,6 @@ label.upload-group{
     width: 60px;
     height: 20px;
     margin-right: 1050px;
-    border-style: solid;
-    border-color: lightgray;
-
 }
 #uploadButton{
     margin-right: 1050px;
