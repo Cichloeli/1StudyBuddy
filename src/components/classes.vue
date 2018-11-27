@@ -2,6 +2,7 @@
     <div id="classes">
       <h1>
           Add your class
+          {{classCounter}}:{{classTotal}}
         </h1>
         <div class="container">
             <div class = "classSet"><ul>
@@ -52,6 +53,8 @@ function error2(err) {
 }
 import db from "./firebaseinit";
 import firebase from "firebase";
+
+var curUser = firebase.auth().currentUser;
 var count = 0;
 //myCar = Object();
 export default {
@@ -63,8 +66,28 @@ export default {
     return {
       courses: [],
       //info : [],
-      classNames: ""
+      classNames: "",
+      classCounter: 0,
+      classTotal: 0,
+
     };
+  },
+  beforeRouteEnter (to, from, next) {
+        curUser = firebase.auth().currentUser,
+        firebase.firestore().collection('users').where('uid', '==', curUser.uid).get()
+        .then(querySnapshot => {
+            querySnapshot.forEach(doc => {
+                next(vm => {
+                  vm.classCounter = doc.data().classCounter
+                  vm.classTotal = doc.data().classTotal
+                  
+                })
+            })
+        })
+    }, 
+  
+  watch: {
+      '$route': 'fetchData'
   },
   methods: {
     test(classnum) {
@@ -222,6 +245,18 @@ export default {
             console.log("Error: " + error.code);
           }
         );
+    },
+    fetchData () {
+        firebase.firestore().collection('users').where
+        ('uid', '==', this.$route.curUser.uid).get()
+        .then(querySnapshot => {
+            querySnapshot.forEach(doc => {
+                
+                this.classCounter = doc.data().classCounter
+                this.classTotal = doc.data().classTotal
+                
+            })
+        })
     }
   },
   created() {
@@ -247,30 +282,7 @@ export default {
         }
       );
 
-    //var classes= new Firebase('https://studybuddy-memo.firebaseio.com/classes');
-    /* var returnArr = [];
-
     
-         firebase.database().ref().on("value", function(snapshot) {
-            snapshot.forEach(function(childSnapshot) {
-            var item = childSnapshot.val();
-            item.key = childSnapshot.key;
-
-            returnArr.push(item);
-    });
-        },  */
-    //firebase.firestore().collection('courses').get().
-    /* then(querySnapshot => {
-            querySnapshot.forEach(doc => {
-                const data = {
-                    'name': doc.key,
-                    //'course_id': doc.data().course_id,
-                    'About': doc.data().information,
-                    'email': doc.data().email,
-                }
-                this.courses.push(data)
-            })
-        }) */
   }
 };
 </script>

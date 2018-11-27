@@ -5,10 +5,12 @@
         <button v-on:click="add">Add to class</button>
         <button v-on:click="getClasses">display classes</button>
         <router-link class="nav-link" to="/dashboard">Dashboard</router-link>
-
+        <button class="btn btn-primary" v-on:click="delClass1()" >Remove class1</button>
         <div class="container">
+            
             <div class="class1">
                 <h1 id="class1"></h1>
+                
             </div>
             <div class="class2">
                 <h1 id="class2"></h1>
@@ -65,6 +67,20 @@
                     var class3 = (snapshot.val() && snapshot.val().class3) || 'No Class';
                     document.getElementById("class3").innerHTML = class3.class;
                 });
+            },
+            delClass1() {
+                var userId = firebase.auth().currentUser.uid;
+                // firebase.database().ref('/users/' + userId).once('value').child(class1).remove();
+
+                var ref = firebase.database().ref('/users/' + userId + '/class2');
+
+                ref.once('value').then(function(snapshot) {
+                snapshot.forEach(function(childSnapshot) {
+                //remove each child
+                ref.child(childSnapshot.key).remove();
+                });
+                });
+
             }
         }
     }
