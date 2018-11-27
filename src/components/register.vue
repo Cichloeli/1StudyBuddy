@@ -58,8 +58,6 @@
                             friday: '',
                             saturday: '',
 
-                            classCounter: 0,
-                            classTotal:0,
 
                             checkedName: true,
                             checkedClasses: true,

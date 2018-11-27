@@ -2,7 +2,6 @@
     <div id="classes">
       <h1>
           Add your class
-          {{classCounter}}:{{classTotal}}
         </h1>
         <div class="container">
             <div class = "classSet"><ul>
@@ -53,8 +52,6 @@ function error2(err) {
 }
 import db from "./firebaseinit";
 import firebase from "firebase";
-
-var curUser = firebase.auth().currentUser;
 var count = 0;
 //myCar = Object();
 export default {
@@ -65,29 +62,8 @@ export default {
   data() {
     return {
       courses: [],
-      //info : [],
-      classNames: "",
-      classCounter: 0,
-      classTotal: 0,
-
+      classNames: ""
     };
-  },
-  beforeRouteEnter (to, from, next) {
-        curUser = firebase.auth().currentUser,
-        firebase.firestore().collection('users').where('uid', '==', curUser.uid).get()
-        .then(querySnapshot => {
-            querySnapshot.forEach(doc => {
-                next(vm => {
-                  vm.classCounter = doc.data().classCounter
-                  vm.classTotal = doc.data().classTotal
-                  
-                })
-            })
-        })
-    }, 
-  
-  watch: {
-      '$route': 'fetchData'
   },
   methods: {
     test(classnum) {
@@ -95,92 +71,88 @@ export default {
       firebase.auth().onAuthStateChanged(user => {
         if (user) {
           var userID = user.uid;
-          //console.log((firebase.database().ref('/classes/' + classnum +'/' +userID)).user)
-
-          // firebase.database().ref('/users/' + userID +'/class' + count).update({
-          //     class: classnum
-          // });
-          // firebase.database().ref('/classes/' + classnum +'/' +userID).update({
-          //     user: userID
-          // });
+          var checkclass = firebase.database().ref("users/" + userID);
 
           user = firebase.auth().currentUser;
 
+          //check to see if the class is already added on to the list
+          //if not, add the class into user's info
+          //        add the user's info to under the class
           var ref = firebase.database().ref("classes/" + classnum);
           ref.once("value").then(function(snapshot) {
             var a = snapshot.exists(); // true
             var b = snapshot.child(user.uid).exists(); // true
             if (a == true) console.log("class exist");
-            if (b == true) {console.log("user exist");alert('You are already in the class')}
-            else {
-              firebase
-                .database()
-                .ref("/users/" + userID + "/class" + count)
-                .update({
-                  class: classnum
-                });
-              firebase
-                .database()
-                .ref("/classes/" + classnum + "/" + userID)
-                .update({
-                  user: userID
-                });
-              console.log("user added");
-              alert('Class added')
-            }
+            if (b == true) {
+              console.log("user exist");//if class is already added to the user
+              alert("You are already in the class");
+            } else {
+              checkclass.once("value").then(function(snapshot) {
+                if (snapshot.child("class1").exists() != true) {
+                  //check if class can be added to class1 spot
+                  firebase
+                    .database()
+                    .ref("/users/" + userID + "/class1")
+                    .update({
+                      //add class to class1
+                      class: classnum
+                    });
+                  firebase
+                    .database()
+                    .ref("/classes/" + classnum + "/" + userID)
+                    .update({
+                      user: userID
+                    });
+                  console.log("user added");
+                  alert("Class added");
+                } else if (snapshot.child("class2").exists() != true) {
+                  //check if class can be added to class2 spot
+                  firebase
+                    .database()
+                    .ref("/users/" + userID + "/class2")
+                    .update({
+                      //add class to class2
+                      class: classnum
+                    });
+                  firebase
+                    .database()
+                    .ref("/classes/" + classnum + "/" + userID)
+                    .update({
+                      user: userID
+                    });
+                  console.log("user added");
+                  alert("Class added");
+                } else if (snapshot.child("class3").exists() != true) {
+                  //check if class can be added to class3 spot
+                  firebase
+                    .database()
+                    .ref("/users/" + userID + "/class3")
+                    .update({
+                      //add class to class3
+                      class: classnum
+                    });
+                  firebase
+                    .database()
+                    .ref("/classes/" + classnum + "/" + userID)
+                    .update({
+                      user: userID
+                    });
+                  console.log("user added");
+                  alert("Class added");
+                }
+                else{alert("cannot add more than 3 classes")};
+              });
+            } 
           });
-          //             return firebase.database().ref('/classes/' + classnum).once('value').then(function(snapshot) {
-          //                 // var class1 = (snapshot.val() && snapshot.val().class1) || 'No Class';
-          //                 // document.getElementById("class1").innerHTML = class1.class;
-          //                 //napshot.userID.user.val()
-          //                 var check = (snapshot.val() && snapshot.val().userID)
-          //                 check.user
-          //                 console.log(snapshot.val())
-          // });
-
-          // var test = {};
-          // test[classnum]='';
-          // firebase.database().ref('/classes/' + classnum).update({
-          //     test
-          // });
         }
       });
-      count = count + 1;
     },
-    add1() {
-      console.log("here");
-    },
-    // add() {
-    //     console.log("here");
-    //     firebase.auth().onAuthStateChanged((user) => {
-    //         if (user) {
-    //             var userID = user.uid;
-    //             firebase.database().ref('/users/' + userID).update({
-    //                 class1: classnum
-    //             })
-    //         }
-    //     });
-    // },
 
-    getClasses: function() { 
+    getClasses: function() {
+      //another way to add classes
       let courseref = firebase.database().ref("classes");
       var Keys = null;
       courseref.once("value", getdata);
-
-      function test() {
-        console.log("here");
-        firebase.auth().onAuthStateChanged(user => {
-          if (user) {
-            var userID = user.uid;
-            firebase
-              .database()
-              .ref("/users/" + userID)
-              .update({
-                class1: classnum
-              });
-          }
-        });
-      }
 
       function getdata(data) {
         var classes = data.val();
@@ -188,7 +160,6 @@ export default {
         console.log(Keys);
 
         var str = " <ul>";
-        //var funct1 = '"'+'add1()'+'"';
 
         Keys.forEach(function(key) {
           var err = "abc";
@@ -209,14 +180,6 @@ export default {
       function error(err) {
         console.log("error");
       }
-
-      // listItems=Keys.reduce((result,item) => {
-      //     result += `<li>${item}</li>`;
-      //     return result
-      // },'');
-      // console.log(listItems);
-      // resultElement = document.getElementById('classes');
-      // resultElement.innerHTML = listItems;
     },
     myFunction() {
       firebase
@@ -224,11 +187,7 @@ export default {
         .ref()
         .on(
           "value",
-          function(snapshot) {
-            //this.classNames= snapshot.child("classes").val();
-            //console.log(classNames);
-            //console.log(snapshot.val());
-          },
+          function(snapshot) {},
           function(error) {
             console.log("Error: " + error.code);
           }
@@ -245,18 +204,6 @@ export default {
             console.log("Error: " + error.code);
           }
         );
-    },
-    fetchData () {
-        firebase.firestore().collection('users').where
-        ('uid', '==', this.$route.curUser.uid).get()
-        .then(querySnapshot => {
-            querySnapshot.forEach(doc => {
-                
-                this.classCounter = doc.data().classCounter
-                this.classTotal = doc.data().classTotal
-                
-            })
-        })
     }
   },
   created() {
@@ -267,22 +214,9 @@ export default {
         "value",
         function(snapshot) {
           var classNames = snapshot.child("classes").val();
-          //console.log(classNames);
-          //console.log(snapshot.val());
         },
-        function(error) {
-          //console.log("Error: " + error.code);
-          //console.log(snapshot.val());
-          //myCar = snapshot.val();
-          //comment=snapshot.val().get('classes').val();
-          //const timestamp = snapshot.get('classes');
-          //comment = timestamp.toDate();
-          //info = snapshot.val();
-          // console.log(myCar);
-        }
+        function(error) {}
       );
-
-    
   }
 };
 </script>
@@ -300,8 +234,6 @@ ul {
 }
 
 .classSet {
-    
-    font-size:30px;
-
+  font-size: 30px;
 }
 </style>

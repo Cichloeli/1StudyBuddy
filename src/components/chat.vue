@@ -1,7 +1,7 @@
 <template>
     <div class="chat container">
-        <h2 class="text-primary text-center">Real-Time Chat</h2>
-        <h5 class="text-secondary text-center">Group</h5>
+        <h2 class="text-primary text-center">Global Chat</h2>
+        <h5 class="text-secondary text-center">Real Time</h5>
         <div class="card">
             <div class="card-body">
                 <p class="nomessages text-secondary" v-if="messages.length == 0">
