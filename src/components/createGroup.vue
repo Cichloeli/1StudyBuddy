@@ -22,7 +22,6 @@
         <button id = "submit" v-on:click="addingGroup()">Create Group</button>
     </div>
   </div>
-
   <!-- The code above is creating a group, the code below is joining a group --> 
   <div class = "chooseGroup">
     <div class = "heading_for_choose">
@@ -63,60 +62,18 @@ let firebaseApp = firebase.initializeApp(config, "realtime");
 let cloud = firebase.firestore();
 let database = firebaseApp.database();
 let courseref = database.ref('classes');
-//set var for methods
+//set global var for methods
 var Keys = null
 var GroupKeys = null
 var Grouplist = []
 var groupName = []
-var Namelist = []
 var userKey = []
 var userList = []
 var counter = 0
 var counter_again = 0
 var group_Already_In = []
-courseref.once('value', getdata, error)
 
-//get group, classes information and store them in array
-function getdata(data){
-  console.log(data.val());
-  var classes = data.val();
-  Keys = Object.keys(classes)
-  console.log(Keys);
-  for(var n = 0; n< Keys.length; n++){
-    var groupref = database.ref('classes/'+Keys[n]+'/groups');
-    groupref.once('value', getGroupData, getGroupErr);
-    function getGroupData(groupData){
-      if(groupData.val()!=null){
-        GroupKeys = Object.keys(groupData.val());
-      }
-      Grouplist[counter] = GroupKeys;
-      counter = counter + 1;
-    }
-    function getGroupErr(errData){
-      console.log('errData!');
-      console.log(errData);
-    }
-    var classRef = database.ref('classes/'+Keys[n]);
-    classRef.once('value', classData, classErr);
-    function classData(class_ID){
-      if(class_ID.val()!= null){
-        userKey = Object.keys(class_ID.val());
-      }
-      userList[counter_again] = userKey;
-      counter_again = counter_again+1;
-    }
-    function classErr(errclass){
-      console.log('errClass!');
-      console.log(errclass)
-    }
-  }
-}
-function error(err){
-  console.log('error!');
-  console.log(err)
-}
-
-
+//initial some var which will be used for upcoming methods
 export default {
   name: 'create_a_Group',
   data () {
@@ -132,7 +89,54 @@ export default {
       currClass: [],
     }
   },
+  mounted(){
+    //get group, classes information and store them in array
+    //Keys: class list
+    //GroupList: an array to store groups from current class list, the index is corresponding
+    //with the index of class list
+    //userList: an array to store userID from current class list, the index is corresponding
+    //with the index of class list 
+    courseref.once('value', getdata, error)
+    function getdata(data){
+      var classes = data.val();
+      Keys = Object.keys(classes)
+      for(var n = 0; n< Keys.length; n++){
+        var groupref = database.ref('classes/'+Keys[n]+'/groups');
+        groupref.once('value', getGroupData, getGroupErr);
+        function getGroupData(groupData){
+          if(groupData.val()!=null){
+            GroupKeys = Object.keys(groupData.val());
+          }
+          Grouplist[counter] = GroupKeys;
+          counter = counter + 1;
+        }
+        function getGroupErr(errData){
+          console.log('errData!');
+          console.log(errData);
+        }
+        var classRef = database.ref('classes/'+Keys[n]);
+        classRef.once('value', classData, classErr);
+        function classData(class_ID){
+          if(class_ID.val()!= null){
+            userKey = Object.keys(class_ID.val());
+          }
+          userList[counter_again] = userKey;
+          counter_again = counter_again+1;
+        }
+        function classErr(errclass){
+          console.log('errClass!');
+          console.log(errclass)
+        }
+      }
+    }
+    function error(err){
+      console.log('error!');
+      console.log(err)
+    }
+  },
   methods: {
+    //method for search a class: in this method, it will add class to the empty array currClass based on
+    //current user's enroll class. If there is no class for current user, it will not change currClass array 
     searchingClass:function(){
       var The_user = firebase.auth().currentUser;
       var User_ID = The_user.uid;
@@ -144,7 +148,6 @@ export default {
               group_Already_In = doc.data().group
             })
         });
-      console.log(userList);
       for(var u =0; u<Keys.length; u++){
         curr_class_list = userList[u];
         if (curr_class_list!= ''){
@@ -155,19 +158,20 @@ export default {
           }
         }
       }
-      console.log(this.currClass)
     },
+    // method for create a group: At the beginning, double check if the class user choose is exist or not.
+    // If the class does not exist, it will show the warning. If the class exist, it will check whether the 
+    // the group name user enter exist. If the group name exist, it will show the warning, too. If the group
+    // name does not exist, create the group in the realtime database and update user information on cloud.
+    // At last, refresh the page
     addingGroup: function (){
       var ID = 0;
-      console.log(Keys)
-      console.log(this.newgroup.classname)
       for(var i = 0; i< Keys.length; i++){
         if(this.newgroup.classname == Keys[i]){
           ID = 1;
         }
       }
       if(ID == 1){
-        console.log(ID)
         var The_user = firebase.auth().currentUser;
         var masterID = The_user.uid;
         var group_name = this.newgroup.groupname;
@@ -200,6 +204,8 @@ export default {
       }
       location.reload();
     },
+    // method for choose a group: In this method, it will check whether user choose a class first, after that,
+    // it will put the groups under that class to the array currGroup. 
     choosingGroup: function(){
       if(this.newgroup.classname == ''){
         alert('Please choose a class first')
@@ -211,10 +217,12 @@ export default {
         }
       }
     },
+    // method for join a group: check whether user choose a group first. If not, give user alert. If user
+    // choose a group and click the button, put user into the group and update user information on the cloud.
+    // At last, refresh the page
     joiningGroup: function(groupID){ 
       var The_user = firebase.auth().currentUser;
       var group_member_ID = The_user.uid;
-      console.log(groupID);
       var group_checker = 1;
       if(group_Already_In!=''){
         for(var c =0; c<group_Already_In.length; c++){
@@ -231,6 +239,12 @@ export default {
       else{
         database.ref('classes/'+this.newgroup.classname+'/groups/'+groupID+"/"+group_member_ID).set({
           Identity: 'member',
+        });
+        var curr_length = group_Already_In.length;
+        group_Already_In[curr_length] = groupID;
+        var addGroupRef = cloud.collection("users").doc(group_member_ID);
+          addGroupRef.update({
+          group: group_Already_In
         });
       }
       location.reload();
