@@ -12,6 +12,7 @@ import ViewUser from '@/components/ViewUser'
 import editProfile from '@/components/editProfile'
 import createGroup from '@/components/createGroup'
 import profile_other from '@/components/profile_other'
+import upload from '@/components/upload'
 
 import firebase from 'firebase'
 
@@ -97,6 +98,14 @@ let router = new Router({
       meta: {
         requiresAuth: true
     }
+    },
+    {
+      path: '/upload',
+      name: 'upload',
+      component: upload,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: '/dashboard',
