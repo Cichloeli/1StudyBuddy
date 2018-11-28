@@ -1,9 +1,7 @@
 <template>
     <div>
         This is the home page
-        <!-- <button v-on:click="create">create user</button>
-        <button v-on:click="add">Add to class</button>
-        <button v-on:click="getClasses">display classes</button> -->
+        
         <router-link class="nav-link" to="/dashboard">Dashboard</router-link>
         <button class="btn btn-primary" v-on:click="delClass1()" >Remove class 1</button>
         <button class="btn btn-primary" v-on:click="delClass2()" >Remove class 2</button>
@@ -55,28 +53,42 @@
                     }
                 });
             },
-            add() {
-                firebase.auth().onAuthStateChanged((user) => {
-                    if (user) {
-                        var userID = user.uid;
-                        firebase.database().ref('/users/' + userID).update({
-                            class1: "cmps101"
-                        })
-                    }
-                });
-            },
+            
             getClasses: function() {
                 var userId = firebase.auth().currentUser.uid;
                 return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
-
-                    var class1 = (snapshot.val() && snapshot.val().class1.class) || 'No Class';
-                    document.getElementById("class1").innerHTML = class1;
                     
-                    var class2 = (snapshot.val() && snapshot.val().class2.class) || 'No Class';
-                    document.getElementById("class2").innerHTML = class2;
+                    if(snapshot.child("class1").exists() == true){
+                        console.log("class1 is true");
+                        var class1 = (snapshot.val() && snapshot.val().class1.class);
+                        document.getElementById("class1").innerHTML = class1;
+                    }
+                    else {
+                        console.log("no class1");
+                        var class1 = 'No Class';
+                        document.getElementById("class1").innerHTML = class1;
+                    }
 
-                    var class3 = (snapshot.val() && snapshot.val().class3.class) || 'No Class';
-                    document.getElementById("class3").innerHTML = class3;
+                    if(snapshot.child("class2").exists() == true){
+                        console.log("class2 is true");
+                        var class2 = (snapshot.val() && snapshot.val().class2.class);
+                        document.getElementById("class2").innerHTML = class2;
+                    }
+                    else {
+                         console.log("no class2");
+                        var class2 = 'No Class';
+                        document.getElementById("class2").innerHTML = class2;
+                    }
+                    if(snapshot.child("class3").exists() == true){
+                        console.log("class3 is true");
+                        var class3 = (snapshot.val() && snapshot.val().class3.class);
+                        document.getElementById("class3").innerHTML = class3;
+                    }
+                    else {
+                        console.log("no class3");
+                        var class3 = 'No Class';
+                        document.getElementById("class3").innerHTML = class3;
+                    }
 
                 });
             },
@@ -111,7 +123,7 @@
                 });
 
                 alert("class removed")
-                //this.$router.go(0);
+                this.$router.go(0);
 
             },
 
@@ -146,7 +158,7 @@
                 });
 
                 alert("class removed")
-                //this.$router.go(0);
+                this.$router.go(0);
 
             },
 
@@ -181,7 +193,7 @@
                 });
 
                 alert("class removed")
-                //this.$router.go(0);
+                this.$router.go(0);
             }
         }
     }
