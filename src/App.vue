@@ -18,6 +18,23 @@
               <router-link class="nav-link" to="/dashboard">Dashboard</router-link>
             </li>
             <li class="nav-item">
+              <router-link class="nav-link" to="/profile">Profile</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/classes">Classes</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/ViewUser">View Users</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/createGroup">Groups</router-link>
+            </li>
+            
+            <li class="nav-item">
+              <router-link class="nav-link" to="/setup">Global Chat</router-link>
+            </li>
+
+            <li class="nav-item">
               <button v-on:click="logout()">Logout</button>   
             </li>
           </ul>
