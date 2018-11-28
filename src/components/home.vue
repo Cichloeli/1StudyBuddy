@@ -1,8 +1,8 @@
 <template>
     <div>
-        This is the home page
         
-        <router-link class="nav-link" to="/dashboard">Dashboard</router-link>
+        
+        <!-- <router-link class="nav-link" to="/dashboard">Dashboard</router-link> -->
         <button class="btn btn-primary" v-on:click="delClass1()" >Remove class 1</button>
         <button class="btn btn-primary" v-on:click="delClass2()" >Remove class 2</button>
         <button class="btn btn-primary" v-on:click="delClass3()" >Remove class 3</button>
