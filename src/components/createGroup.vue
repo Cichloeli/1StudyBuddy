@@ -8,9 +8,9 @@
     </div>
     <div class = "body">
       <p>1. Click on Select a Class and choose one of your classes in the drop down menu below</p>
-      <button id = "Begin" class = "init" v-on:click="searchingClass()">Select a Class</button>
+      <button id = "Begin" style="margin-left: 20px; margin-bottom: 10px"class = "init" v-on:click="searchingClass()">Select a Class</button>
         <div class = "Begin-group">
-          <select v-model="newgroup.classname">
+          <select style="margin-left: 20px; margin-bottom:10px; padding: 5px"v-model="newgroup.classname">
           <option v-for="classname in currClass" :key="classname.id">
             {{classname}}
           </option>
@@ -18,9 +18,9 @@
         </div>
         <div>
           <h4 style="font-size: 20px">2. Enter a group name</h4>
-            <input v-model="newgroup.groupname">
+            <input style="margin-left: 20px" v-model="newgroup.groupname">
           </div>
-        <button id = "submit" v-on:click="addingGroup()">Create Group</button>
+        <button id = "submit" style="margin-left: 20px"v-on:click="addingGroup()">Create Group</button>
     </div>
   </div>
   <!-- The code above is creating a group, the code below is joining a group --> 
@@ -31,7 +31,7 @@
      </div>
       <p>1. Click on Select a Group and choose a group from the drop down menu. Then click Join</p>
      <div class = "body_for_choose">
-      <button id = "form_for_choose" class = "init form_for_choose" v-on:click="choosingGroup()">Select a Group</button>
+      <button id = "form_for_choose" style="margin-left: 20px"class = "init form_for_choose" v-on:click="choosingGroup()">Select a Group</button>
       <!-- The code above is finding a group, the code below is joining a group --> 
         <select style="margin-left: 22px; padding: 5px" v-model="selected">
           <option v-for="groupname in currGroup" :key="groupname.id">
@@ -39,7 +39,7 @@
           </option>
         </select>
       <div>
-        <button style="margin-top: 10px;margin-bottome: 40px;margin-left: 22px" v-on:click="joiningGroup(selected)">Join</button>
+        <button style="margin-top: 10px;margin-bottom: 30px;margin-left: 20px" v-on:click="joiningGroup(selected)">Join</button>
       </div>
     </div>
   </div>
@@ -47,8 +47,9 @@
   
   <div class = "removeGroup">
     <div class = "heading_for_remove">
-      <h3>Leave A Group</h3>
+      <h3 style="color : #0066cc;margin-top: 30px">Leave A Group</h3>
     </div>
+    <p>1. Click on Select a Group and choose a group from the drop down menu that you want to leave.</p>
     <div class = "body_for_remove">
       <button id = "form_for_remove" class = "init form_for_remove" v-on:click="choosingGroupRemove()">Select a Group</button>
         <select style="margin-left: 22px; padding: 5px" v-model="selectedR">
@@ -288,12 +289,17 @@ export default {
   margin-bottom: 80px;
 }
 
+p{
+  text-align: left;
+  font-size: 10px;
+}
+
 .body{
   text-align: left;
   margin-top: 10px;
 }
 
-.button-to-submit{
+#submit{
   margin-top: 15px;
   margin-bottom: 30px;
 }
@@ -308,6 +314,10 @@ export default {
 /* This is css code for the join your group section */
 .chooseGroup{
   margin-top: 30px;
+  border-style: solid;
+  border-color: white;
+  border-bottom-width: 5px;
+  border-bottom-color: lightgrey;
 }
 .heading_for_choose{
   margin-bottom: 20px;
@@ -317,5 +327,10 @@ export default {
 }
 p{
   font-size: 20px;
+}
+
+/* this is css code for leave a group */
+.removeGroup{
+
 }
 </style>
