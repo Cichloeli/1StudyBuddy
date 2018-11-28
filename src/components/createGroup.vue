@@ -40,7 +40,23 @@
       </div>
     </div>
   </div>
-  <!-- The code above is joing a group -->
+  <!-- The code above is joing a group, the code below is remove a group-->
+  <div class = "removeGroup">
+    <div class = "heading_for_remove">
+      <h3>Remove Group</h3>
+    </div>
+    <div class = "body_for_remove">
+      <button id = "form_for_remove" class = "init form_for_remove" v-on:click="choosingGroupRemove()">Choose group</button>
+        <select style="margin-left: 22px; padding: 5px" v-model="selectedR">
+          <option v-for="groupnameR in currGroupR" :key="groupnameR.id">
+            {{groupnameR}}
+          </option>
+        </select>
+      <div>
+        <button style="margin-top: 10px;margin-bottome: 40px;margin-left: 22px" v-on:click="joiningGroupRemove(selectedR)">Remove</button>
+      </div>
+    </div>
+  </div>
 </div>
 </template>
 
@@ -85,7 +101,9 @@ export default {
       choose_a_class:'',
       message: 'Hello',
       currGroup: '',
+      currGroupR: '',
       selected: '',
+      selectedR: '',
       currClass: [],
     }
   },
@@ -96,6 +114,13 @@ export default {
     //with the index of class list
     //userList: an array to store userID from current class list, the index is corresponding
     //with the index of class list 
+    var The_user = firebase.auth().currentUser;
+    var User_ID = The_user.uid;
+    cloud.collection("users").where('uid', '==', User_ID).get().then(querySnapshot => {
+            querySnapshot.forEach(doc => {
+              group_Already_In = doc.data().group
+            })
+        });
     courseref.once('value', getdata, error)
     function getdata(data){
       var classes = data.val();
@@ -142,12 +167,7 @@ export default {
       var User_ID = The_user.uid;
       var curr_class_list = [];
       var printList = [];
-     
-      cloud.collection("users").where('uid', '==', User_ID).get().then(querySnapshot => {
-            querySnapshot.forEach(doc => {
-              group_Already_In = doc.data().group
-            })
-        });
+
       for(var u =0; u<Keys.length; u++){
         curr_class_list = userList[u];
         if (curr_class_list!= ''){
@@ -248,6 +268,12 @@ export default {
         });
       }
       location.reload();
+    },
+    choosingGroupRemove: function(){
+      this.currGroupR = group_Already_In;
+    },
+    joiningGroupRemove: function(groupID){
+
     }
   }
 }
