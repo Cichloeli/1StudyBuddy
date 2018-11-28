@@ -273,7 +273,42 @@ export default {
       this.currGroupR = group_Already_In;
     },
     joiningGroupRemove: function(groupID){
+      var The_user = firebase.auth().currentUser;
+      var group_member_ID = The_user.uid;
+      if(groupID == ''){
+        alert('Please choose a group first')
+      }else if(group_Already_In == ""){
+        alert('You do not have any groups')
+      }else{
+        var removeGroupRef = cloud.collection("users").doc(group_member_ID);
+        var leng = group_Already_In.length;
 
+        for(var l = 0; l<leng; l++){
+          if(group_Already_In[l] == groupID){
+            group_Already_In.splice(l, 1);
+          }
+        }
+        removeGroupRef.update({
+          group: group_Already_In
+        });
+
+        var className = '';
+        var groupList_R = '';
+
+        for(var n = 0; n< Grouplist.length; n++){
+          groupList_R = Grouplist[n];
+          if(groupList_R != ''){
+            for(var r =0; r<groupList_R.length; r++){
+              if (groupList_R[r] == groupID){
+                className = Keys[n];
+              }
+            }
+          }
+        }
+
+        database.ref('classes/'+className+'/groups/'+groupID+"/"+group_member_ID).remove()
+        location.reload();
+      }
     }
   }
 }
