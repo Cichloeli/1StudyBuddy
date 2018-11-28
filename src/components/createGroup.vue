@@ -7,6 +7,7 @@
       <h3 style="color : #0066cc">Create A Group</h3>
     </div>
     <div class = "body">
+      <p>1. Click on Select a Class and choose one of your classes in the drop down menu below</p>
       <button id = "Begin" class = "init" v-on:click="searchingClass()">Select a Class</button>
         <div class = "Begin-group">
           <select v-model="newgroup.classname">
@@ -16,7 +17,7 @@
         </select>
         </div>
         <div>
-          <h4 style="font-size: 20px">Enter a group name</h4>
+          <h4 style="font-size: 20px">2. Enter a group name</h4>
             <input v-model="newgroup.groupname">
           </div>
         <button id = "submit" v-on:click="addingGroup()">Create Group</button>
@@ -26,10 +27,11 @@
   
   <div class = "chooseGroup">
     <div class = "heading_for_choose">
-       <h3 style="color : #0066cc">Join Your Group</h3>
+       <h3 style="color : #0066cc">Join A Group</h3>
      </div>
+      <p>1. Click on Select a Group and choose a group from the drop down menu. Then click Join</p>
      <div class = "body_for_choose">
-      <button id = "form_for_choose" class = "init form_for_choose" v-on:click="choosingGroup()">Choose group</button>
+      <button id = "form_for_choose" class = "init form_for_choose" v-on:click="choosingGroup()">Select a Group</button>
       <!-- The code above is finding a group, the code below is joining a group --> 
         <select style="margin-left: 22px; padding: 5px" v-model="selected">
           <option v-for="groupname in currGroup" :key="groupname.id">
@@ -42,12 +44,13 @@
     </div>
   </div>
   <!-- The code above is joing a group, the code below is remove a group-->
+  
   <div class = "removeGroup">
     <div class = "heading_for_remove">
-      <h3>Remove Group</h3>
+      <h3>Leave A Group</h3>
     </div>
     <div class = "body_for_remove">
-      <button id = "form_for_remove" class = "init form_for_remove" v-on:click="choosingGroupRemove()">Choose group</button>
+      <button id = "form_for_remove" class = "init form_for_remove" v-on:click="choosingGroupRemove()">Select a Group</button>
         <select style="margin-left: 22px; padding: 5px" v-model="selectedR">
           <option v-for="groupnameR in currGroupR" :key="groupnameR.id">
             {{groupnameR}}
@@ -281,7 +284,7 @@ export default {
 
 <style>
 #create_a_Group{
-  margin-top: 90px;
+  margin-top: 70px;
   margin-bottom: 80px;
 }
 
