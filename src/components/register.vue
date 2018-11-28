@@ -58,6 +58,7 @@
                             friday: '',
                             saturday: '',
 
+
                             checkedName: true,
                             checkedClasses: true,
                             checkedMajor: true,
