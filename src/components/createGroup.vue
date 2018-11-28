@@ -167,7 +167,6 @@ export default {
       var User_ID = The_user.uid;
       var curr_class_list = [];
       var printList = [];
-
       for(var u =0; u<Keys.length; u++){
         curr_class_list = userList[u];
         if (curr_class_list!= ''){
