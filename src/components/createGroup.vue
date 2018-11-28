@@ -288,6 +288,8 @@ export default {
             group_Already_In.splice(l, 1);
           }
         }
+
+        console.log(group_Already_In, "debug")
         removeGroupRef.update({
           group: group_Already_In
         });
