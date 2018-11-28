@@ -12,6 +12,7 @@ import ViewUser from '@/components/ViewUser'
 import editProfile from '@/components/editProfile'
 import createGroup from '@/components/createGroup'
 import profile_other from '@/components/profile_other'
+import groups from '@/components/groupPage'
 
 import firebase from 'firebase'
 
@@ -46,6 +47,14 @@ let router = new Router({
       path: '/home',
       name: 'home',
       component: home,
+      meta: {
+        requiresAuth: true
+    }
+    },
+    {
+      path: '/groups',
+      name: 'groups',
+      component: groups,
       meta: {
         requiresAuth: true
     }
