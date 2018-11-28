@@ -35,7 +35,7 @@
             </li>
 
             <li class="nav-item">
-              <button v-on:click="logout()">Logout</button>   
+              <button id="logout" v-on:click="logout()">Logout</button>   
             </li>
           </ul>
         </div>
@@ -102,5 +102,21 @@ export default {
   100%{
   transform: translateY(-400px);
  }
+}
+
+#logout {
+  background-color: Transparent;
+  border: none;
+  overflow: hidden;
+  outline:none;
+  cursor:pointer;
+  margin-top: 7px;
+  display: grid;
+  justify-items: right;
+  color: #2c3e50;
+}
+
+#logout:hover {
+  color: black;
 }
 </style>
