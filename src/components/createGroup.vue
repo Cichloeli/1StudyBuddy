@@ -4,10 +4,10 @@
   <div class = "createGroup">
     <!-- the 'heading' is in the class 'createGroup' but not in the 'body' -->
     <div class = "heading">
-      <h3 style="color : #0066cc">Create Your Group</h3>
+      <h3 style="color : #0066cc">Create A Group</h3>
     </div>
     <div class = "body">
-      <button id = "Begin" class = "init" v-on:click="searchingClass()">choose your class</button>
+      <button id = "Begin" class = "init" v-on:click="searchingClass()">Select a Class</button>
         <div class = "Begin-group">
           <select v-model="newgroup.classname">
           <option v-for="classname in currClass" :key="classname.id">
@@ -23,6 +23,7 @@
     </div>
   </div>
   <!-- The code above is creating a group, the code below is joining a group --> 
+  
   <div class = "chooseGroup">
     <div class = "heading_for_choose">
        <h3 style="color : #0066cc">Join Your Group</h3>
@@ -280,7 +281,7 @@ export default {
 
 <style>
 #create_a_Group{
-  margin-top: 80px;
+  margin-top: 90px;
   margin-bottom: 80px;
 }
 
