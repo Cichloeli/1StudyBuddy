@@ -40,8 +40,30 @@ export default {
       } else {
         this.errorText = "Please enter a name!"
       }
-    }
-  }
+    },
+
+    setup() {
+            if (this.name) {
+                this.$router.push({name: 'chat', params: {name: this.name}})
+            } 
+        },
+
+        fetchData () {
+        firebase.firestore().collection('users').where
+        ('uid', '==', this.$route.curUser.uid).get()
+        .then(querySnapshot => {
+            querySnapshot.forEach(doc => {
+               
+                this.name = doc.data().name
+                
+            })
+        })
+        }
+  },
+
+  watch: {
+        '$route': 'fetchData'
+        } 
 }
 </script>
 
@@ -52,5 +74,9 @@ export default {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.or_word {
+  padding: 10%;
 }
 </style>
