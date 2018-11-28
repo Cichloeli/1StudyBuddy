@@ -12,13 +12,10 @@ import ViewUser from '@/components/ViewUser'
 import editProfile from '@/components/editProfile'
 import createGroup from '@/components/createGroup'
 import profile_other from '@/components/profile_other'
-<<<<<<< HEAD
 import groups from '@/components/groupPage'
-=======
 import setup from '@/components/setup'
 import chat from '@/components/chat'
 
->>>>>>> 3856daaa3e90ca7ab53cbbcc02aa31ba1365661d
 
 import firebase from 'firebase'
 

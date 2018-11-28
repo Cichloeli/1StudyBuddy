@@ -7,6 +7,7 @@
         <div class="container">
             <div class="class1">
                 <h1 id="class1"></h1>
+                <ul id ="groupList"></ul>
             </div>
         </div>
     </div>
@@ -24,27 +25,6 @@
             lastName: 'dunbar'
         },
         methods: {
-            create() {
-                firebase.auth().onAuthStateChanged((user) => {
-                    if (user) {
-                        var userID = user.uid;
-                        firebase.database().ref('users/' + userID).set({
-                            username: "eric",
-                            email: "test@gmail",
-                        });
-                    }
-                });
-            },
-            add() {
-                firebase.auth().onAuthStateChanged((user) => {
-                    if (user) {
-                        var userID = user.uid;
-                        firebase.database().ref('/users/' + userID).update({
-                            class1: "cmps101"
-                        })
-                    }
-                });
-            },
             getClasses: function() {
                 let cloud = firebase.firestore();
 
@@ -54,8 +34,18 @@
                         querySnapshot.forEach(doc => {
                         var groups = doc.data().group
                         console.log(groups);
+                        
+                        var str = "<li>";
+                        groups.forEach(function(group) {
+                            str += "<li>" + group + "</li>"
+                        });
+                        str += "</li>";
+
+                        document.getElementById("groupList").innerHTML = str;
                     })
                 });
+
+                
 
                 // var userId = firebase.auth().currentUser.uid;
                 // return firebase.database().ref('classes/cmps101/groups').once('value').then(function(snapshot) {
@@ -92,6 +82,14 @@
     background: #DCDCDC;
     color: #0059b3;
     text-transform: uppercase;
+}
+ul {
+    list-style-type: none;
+    font-size: 24px;
+    display: grid;
+    justify-items: left;
+    grid-gap: 25px;
+    
 }
 
 </style>
