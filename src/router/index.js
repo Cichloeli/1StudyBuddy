@@ -12,6 +12,9 @@ import ViewUser from '@/components/ViewUser'
 import editProfile from '@/components/editProfile'
 import createGroup from '@/components/createGroup'
 import profile_other from '@/components/profile_other'
+import setup from '@/components/setup'
+import chat from '@/components/chat'
+
 
 import firebase from 'firebase'
 
@@ -94,6 +97,31 @@ let router = new Router({
       path: '/createGroup',
       name: 'create_a_Group',
       component: createGroup,
+      meta: {
+        requiresAuth: true
+    }
+    },
+    {
+      path: '/setup',
+      name: 'setup',
+      component: setup,
+      meta: {
+        requiresAuth: true
+    }
+    },
+   
+    {
+      path: '/chat',
+      name: 'chat',
+      component: chat,
+      props: true,
+      beforeEnter: (to, from, next) => {
+        if (to.params.name) {
+          next();
+        } else {
+          next({name: 'Login'});
+        }
+      },
       meta: {
         requiresAuth: true
     }
