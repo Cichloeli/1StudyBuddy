@@ -29,7 +29,7 @@
     <div class = "heading_for_choose">
        <h3 style="color : #0066cc">Join A Group</h3>
      </div>
-      <p>1. Click on Select a Group and choose a group from the drop down menu. Then click Join</p>
+      <p>Click on Select a Group and choose a group from the drop down menu. Then click Join</p>
      <div class = "body_for_choose">
       <button id = "form_for_choose" style="margin-left: 20px"class = "init form_for_choose" v-on:click="choosingGroup()">Select a Group</button>
       <!-- The code above is finding a group, the code below is joining a group --> 
@@ -49,7 +49,7 @@
     <div class = "heading_for_remove">
       <h3 style="color : #0066cc;margin-top: 30px">Leave A Group</h3>
     </div>
-    <p>1. Click on Select a Group and choose a group from the drop down menu that you want to leave.</p>
+    <p>Click on Select a Group and choose a group from the drop down menu that you want to leave.</p>
     <div class = "body_for_remove">
       <button id = "form_for_remove" class = "init form_for_remove" v-on:click="choosingGroupRemove()">Select a Group</button>
         <select style="margin-left: 22px; padding: 5px" v-model="selectedR">
