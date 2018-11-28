@@ -46,8 +46,16 @@
                 });
             },
             getClasses: function() {
-                
+                let cloud = firebase.firestore();
 
+                var The_user = firebase.auth().currentUser;
+                var User_ID = The_user.uid;
+                cloud.collection("users").where('uid', '==', User_ID).get().then(querySnapshot => {
+                        querySnapshot.forEach(doc => {
+                        var groups = doc.data().group
+                        console.log(groups);
+                    })
+                });
 
                 // var userId = firebase.auth().currentUser.uid;
                 // return firebase.database().ref('classes/cmps101/groups').once('value').then(function(snapshot) {
