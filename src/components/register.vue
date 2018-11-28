@@ -58,6 +58,8 @@
                             friday: '',
                             saturday: '',
 
+                            group: [],
+
 
                             checkedName: true,
                             checkedClasses: true,
