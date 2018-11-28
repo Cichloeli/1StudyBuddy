@@ -11,28 +11,47 @@
           <button class="btn btn-primary">Enter Chat</button>
         </form>
 
-        <h2 class="or_word">
+        <!-- <h2 class="or_word">
           OR
         </h2>
 
         <h2 class="card-title text-center">Use Your Account Name</h2>
 
-        <button class="btn btn-primary" v-on:click="setup()" >Enter Chat</button>
+        <button class="btn btn-primary" v-on:click="setup()" >Enter Chat</button> -->
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import firebase from 'firebase';
+
+var curUser = firebase.auth().currentUser;
 
 export default {
   name: 'setup',
   data () {
     return {
       name: "",
-      errorText: null
+      errorText: null,
     }
   },
+  beforeRouteEnter (to, from, next) {
+        curUser = firebase.auth().currentUser,
+        firebase.firestore().collection('users').where('uid', '==', curUser.uid).get()
+        .then(querySnapshot => {
+            querySnapshot.forEach(doc => {
+                next(vm => {
+                  vm.name = doc.data().name
+                 
+                })
+            })
+        })
+        }, 
+
+        created () {
+        curUser = firebase.auth().currentUser
+        },
   methods: {
     login() {
       if (this.name) {

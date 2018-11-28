@@ -1,6 +1,6 @@
 # node modules
 node_modules/*
-
+functions/node_modules/*
 # for mac os
 .DS_Store
 
