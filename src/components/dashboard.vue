@@ -16,6 +16,8 @@
 <script>
 import firebase from 'firebase';
 
+//get user data, links to other pages
+
 var curUser = firebase.auth().currentUser;
 
     export default {
