@@ -7,8 +7,7 @@
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
-    "build": "node build/build.js",
-    "test": "mocha --reporter spec",
+    "build": "node build/build.js"
   },
   "dependencies": {
     "firebase": "^5.5.7",
