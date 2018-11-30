@@ -53,9 +53,9 @@ function error2(err) {
 import db from "./firebaseinit";
 import firebase from "firebase";
 var count = 0;
-//myCar = Object();
+
 export default {
-  name: "view-courses", //doesn't matter
+  name: "view-courses", 
   mounted: function() {
     this.getClasses();
   },
