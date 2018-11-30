@@ -24,6 +24,7 @@
                 errorText: null
             }
         },
+        //takes in input, adds name of the user, the time into database
         methods: {
             createMessage () {
                 if (this.newMessage) {
