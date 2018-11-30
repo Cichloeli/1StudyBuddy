@@ -1,3 +1,5 @@
+//setting up chat
+
 import firebase from 'firebase';
 import 'firebase/firestore'
 import 'firebase/database'
