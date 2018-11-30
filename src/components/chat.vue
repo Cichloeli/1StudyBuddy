@@ -23,6 +23,7 @@
 </template>
 
 <script>
+//get messages from firebase
     import CreateMessage from '@/components/CreateMessage';
     import firebase from 'firebase';
     const fb = firebase.firestore();
@@ -31,6 +32,7 @@
     export default {
         name: 'Chat',
         props: ['name'],
+        
         components: {
             CreateMessage
         },
@@ -51,6 +53,7 @@
                             name: doc.data().name,
                             message: doc.data().message,
                             timestamp: moment(doc.data().timestamp).format('LTS')
+                            //store the above information for html display
                         });
                     }
                 });
