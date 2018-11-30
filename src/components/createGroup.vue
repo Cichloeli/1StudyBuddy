@@ -6,11 +6,13 @@
     <div class = "heading">
       <h3 style="color : #0066cc">Create A Group</h3>
     </div>
+    <template v-if="this.removeTrigger!=0">
+      <div v-on="updateGroup()"></div>
+    </template>
     <div class = "body">
-      <p>1. Click on Select a Class and choose one of your classes in the drop down menu below</p>
-      <button id = "Begin" style="margin-left: 20px; margin-bottom: 10px"class = "init" v-on:click="searchingClass()">Select a Class</button>
+      <p>1. Choose one of your classes in the drop down menu below</p>
         <div class = "Begin-group">
-          <select style="margin-left: 20px; margin-bottom:10px; padding: 5px"v-model="newgroup.classname">
+          <select style="margin-left: 20px; margin-bottom:10px; padding: 5px" v-model="newgroup.classname">
           <option v-for="classname in currClass" :key="classname.id">
             {{classname}}
           </option>
@@ -20,18 +22,20 @@
           <h4 style="font-size: 20px">2. Enter a group name</h4>
             <input style="margin-left: 20px" v-model="newgroup.groupname">
           </div>
-        <button id = "submit" style="margin-left: 20px"v-on:click="addingGroup()">Create Group</button>
+        <button id = "submit" style="margin-left: 20px" v-on:click="addingGroup()">Create Group</button>
     </div>
   </div>
   <!-- The code above is creating a group, the code below is joining a group --> 
-  
   <div class = "chooseGroup">
     <div class = "heading_for_choose">
        <h3 style="color : #0066cc">Join A Group</h3>
      </div>
-      <p>Click on Select a Group and choose a group from the drop down menu. Then click Join</p>
+      <p>Choose a group from the drop down menu. Then click Join</p>
      <div class = "body_for_choose">
-      <button id = "form_for_choose" style="margin-left: 20px"class = "init form_for_choose" v-on:click="choosingGroup()">Select a Group</button>
+       <template v-if="newgroup.classname">
+         <div v-on="choosingGroup()"></div>
+       </template>
+      <!--<button id = "form_for_choose" style="margin-left: 20px" class = "init form_for_choose" v-on:click="choosingGroup()">Select a Group</button>-->
       <!-- The code above is finding a group, the code below is joining a group --> 
         <select style="margin-left: 22px; padding: 5px" v-model="selected">
           <option v-for="groupname in currGroup" :key="groupname.id">
@@ -49,9 +53,12 @@
     <div class = "heading_for_remove">
       <h3 style="color : #0066cc;margin-top: 30px">Leave A Group</h3>
     </div>
-    <p>Click on Select a Group and choose a group from the drop down menu that you want to leave.</p>
+    <p>Choose a group from the drop down menu that you want to leave.</p>
     <div class = "body_for_remove">
-      <button id = "form_for_remove" class = "init form_for_remove" v-on:click="choosingGroupRemove()">Select a Group</button>
+      <template v-if="this.updateTrigger == 1">
+        <div v-on="choosingGroupRemove()"></div>
+      </template>
+      <!--<button id = "form_for_remove" class = "init form_for_remove" v-on:click="choosingGroupRemove()">Select a Group</button>-->
         <select style="margin-left: 22px; padding: 5px" v-model="selectedR">
           <option v-for="groupnameR in currGroupR" :key="groupnameR.id">
             {{groupnameR}}
@@ -93,7 +100,9 @@ var userList = []
 var counter = 0
 var counter_again = 0
 var group_Already_In = []
-
+var classList_user = []
+var updateList = []
+var updateClass = []
 //initial some var which will be used for upcoming methods
 export default {
   name: 'create_a_Group',
@@ -109,7 +118,9 @@ export default {
       currGroupR: '',
       selected: '',
       selectedR: '',
-      currClass: [],
+      updateTrigger: 0,
+      removeTrigger: 0,
+      currClass: classList_user,
     }
   },
   mounted(){
@@ -123,7 +134,9 @@ export default {
     var User_ID = The_user.uid;
     cloud.collection("users").where('uid', '==', User_ID).get().then(querySnapshot => {
             querySnapshot.forEach(doc => {
-              group_Already_In = doc.data().group
+              group_Already_In = doc.data().group;
+              //show user's current group
+              this.currGroupR = group_Already_In;
             })
         });
     courseref.once('value', getdata, error)
@@ -155,16 +168,40 @@ export default {
         }
         function classErr(errclass){
           console.log('errClass!');
-          console.log(errclass)
+          console.log(errclass);
         }
       }
     }
     function error(err){
       console.log('error!');
-      console.log(err)
+      console.log(err);
     }
+
+    //method for search a class: in this method, it will add class to the empty array currClass based on
+    //current user's enroll class. If there is no class for current user, it will not change currClass array     
+    var userClassRef = database.ref('users/'+User_ID);
+    userClassRef.once('value', userClass, erruserClass);
+    function userClass(classname){
+      if(classname!=null){
+        var test = Object.keys(classname.val());
+        for(var t = 0; t<test.length;t++){
+          var currclassref = database.ref('users/'+User_ID+'/'+test[t]+'/class')
+          currclassref.once('value').then(function(snapshot){
+            var id = snapshot.val()
+            classList_user.push(id)
+          })
+          
+        }
+      }
+    }
+    function erruserClass(errclssname){
+      console.log('errClassname!');
+      console.log(errclassname)
+    }
+
   },
   methods: {
+    /*
     //method for search a class: in this method, it will add class to the empty array currClass based on
     //current user's enroll class. If there is no class for current user, it will not change currClass array 
     searchingClass:function(){
@@ -183,13 +220,35 @@ export default {
           }
         }
       }
-    },
+    },*/
     // method for create a group: At the beginning, double check if the class user choose is exist or not.
     // If the class does not exist, it will show the warning. If the class exist, it will check whether the 
     // the group name user enter exist. If the group name exist, it will show the warning, too. If the group
     // name does not exist, create the group in the realtime database and update user information on cloud.
     // At last, refresh the page
+    updateGroup: function(){
+      var classname = this.removeTrigger;
+      for(var index =0; index < Keys.length; index++){
+          if(classname == Keys[index]){
+            var ref = database.ref('classes/'+classname+'/groups');
+            ref.once('value').then(function(snapshot) {
+              updateList = Object.keys(snapshot.val());
+            });
+          }
+        }
+      updateClass = this.removeTrigger;
+      this.removeTrigger = 0;
+    },
     addingGroup: function (){
+      if(updateClass!=''){
+         for(var u =0; u < Keys.length; u++){
+          if(updateClass == Keys[u]){
+            Grouplist[u] = updateList;
+          }
+        }
+        updateList = [];
+        updateClass = [];
+      }
       var ID = 0;
       for(var i = 0; i< Keys.length; i++){
         if(this.newgroup.classname == Keys[i]){
@@ -223,11 +282,18 @@ export default {
         }else{
           alert("Group Already Exist!")
         }
+        
+        //update current status
+        for(var index =0; index < Keys.length; index++){
+          if(this.newgroup.classname == Keys[index]){
+            Grouplist[index].push(group_name);
+          }
+        }
+        this.updateTrigger = 1;
         this.newgroup.classname = '';
       }else{
         alert('The class '+this.newgroup.classname+' does not exist');
       }
-      location.reload();
     },
     // method for choose a group: In this method, it will check whether user choose a class first, after that,
     // it will put the groups under that class to the array currGroup. 
@@ -267,16 +333,20 @@ export default {
         });
         var curr_length = group_Already_In.length;
         group_Already_In[curr_length] = groupID;
+        console.log(group_Already_In,"Debug")
         var addGroupRef = cloud.collection("users").doc(group_member_ID);
           addGroupRef.update({
           group: group_Already_In
         });
+        this.updateTrigger = 1;
       }
-      location.reload();
     },
+    //method to show user's current group
     choosingGroupRemove: function(){
       this.currGroupR = group_Already_In;
+      this.updateTriggerr = 0;
     },
+    //method to remove group, it is almost same with join group except it tries to remove rather than add
     joiningGroupRemove: function(groupID){
       var The_user = firebase.auth().currentUser;
       var group_member_ID = The_user.uid;
@@ -293,8 +363,7 @@ export default {
             group_Already_In.splice(l, 1);
           }
         }
-
-        console.log(group_Already_In, "debug")
+        
         removeGroupRef.update({
           group: group_Already_In
         });
@@ -314,12 +383,13 @@ export default {
         }
 
         database.ref('classes/'+className+'/groups/'+groupID+"/"+group_member_ID).remove()
-        location.reload();
+        this.removeTrigger = className;
       }
     }
-  }
+  },
 }
 </script>
+
 
 <style>
 #create_a_Group{
