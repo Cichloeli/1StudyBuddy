@@ -172,7 +172,7 @@ export default {
             ')">Add</button>';
         });
 
-        str += "</ul>";
+       // str += "</ul>";
 
         console.log(str);
         //document.getElementById("classest").innerHTML = str;
