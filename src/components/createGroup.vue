@@ -1,4 +1,3 @@
-
 <template>
 <div id="create_a_Group">
   <div class = "createGroup">
@@ -176,7 +175,6 @@ export default {
       console.log('error!');
       console.log(err);
     }
-
     //method for search a class: in this method, it will add class to the empty array currClass based on
     //current user's enroll class. If there is no class for current user, it will not change currClass array     
     var userClassRef = database.ref('users/'+User_ID);
@@ -198,7 +196,6 @@ export default {
       console.log('errClassname!');
       console.log(errclassname)
     }
-
   },
   methods: {
     /*
@@ -209,7 +206,6 @@ export default {
       var User_ID = The_user.uid;
       var curr_class_list = [];
       var printList = [];
-
       for(var u =0; u<Keys.length; u++){
         curr_class_list = userList[u];
         if (curr_class_list!= ''){
@@ -357,7 +353,6 @@ export default {
       }else{
         var removeGroupRef = cloud.collection("users").doc(group_member_ID);
         var leng = group_Already_In.length;
-
         for(var l = 0; l<leng; l++){
           if(group_Already_In[l] == groupID){
             group_Already_In.splice(l, 1);
@@ -367,10 +362,8 @@ export default {
         removeGroupRef.update({
           group: group_Already_In
         });
-
         var className = '';
         var groupList_R = '';
-
         for(var n = 0; n< Grouplist.length; n++){
           groupList_R = Grouplist[n];
           if(groupList_R != ''){
@@ -381,7 +374,6 @@ export default {
             }
           }
         }
-
         database.ref('classes/'+className+'/groups/'+groupID+"/"+group_member_ID).remove()
         this.removeTrigger = className;
       }
@@ -396,29 +388,24 @@ export default {
   margin-top: 70px;
   margin-bottom: 80px;
 }
-
 p{
   text-align: left;
   font-size: 10px;
 }
-
 .body{
   text-align: left;
   margin-top: 10px;
 }
-
 #submit{
   margin-top: 15px;
   margin-bottom: 30px;
 }
-
 .createGroup{
   border-style: solid;
   border-color: white;
   border-bottom-width: 5px;
   border-bottom-color: lightgrey;
 }
-
 /* This is css code for the join your group section */
 .chooseGroup{
   margin-top: 30px;
@@ -435,10 +422,5 @@ p{
 }
 p{
   font-size: 20px;
-}
-
-/* this is css code for leave a group */
-.removeGroup{
-
 }
 </style>
