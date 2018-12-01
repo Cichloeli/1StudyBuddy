@@ -1,3 +1,6 @@
+#creates a json file that we need for firebase's database. 
+#The json file contains the classes that are hapeening in this current quarter
+
 import json
 
 FILEINPUT   = 'classes.txt'
