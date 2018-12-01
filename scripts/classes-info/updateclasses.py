@@ -1,8 +1,9 @@
-
+#this reads the txt file of the course page's html and select the courses that we want
 
 inputFile=open('classes1.txt','r')
 outputFile=open('classes.txt','w')
 
+#the quarter we want
 quarter="Fall18"
 
 for line in inputFile:
