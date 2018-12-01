@@ -344,6 +344,7 @@ export default {
           group: group_Already_In
         });
         this.updateTrigger = 1;
+        this.newgroup.classname = '';
       }
     },
     //method to show user's current group
