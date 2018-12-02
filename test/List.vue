@@ -24,7 +24,7 @@ export default {
       pass_or_notR: '',
       pass_or_notRJ: '',
       defaultGroup: 'haha',
-      defaultGroupJ: ''
+      defaultGroupJ: 'hi'
     }
   },
   methods: {
@@ -79,11 +79,19 @@ export default {
             counterC = counterC + 1
           }
         }
+      if(counterC < 1){
+        this.pass_or_notJ = 'Exception! User did not join the group'
+      }else if(counterC > 1){
+        this.pass_or_notJ = 'Exception! User join the group more than one time'
+      }else{
+        this.pass_or_notJ = 'PASS!'
+      }
     }
     },
     removeCheck: function() {
     //unit test for remove group which only contain user itself, get result after do the operation and compare with the data
     //expected. Printing Pass if pass, printing specific exception if not pass.
+    
 
     },
     removeCheckJ: function() {

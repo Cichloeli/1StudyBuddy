@@ -332,6 +332,7 @@ export default {
         });
         this.updateTrigger = 1;
         this.newgroup.classname = '';
+        this.currGroup = '';
         localStorage.setItem('cloud' , JSON.stringify(group_Already_In))
       }
     },
@@ -374,6 +375,13 @@ export default {
         }
         database.ref('classes/'+className+'/groups/'+groupID+"/"+group_member_ID).remove()
         this.removeTrigger = className;
+        localStorage.setItem('cloud' , JSON.stringify(group_Already_In))
+        for(var index =0; index < Keys.length; index++){
+            if(classname == Keys[index]){
+              //for unit test, it can be comment if we don't need to test
+              localStorage.setItem('real' , JSON.stringify(Grouplist[index]))
+            }
+          }
       }
     }
   },
