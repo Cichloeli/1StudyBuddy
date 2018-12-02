@@ -1,10 +1,12 @@
 # Installation Guide
 
+Clone or Download the repo
+
 npm install
 
 npm start
 
-It will be running on http://localhost:8010/
+It will be running on http://localhost:8081/
 
 
 # StudyBuddy
