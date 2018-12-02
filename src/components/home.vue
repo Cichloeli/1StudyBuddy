@@ -1,22 +1,18 @@
 <template>
     <div>
-        
-        
-        <!-- <router-link class="nav-link" to="/dashboard">Dashboard</router-link> -->
-        <button class="btn btn-primary" v-on:click="delClass1()" >Remove class 1</button>
-        <button class="btn btn-primary" v-on:click="delClass2()" >Remove class 2</button>
-        <button class="btn btn-primary" v-on:click="delClass3()" >Remove class 3</button>
         <div class="container">
             
             <div class="class1">
                 <h1 id="class1"></h1>
-                
+                <button class="btn btn-primary" v-on:click="delClass1()" >Remove class 1</button>
             </div>
             <div class="class2">
                 <h1 id="class2"></h1>
+                <button class="btn btn-primary" v-on:click="delClass2()" >Remove class 2</button>
             </div>
             <div class="class3">
                 <h1 id="class3"></h1>
+                <button class="btn btn-primary" v-on:click="delClass3()" >Remove class 3</button>
             </div>
         </div>
     </div>
@@ -122,8 +118,8 @@
                 });
                 });
 
-                alert("class removed")
-                this.$router.go(0);
+                alert("Class removed, please refresh page")
+                //this.$router.go(0);
 
             },
 
@@ -157,8 +153,8 @@
                 });
                 });
 
-                alert("class removed")
-                this.$router.go(0);
+                alert("Class removed, please refresh page")
+                //this.$router.go(0);
 
             },
 
@@ -192,8 +188,8 @@
                 });
                 });
 
-                alert("class removed")
-                this.$router.go(0);
+                alert("Class removed, please refresh page")
+                //this.$router.go(0);
             }
         }
     }
