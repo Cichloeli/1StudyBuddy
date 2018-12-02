@@ -15,6 +15,7 @@ import profile_other from '@/components/profile_other'
 import groups from '@/components/groupPage'
 import setup from '@/components/setup'
 import chat from '@/components/chat'
+import classtest from '../../test/classtest'
 
 
 import firebase from 'firebase'
@@ -139,6 +140,14 @@ let router = new Router({
       path: '/dashboard',
       name: 'dashboard',
       component: dashboard,
+      meta: {
+        requiresAuth: true
+    }
+    },
+    {
+      path: '/classtest',
+      name: 'classtest',
+      component: classtest,
       meta: {
         requiresAuth: true
     }
