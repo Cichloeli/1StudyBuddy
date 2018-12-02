@@ -160,6 +160,7 @@ export default {
         console.log(Keys);
 
         var str = " <ul>";
+        //for each classes(read from firebase), create its won button and information
 
         Keys.forEach(function(key) {
           var err = "abc";
