@@ -17,7 +17,7 @@ import setup from '@/components/setup'
 import chat from '@/components/chat'
 import classtest from '../../test/classtest'
 import chattest from '../../test/chattest'
-
+import List from '../../test/List'
 
 import firebase from 'firebase'
 
@@ -161,6 +161,14 @@ let router = new Router({
         requiresAuth: true
     }
     },
+    {
+      path: '/to-do',
+      name: 'ToDo',
+      component: List,
+      meta: {
+        requiresAuth: true
+    }
+    }
   ]
 })
 
