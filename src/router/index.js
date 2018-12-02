@@ -16,6 +16,7 @@ import groups from '@/components/groupPage'
 import setup from '@/components/setup'
 import chat from '@/components/chat'
 import classtest from '../../test/classtest'
+import chattest from '../../test/chattest'
 
 
 import firebase from 'firebase'
@@ -148,6 +149,14 @@ let router = new Router({
       path: '/classtest',
       name: 'classtest',
       component: classtest,
+      meta: {
+        requiresAuth: true
+    }
+    },
+    {
+      path: '/chattest',
+      name: 'chattest',
+      component: chattest,
       meta: {
         requiresAuth: true
     }
