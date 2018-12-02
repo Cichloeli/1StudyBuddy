@@ -15,7 +15,7 @@ import profile_other from '@/components/profile_other'
 import groups from '@/components/groupPage'
 import setup from '@/components/setup'
 import chat from '@/components/chat'
-import List from '@/components/List'
+import List from '../../test/List'
 
 import firebase from 'firebase'
 

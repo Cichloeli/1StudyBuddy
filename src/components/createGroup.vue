@@ -76,7 +76,6 @@
 <script>
 import firebase from "firebase";
 import db from './firebaseinit';
-import { mapState, mapActions } from 'vuex';
   // Initialize Firebase
 let config ={
   apiKey: "AIzaSyAtTNO9fCUwweAnOXWbbAaOR39t7X1hdCQ",
@@ -106,10 +105,6 @@ var updateClass = []
 //initial some var which will be used for upcoming methods
 export default {
   name: 'create_a_Group',
-  computed: mapState([
-    "groupReal",
-    "groupCloud"
-  ]),
   data () {
     return {
       newgroup:{
@@ -204,10 +199,6 @@ export default {
   },
 
   methods: {
-    ...mapActions([
-      'uR',
-      'uC'
-    ]),
     // method for create a group: At the beginning, double check if the class user choose is exist or not.
     // If the class does not exist, it will show the warning. If the class exist, it will check whether the 
     // the group name user enter exist. If the group name exist, it will show the warning, too. If the group
@@ -269,9 +260,11 @@ export default {
           for(var index =0; index < Keys.length; index++){
             if(this.newgroup.classname == Keys[index]){
               Grouplist[index].push(group_name);
+              //for unit test, it can be comment if we don't need to test
               localStorage.setItem('real' , JSON.stringify(Grouplist[index]))
             }
           }
+          //for unit test, it can be comment if we don't need to test
           localStorage.setItem('cloud' , JSON.stringify(group_Already_In))
           this.currGroup = [];
         }else{
@@ -339,6 +332,7 @@ export default {
         });
         this.updateTrigger = 1;
         this.newgroup.classname = '';
+        localStorage.setItem('cloud' , JSON.stringify(group_Already_In))
       }
     },
     //method to show user's current group
