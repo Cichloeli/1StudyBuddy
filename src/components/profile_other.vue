@@ -107,7 +107,7 @@ export default {
                   vm.wednesday = doc.data().wednesday
                   vm.thursday = doc.data().thursday
                   vm.friday = doc.data().friday
-                  vm.asaturday = doc.data().saturday
+                  vm.saturday = doc.data().saturday
                 })
             })
         })
@@ -141,7 +141,7 @@ export default {
                 this.wednesday = doc.data().wednesday
                 this.thursday = doc.data().thursday
                 this.friday = doc.data().friday
-                this.asaturday = doc.data().saturday
+                this.saturday = doc.data().saturday
             })
         })
     }
