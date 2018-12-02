@@ -52,6 +52,7 @@ function error2(err) {
 }
 import db from "./firebaseinit";
 import firebase from "firebase";
+var user = firebase.auth().currentUser;
 var count = 0;
 
 export default {
@@ -68,12 +69,9 @@ export default {
   methods: {
     test(classnum) {
       console.log("here");
-      firebase.auth().onAuthStateChanged(user => {
-        if (user) {
+      user = firebase.auth().currentUser;
           var userID = user.uid;
           var checkclass = firebase.database().ref("users/" + userID);
-
-          user = firebase.auth().currentUser;
 
           //check to see if the class is already added on to the list
           //if not, add the class into user's info
@@ -144,8 +142,8 @@ export default {
               });
             } 
           });
-        }
-      });
+        
+      
     },
 
     getClasses: function() {
