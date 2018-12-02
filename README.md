@@ -6,8 +6,7 @@ npm install
 
 npm start
 
-It will be running on http://localhost:8081/
-
+Follow instruction from terminal: Your application is running here http://localhost:8081/
 
 # StudyBuddy
 
