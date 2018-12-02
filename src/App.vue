@@ -10,15 +10,38 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav">
       
-            <li class="nav-item">
-              <router-link class="nav-link" to="/login">Login</router-link>
-            </li>
+            
 
             <li class="nav-item">
               <router-link class="nav-link" to="/dashboard">Dashboard</router-link>
             </li>
             <li class="nav-item">
-              <button v-on:click="logout()">Logout</button>   
+              <router-link class="nav-link" to="/profile">Profile</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/classes">Classes</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/ViewUser">View Users</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/createGroup">Groups</router-link>
+            </li>
+
+            <li class="nav-item">
+              <router-link class="nav-link" to="/groups">My Groups</router-link>
+            </li>
+            
+            <li class="nav-item">
+              <router-link class="nav-link" to="/setup">Global Chat</router-link>
+            </li>
+
+            <li class="nav-item">
+              <router-link id="login" to="/login">Login</router-link>
+            </li>
+
+            <li class="nav-item">
+              <button id="logout" v-on:click="logout()">Logout</button>   
             </li>
           </ul>
         </div>
@@ -85,5 +108,39 @@ export default {
   100%{
   transform: translateY(-400px);
  }
+}
+
+#logout {
+  background-color: Transparent;
+  border: none;
+  overflow: hidden;
+  outline:none;
+  cursor:pointer;
+  margin-top: 7px;
+  display: grid;
+  justify-items: right;
+  color: #2c3e50;
+  margin-left: 4px;
+}
+
+#logout:hover {
+  color: black;
+}
+
+#login {
+  background-color: Transparent;
+  border: none;
+  overflow: hidden;
+  outline:none;
+  cursor:pointer;
+  margin-top: 7px;
+  display: grid;
+  justify-items: right;
+  color: #2c3e50;
+  margin-left: 4px;
+}
+
+#login:hover {
+  color: black;
 }
 </style>
