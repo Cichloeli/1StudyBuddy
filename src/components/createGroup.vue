@@ -12,6 +12,9 @@
       <p>1. Choose one of your classes in the drop down menu below</p>
         <div class = "Begin-group">
           <select style="margin-left: 20px; margin-bottom:10px; padding: 5px" v-model="newgroup.classname">
+          <template v-if="this.currClass == ''" >
+            <div v-on="getClassupdate()"></div>
+          </template>
           <option v-for="classname in currClass" :key="classname.id">
             {{classname}}
           </option>
@@ -119,7 +122,7 @@ export default {
       selectedR: '',
       updateTrigger: 0,
       removeTrigger: 0,
-      currClass: classList_user,
+      currClass: '',
     }
   },
   mounted(){
@@ -199,6 +202,10 @@ export default {
   },
 
   methods: {
+    //update class list
+    getClassupdate: function(){
+      this.currClass = classList_user;
+    },
     // method for create a group: At the beginning, double check if the class user choose is exist or not.
     // If the class does not exist, it will show the warning. If the class exist, it will check whether the 
     // the group name user enter exist. If the group name exist, it will show the warning, too. If the group
@@ -206,6 +213,8 @@ export default {
     // At last, refresh the page
     updateGroup: function(){
       var classname = this.removeTrigger;
+      updateList = [];
+      updateClass = [];
       for(var index =0; index < Keys.length; index++){
           if(classname == Keys[index]){
             var ref = database.ref('classes/'+classname+'/groups');
@@ -224,8 +233,6 @@ export default {
             Grouplist[u] = updateList;
           }
         }
-        updateList = [];
-        updateClass = [];
       }
       var ID = 0;
       for(var i = 0; i< Keys.length; i++){
@@ -287,8 +294,6 @@ export default {
             Grouplist[u] = updateList;
           }
         }
-        updateList = [];
-        updateClass = [];
       }
       if(this.newgroup.classname == ''){
         alert('Please choose a class first')
@@ -325,7 +330,6 @@ export default {
         });
         var curr_length = group_Already_In.length;
         group_Already_In[curr_length] = groupID;
-        console.log(group_Already_In,"Debug")
         var addGroupRef = cloud.collection("users").doc(group_member_ID);
           addGroupRef.update({
           group: group_Already_In
@@ -357,7 +361,6 @@ export default {
             group_Already_In.splice(l, 1);
           }
         }
-        
         removeGroupRef.update({
           group: group_Already_In
         });
@@ -375,13 +378,8 @@ export default {
         }
         database.ref('classes/'+className+'/groups/'+groupID+"/"+group_member_ID).remove()
         this.removeTrigger = className;
+        this.currClass = ''
         localStorage.setItem('cloud' , JSON.stringify(group_Already_In))
-        for(var index =0; index < Keys.length; index++){
-            if(classname == Keys[index]){
-              //for unit test, it can be comment if we don't need to test
-              localStorage.setItem('real' , JSON.stringify(Grouplist[index]))
-            }
-          }
       }
     }
   },

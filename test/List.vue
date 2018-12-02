@@ -6,10 +6,8 @@
     <p>{{pass_or_notC}}</p>
     <button @click="joinCheck()">JoinGroupTest</button>
     <p>{{pass_or_notJ}}</p>
-    <button @click="removeCheck()">RemoveGroupMasterTest</button>
+    <button @click="removeCheck()">RemoveGroupTest</button>
     <p>{{pass_or_notR}}</p>
-    <button @click="removeCheckJ()">RemoveGroupMemberTest</button>
-    <p>{{pass_or_notRJ}}</p>
   </div>
 </template>
 
@@ -22,7 +20,6 @@ export default {
       pass_or_notC: '',
       pass_or_notJ: '',
       pass_or_notR: '',
-      pass_or_notRJ: '',
       defaultGroup: 'haha',
       defaultGroupJ: 'hi'
     }
@@ -57,7 +54,7 @@ export default {
         }else if(counterC < 1){
           this.pass_or_notC = 'Exception! Group has not been add to cloud group yet'
         }else if(counterC > 1){
-          pass_or_notC = 'Exception! Group has been add to cloud group more than one time'
+          this.pass_or_notC = 'Exception! Group has been add to cloud group more than one time'
         }else{
           this.pass_or_notC = 'PASS!'
         }
@@ -87,17 +84,29 @@ export default {
         this.pass_or_notJ = 'PASS!'
       }
     }
+    localStorage.setItem('real' , JSON.stringify([]))
+    localStorage.setItem('cloud' , JSON.stringify([]))
     },
     removeCheck: function() {
     //unit test for remove group which only contain user itself, get result after do the operation and compare with the data
     //expected. Printing Pass if pass, printing specific exception if not pass.
-    
-
-    },
-    removeCheckJ: function() {
-    //unit test for remove group which not only contain user itself, get result after do the operation and compare with the data
-    //expected. Printing Pass if pass, printing specific exception if not pass.
-
+    var groupCloud = JSON.parse(localStorage.getItem('cloud'))
+    var counterC = 0
+    if(groupCloud == ''){
+      this.pass_or_notR = 'Exception! Cloud Group List is empty'
+    }else{
+      for(var loopC = 0; loopC < groupCloud.length; loopC++){
+        if(this.defaultGroupJ == groupCloud[loopC]){
+           counterC = counterC + 1
+         }
+        }
+      if(counterC > 0){
+        this.pass_or_notR = 'Exception! Group has not been remove from cloud group yet'
+      }else{
+        this.pass_or_notR = 'PASS!'
+      }
+    }
+    localStorage.setItem('cloud' , JSON.stringify([]))
     }
   }
 }
