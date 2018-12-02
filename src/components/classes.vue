@@ -87,6 +87,7 @@ export default {
             } else {
               checkclass.once("value").then(function(snapshot) {
                 if (snapshot.child("class1").exists() != true) {
+                localStorage.setItem('class1' , JSON.stringify(classnum))
                   //check if class can be added to class1 spot
                   firebase
                     .database()
@@ -104,6 +105,7 @@ export default {
                   console.log("user added");
                   alert("Class added");
                 } else if (snapshot.child("class2").exists() != true) {
+                localStorage.setItem('class2' , JSON.stringify(classnum))
                   //check if class can be added to class2 spot
                   firebase
                     .database()
@@ -121,6 +123,7 @@ export default {
                   console.log("user added");
                   alert("Class added");
                 } else if (snapshot.child("class3").exists() != true) {
+                localStorage.setItem('class3' , JSON.stringify(classnum))
                   //check if class can be added to class3 spot
                   firebase
                     .database()
