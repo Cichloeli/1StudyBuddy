@@ -15,7 +15,7 @@ import profile_other from '@/components/profile_other'
 import groups from '@/components/groupPage'
 import setup from '@/components/setup'
 import chat from '@/components/chat'
-
+import List from '@/components/List'
 
 import firebase from 'firebase'
 
@@ -143,6 +143,14 @@ let router = new Router({
         requiresAuth: true
     }
     },
+    {
+      path: '/to-do',
+      name: 'ToDo',
+      component: List,
+      meta: {
+        requiresAuth: true
+    }
+    }
   ]
 })
 

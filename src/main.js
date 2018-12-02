@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import firebase from 'firebase'
 import VueChatScroll from 'vue-chat-scroll'
+import store from "./store"
 
 Vue.use(VueChatScroll)
 
@@ -18,6 +19,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     app = new Vue({
       el: '#app',
       router,
+      store,
       components: { App },
       template: '<App/>'
     })
