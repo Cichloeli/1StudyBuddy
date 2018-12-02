@@ -28,6 +28,8 @@
         methods: {
             createMessage () {
                 if (this.newMessage) {
+                    localStorage.setItem('chatname' , JSON.stringify(this.name));
+                    localStorage.setItem('message' , JSON.stringify(this.newMessage));
                     fb.collection('messages').add({
                         message: this.newMessage,
                         name: this.name,
