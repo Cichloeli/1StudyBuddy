@@ -22,6 +22,7 @@ export default {
   methods: {
     
     nametest: function() {
+    //check if it is the correct name from the input
       var name = JSON.parse(localStorage.getItem('chatname'));
       var message = JSON.parse(localStorage.getItem('message'));
       if(name=="test"){
@@ -31,6 +32,7 @@ export default {
       }
     },
     messagetest: function() {
+    //check if it is the correct message from the input
       var name = JSON.parse(localStorage.getItem('chatname'));
       var message = JSON.parse(localStorage.getItem('message'));
       if(message=="this is a test"){
