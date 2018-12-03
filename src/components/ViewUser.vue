@@ -1,3 +1,5 @@
+// View Users creates a list of all of the users registered in the website and click the icon allows
+// the user to see that individual's profile page
 <template>
     <div id="ViewUsers">
         <ul class="col">
@@ -9,6 +11,8 @@
                 {{user.name}}
 
                 <router-link class="secondary-content"
+                <!-- link to the user's profile page
+                sends the user's uid as a parameter to profile_other page -->
                 v-bind:to="{name: 'profile_other', params: {uid: user.uid}}">
                 <i class="fa fa-eye"></i>
                 </router-link>
