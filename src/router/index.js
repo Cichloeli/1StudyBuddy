@@ -17,7 +17,7 @@ import setup from '@/components/setup'
 import chat from '@/components/chat'
 import classtest from '../../test/classtest'
 import chattest from '../../test/chattest'
-import List from '../../test/List'
+import groupTest from '../../test/groupTest'
 
 import firebase from 'firebase'
 
@@ -164,7 +164,7 @@ let router = new Router({
     {
       path: '/to-do',
       name: 'ToDo',
-      component: List,
+      component: groupTest,
       meta: {
         requiresAuth: true
     }
