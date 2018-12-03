@@ -1,3 +1,5 @@
+// Profile other page is very similar to profile page except it does not take the current
+// user's information but any user's uid depending on the parameter
 <template>
     <div id="profile_other">
         <div class="banner">
@@ -87,6 +89,8 @@ export default {
       header: require("../assets/images/p2.jpg"),
     };
   },
+    // Parameter taken in is a user uid. User uid is passed from a previous page and based on
+    // that grab the user information
     beforeRouteEnter (to, from, next) {
         curUser = firebase.auth().currentUser,
         firebase.firestore().collection('users').where('uid', '==', to.params.uid).get()
@@ -117,11 +121,14 @@ export default {
         
     },
   methods: {
+    // lets the user logout
     logout() {
         firebase.auth().signOut().then(() => {
             this.$router.replace('login')
         })
     },
+    // Grab the user information and set it to a variable so that it can be used in the html
+    // With the user uid param find the equivalent one in the database
     fetchData () {
         firebase.firestore().collection('users').where
         ('uid', '==', this.$route.params.uid).get()
@@ -154,6 +161,7 @@ export default {
 
 </script>
 
+// start of the css
 <style scoped>
 #profile_other {
 
