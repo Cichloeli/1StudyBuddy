@@ -5,8 +5,8 @@
         <router-link class="nav-link" to="/dashboard">Dashboard</router-link>
 
         <div class="container">
-            <div class="class1">
-                <h1 id="class1"></h1>
+            <div class="group1">
+                <h1 id="group1"></h1>
                 <ul id ="groupList"></ul>
             </div>
         </div>
@@ -44,21 +44,6 @@
                         document.getElementById("groupList").innerHTML = str;
                     })
                 });
-
-                
-
-                // var userId = firebase.auth().currentUser.uid;
-                // return firebase.database().ref('classes/cmps101/groups').once('value').then(function(snapshot) {
-                //     if (snapshot.val() != null) {
-                //         document.getElementById("class1").innerHTML = snapshot.val;
-                //     }  
-                //     else {
-                //         document.getElementById("class1").innerHTML = "No Group";
-                //     }
-                //     // var class1 = (snapshot.val() && snapshot.val().class1) || 'No Class';
-                //     // console.log(class1);
-                    
-                // });
             }
         }
     }
@@ -76,7 +61,7 @@
     grid-gap: 50px;
     justify-items: center;
 }
-.class1 {
+.group1 {
     width: 250px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background: #DCDCDC;
