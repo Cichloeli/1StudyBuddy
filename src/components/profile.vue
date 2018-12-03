@@ -1,3 +1,4 @@
+// Profile page will show the current user's information and schedule
 <template>
     <div id="profile">
         <div class="banner">
@@ -87,6 +88,9 @@ export default {
       header: require("../assets/images/p2.jpg"),
     };
   },
+    // Take in the parameter sent from the previous page which should be the current user
+    // uid. Get a snapshot of the user information and schedule. Take the uid parameter
+    // and find the matching uid
     beforeRouteEnter (to, from, next) {
         curUser = firebase.auth().currentUser,
         firebase.firestore().collection('users').where('uid', '==', curUser.uid).get()
@@ -112,16 +116,20 @@ export default {
             })
         })
     }, 
+    // get the current user
     created () {
         curUser = firebase.auth().currentUser
         
     },
   methods: {
+    // let the user logout
     logout() {
         firebase.auth().signOut().then(() => {
             this.$router.replace('login')
         })
     },
+    // grab the user's information and set it to another variable so it can be easily used
+    // in the html. Grab each field
     fetchData () {
         firebase.firestore().collection('users').where
         ('uid', '==', this.$route.curUser.uid).get()
@@ -154,6 +162,7 @@ export default {
 
 </script>
 
+// start of the css for profile page
 <style scoped>
 #profile {
 
