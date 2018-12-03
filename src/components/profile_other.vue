@@ -1,5 +1,6 @@
+// Profile page will show the current user's information and schedule
 <template>
-    <div id="profile_other">
+    <div id="profile">
         <div class="banner">
             <img :src="header" />
         </div>
@@ -7,13 +8,34 @@
             <h1>Profile</h1>
         </div>
 
+        <router-link class="editLink" to="/editProfile">Edit Profile</router-link>
 
         <div class="info">
             <h6>Name: {{ name }}</h6>
+            <!-- <div class="infoName">
+                {{ name }}
+            </div> -->
+
             <h6>Classes: {{ classes }}</h6>
-            <h6>Major: {{ major }}</h6>      
-            <h6>Email: {{ email }}</h6>              
+            <!-- <div class="infoClasses">
+                {{ classes }}
+            </div> -->
+                
+            <h6>Major: {{ major }}</h6>   
+            <!-- <div class="infoMajor">
+                {{ major }}
+            </div>            -->
+                      
+            <h6>Email: {{ email }}</h6>
+            <!-- <div class="infoEmail">
+                {{ email }}
+            </div> -->
+                     
             <h6>About: {{ about }}</h6>
+            <!-- <div class="infoAbout">
+                {{ about }}
+            </div>                -->
+
         </div>
 
         <div class="schedule">
@@ -45,7 +67,7 @@ var curUser = firebase.auth().currentUser;
 
 export default {
 
-  name: "profile_other",
+  name: "profile",
   
   data() {
     return {
@@ -66,9 +88,12 @@ export default {
       header: require("../assets/images/p2.jpg"),
     };
   },
+    // Take in the parameter sent from the previous page which should be the current user
+    // uid. Get a snapshot of the user information and schedule. Take the uid parameter
+    // and find the matching uid
     beforeRouteEnter (to, from, next) {
         curUser = firebase.auth().currentUser,
-        firebase.firestore().collection('users').where('uid', '==', to.params.uid).get()
+        firebase.firestore().collection('users').where('uid', '==', curUser.uid).get()
         .then(querySnapshot => {
             querySnapshot.forEach(doc => {
                 next(vm => {
@@ -91,19 +116,23 @@ export default {
             })
         })
     }, 
+    // get the current user
     created () {
         curUser = firebase.auth().currentUser
         
     },
   methods: {
+    // let the user logout
     logout() {
         firebase.auth().signOut().then(() => {
             this.$router.replace('login')
         })
     },
+    // grab the user's information and set it to another variable so it can be easily used
+    // in the html. Grab each field
     fetchData () {
         firebase.firestore().collection('users').where
-        ('uid', '==', this.$route.params.uid).get()
+        ('uid', '==', this.$route.curUser.uid).get()
         .then(querySnapshot => {
             querySnapshot.forEach(doc => {
                 this.id = doc.id
@@ -133,8 +162,9 @@ export default {
 
 </script>
 
+// start of the css for profile page
 <style scoped>
-#profile_other {
+#profile {
 
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -154,13 +184,15 @@ export default {
   text-align: left;
   padding-right: 300px;
 }
+.schedule {
+    text-align: left;
+}
 .editLink {
     max-width: 50px;
     padding-left: 90%;
+  
+   
 
-}
-.schedule {
-    text-align: left;
 }
 .infoAbout input {
     padding-bottom: 200px;
