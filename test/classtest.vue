@@ -21,6 +21,7 @@ export default {
   },
   methods: {
     joinclass: function() {
+    //check to see if class1(added) is cs101, if class 2(added) is cs102 .....
       var class1 = JSON.parse(localStorage.getItem('class1'));
       var class2 = JSON.parse(localStorage.getItem('class2'));
       var class3 = JSON.parse(localStorage.getItem('class3'));
@@ -31,6 +32,7 @@ export default {
       }
     },
     classfull: function() {
+    //check to see if extra classes are added/replaced current classed
       var class1 = JSON.parse(localStorage.getItem('class1'))
       var class2 = JSON.parse(localStorage.getItem('class2'))
       var class3 = JSON.parse(localStorage.getItem('class3'))
