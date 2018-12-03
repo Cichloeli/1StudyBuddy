@@ -125,7 +125,7 @@ export default {
       currClass: '',
     }
   },
-  mounted(){
+  created(){
     //get group, classes information and store them in array
     //Keys: class list
     //GroupList: an array to store groups from current class list, the index is corresponding
@@ -185,6 +185,7 @@ export default {
     function userClass(classname){
       if(classname!=null){
         var test = Object.keys(classname.val());
+        classList_user = []
         for(var t = 0; t<test.length;t++){
           var currclassref = database.ref('users/'+User_ID+'/'+test[t]+'/class')
           currclassref.once('value').then(function(snapshot){
