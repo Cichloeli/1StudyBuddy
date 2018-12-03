@@ -10,14 +10,6 @@
           </div>
           <button class="btn btn-primary">Enter Chat</button>
         </form>
-
-        <!-- <h2 class="or_word">
-          OR
-        </h2>
-
-        <h2 class="card-title text-center">Use Your Account Name</h2>
-
-        <button class="btn btn-primary" v-on:click="setup()" >Enter Chat</button> -->
       </div>
     </div>
   </div>

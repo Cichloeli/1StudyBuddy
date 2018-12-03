@@ -10,11 +10,11 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav">
       
-            
+           <!--  
 
             <li class="nav-item">
               <router-link class="nav-link" to="/dashboard">Dashboard</router-link>
-            </li>
+            </li> -->
             <li class="nav-item">
               <router-link class="nav-link" to="/profile">Profile</router-link>
             </li>

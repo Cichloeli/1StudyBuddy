@@ -10,31 +10,10 @@
 
         <div class="info">
             <h6>Name: {{ name }}</h6>
-            <!-- <div class="infoName">
-                {{ name }}
-            </div> -->
-
             <h6>Classes: {{ classes }}</h6>
-            <!-- <div class="infoClasses">
-                {{ classes }}
-            </div> -->
-                
-            <h6>Major: {{ major }}</h6>   
-            <!-- <div class="infoMajor">
-                {{ major }}
-            </div>            -->
-                      
-            <h6>Email: {{ email }}</h6>
-            <!-- <div class="infoEmail">
-                {{ email }}
-            </div> -->
-                     
+            <h6>Major: {{ major }}</h6>      
+            <h6>Email: {{ email }}</h6>              
             <h6>About: {{ about }}</h6>
-            <!-- <div class="infoAbout">
-                {{ about }}
-            </div>                -->
-    
-        
         </div>
 
         <div class="schedule">
