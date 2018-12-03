@@ -197,26 +197,8 @@ export default {
       console.log(errclassname)
     }
   },
+
   methods: {
-    /*
-    //method for search a class: in this method, it will add class to the empty array currClass based on
-    //current user's enroll class. If there is no class for current user, it will not change currClass array 
-    searchingClass:function(){
-      var The_user = firebase.auth().currentUser;
-      var User_ID = The_user.uid;
-      var curr_class_list = [];
-      var printList = [];
-      for(var u =0; u<Keys.length; u++){
-        curr_class_list = userList[u];
-        if (curr_class_list!= ''){
-          for(var u_name = 0; u_name<curr_class_list.length; u_name++){
-            if(User_ID == curr_class_list[u_name]){
-              this.currClass.push(Keys[u])
-            }
-          }
-        }
-      }
-    },*/
     // method for create a group: At the beginning, double check if the class user choose is exist or not.
     // If the class does not exist, it will show the warning. If the class exist, it will check whether the 
     // the group name user enter exist. If the group name exist, it will show the warning, too. If the group
@@ -274,19 +256,24 @@ export default {
           addGroupRef.update({
             group: group_Already_In
           });
+           //update current status and send data for unit test
+          for(var index =0; index < Keys.length; index++){
+            if(this.newgroup.classname == Keys[index]){
+              Grouplist[index].push(group_name);
+              //for unit test, it can be comment if we don't need to test
+              localStorage.setItem('real' , JSON.stringify(Grouplist[index]))
+            }
+          }
+          //for unit test, it can be comment if we don't need to test
+          localStorage.setItem('cloud' , JSON.stringify(group_Already_In))
           this.currGroup = [];
         }else{
           alert("Group Already Exist!")
         }
-        
-        //update current status
-        for(var index =0; index < Keys.length; index++){
-          if(this.newgroup.classname == Keys[index]){
-            Grouplist[index].push(group_name);
-          }
-        }
         this.updateTrigger = 1;
         this.newgroup.classname = '';
+        this.newgroup.groupname = '';
+        
       }else{
         alert('The class '+this.newgroup.classname+' does not exist');
       }
@@ -345,6 +332,8 @@ export default {
         });
         this.updateTrigger = 1;
         this.newgroup.classname = '';
+        this.currGroup = '';
+        localStorage.setItem('cloud' , JSON.stringify(group_Already_In))
       }
     },
     //method to show user's current group
@@ -386,6 +375,13 @@ export default {
         }
         database.ref('classes/'+className+'/groups/'+groupID+"/"+group_member_ID).remove()
         this.removeTrigger = className;
+        localStorage.setItem('cloud' , JSON.stringify(group_Already_In))
+        for(var index =0; index < Keys.length; index++){
+            if(classname == Keys[index]){
+              //for unit test, it can be comment if we don't need to test
+              localStorage.setItem('real' , JSON.stringify(Grouplist[index]))
+            }
+          }
       }
     }
   },

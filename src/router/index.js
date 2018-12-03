@@ -16,6 +16,10 @@ import groups from '@/components/groupPage'
 import setup from '@/components/setup'
 import chat from '@/components/chat'
 
+//testing pages
+import List from '../../test/List'
+import AccountTest from '../../test/AccountTest.vue'
+import ProfileTest from '../../test/ProfileTest.vue'
 
 import firebase from 'firebase'
 
@@ -139,6 +143,30 @@ let router = new Router({
       path: '/dashboard',
       name: 'dashboard',
       component: dashboard,
+      meta: {
+        requiresAuth: true
+    }
+    },
+    {
+      path: '/to-do',
+      name: 'ToDo',
+      component: List,
+      meta: {
+        requiresAuth: true
+    }
+    },
+    {
+      path: '/AccountTest',
+      name: 'AccountTest',
+      component: AccountTest,
+      meta: {
+        requiresAuth: true
+    }
+    },
+    {
+      path: '/ProfileTest',
+      name: 'ProfileTest',
+      component: ProfileTest,
       meta: {
         requiresAuth: true
     }

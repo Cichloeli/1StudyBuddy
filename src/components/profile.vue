@@ -11,30 +11,10 @@
 
         <div class="info">
             <h6>Name: {{ name }}</h6>
-            <!-- <div class="infoName">
-                {{ name }}
-            </div> -->
-
             <h6>Classes: {{ classes }}</h6>
-            <!-- <div class="infoClasses">
-                {{ classes }}
-            </div> -->
-                
-            <h6>Major: {{ major }}</h6>   
-            <!-- <div class="infoMajor">
-                {{ major }}
-            </div>            -->
-                      
-            <h6>Email: {{ email }}</h6>
-            <!-- <div class="infoEmail">
-                {{ email }}
-            </div> -->
-                     
+            <h6>Major: {{ major }}</h6>          
+            <h6>Email: {{ email }}</h6>   
             <h6>About: {{ about }}</h6>
-            <!-- <div class="infoAbout">
-                {{ about }}
-            </div>                -->
-
         </div>
 
         <div class="schedule">
@@ -48,10 +28,8 @@
             <h6>Friday: {{ friday }}</h6>
             <h6>Saturday: {{ saturday }}</h6>
 
-             
         </div>
-        
-        
+       
     </div>
     
 </template>
@@ -62,7 +40,6 @@ import db from './firebaseinit';
 import firebase from 'firebase';
 
 var curUser = firebase.auth().currentUser;
-
 
 export default {
 
@@ -181,9 +158,6 @@ export default {
 .editLink {
     max-width: 50px;
     padding-left: 90%;
-  
-   
-
 }
 .infoAbout input {
     padding-bottom: 200px;

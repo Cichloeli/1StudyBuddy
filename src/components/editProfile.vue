@@ -6,25 +6,13 @@
         <div class="title">
             <h1>Edit Your Profile</h1>
         </div>
-       <!--  <ul class="col">
-            <li class="collection-header"><h4>Users</h4></li>
-            <li v-for="user in users" v-bind:key="user.user_id" 
-            class="collection-item">
-            {{user.name}}:{{user.classes}}:{{user.major}}:{{user.email}}:{{user.about}}:{{user.id}}
-
-            
-         
-        </li>
-        </ul> -->
-        
+ 
         <div class="info">
             <h6>Name:</h6>
             <input type="checkbox" id="checkName" v-model="checkedName" >
             <div class="infoName">
                 <input type="text" name="nameIn" v-model="input.nameIn" placeholder="Name" class="form-control" style="border-radius:10px;"/>   
             </div>
-
-            
 
             <h6>Classes:</h6>
             <input type="checkbox" id="checkClasses" v-model="checkedClasses">
@@ -171,85 +159,8 @@ export default {
             console.log("test")
         },
         updateAll() {
-            if (this.input.nameIn!=null ) {
-                firebase.firestore().collection('users').doc(currentUser.uid).update({
-                name: this.input.nameIn,
-                checkedName: this.checkedName,
-                })
-            }
-
-            if (this.input.classesIn!=null) {
-                firebase.firestore().collection('users').doc(currentUser.uid).update({
-                classes: this.input.classesIn,
-                checkedClasses: this.checkedClasses,
-                })
-            }
-
-            if (this.input.emailIn!=null) {
-                firebase.firestore().collection('users').doc(currentUser.uid).update({
-                email: this.input.emailIn,
-                checkedEmail: this.checkedEmail,
-                })
-            }
-
-            if (this.input.majorIn!=null) {
-                firebase.firestore().collection('users').doc(currentUser.uid).update({
-                major: this.input.majorIn,
-                checkedMajor: this.checkedMajor,
-                })
-            }
-
-            if (this.input.aboutIn!=null) {
-                firebase.firestore().collection('users').doc(currentUser.uid).update({
-                about: this.input.aboutIn,
-                checkedAbout: this.checkedAbout,
-                })
-            }
-
-            
-            if (this.input.sundayIn!=null ) {
-                firebase.firestore().collection('users').doc(currentUser.uid).update({
-                sunday: this.input.sundayIn,
-                })
-            }
-
-            if (this.input.mondayIn!=null) {
-                firebase.firestore().collection('users').doc(currentUser.uid).update({
-                monday: this.input.mondayIn,
-               
-                })
-            }
-
-            if (this.input.tuesdayIn!=null) {
-                firebase.firestore().collection('users').doc(currentUser.uid).update({
-                tuesday: this.input.tuesdayIn,
-                })
-            }
-
-            if (this.input.wednesdayIn!=null) {
-                firebase.firestore().collection('users').doc(currentUser.uid).update({
-                wednesday: this.input.wednesdayIn,
-                })
-            }
-
-            if (this.input.thursdayIn!=null) {
-                firebase.firestore().collection('users').doc(currentUser.uid).update({
-                thursday: this.input.thursdayIn,
-                })
-            }
-
-            if (this.input.fridayIn!=null) {
-                firebase.firestore().collection('users').doc(currentUser.uid).update({
-                friday: this.input.fridayIn,
-                })
-            }
-
-            if (this.input.saturdayIn!=null) {
-                firebase.firestore().collection('users').doc(currentUser.uid).update({
-                saturday: this.input.saturdayIn,
-                })
-            }
-            
+            this.updateSchedule(),
+            this.update(),
             
             this.$router.replace('profile')
         },
