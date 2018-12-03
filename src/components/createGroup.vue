@@ -293,6 +293,7 @@ export default {
          for(var u =0; u < Keys.length; u++){
           if(updateClass == Keys[u]){
             Grouplist[u] = updateList;
+            localStorage.setItem('real' , JSON.stringify(Grouplist[u]))
           }
         }
       }
@@ -379,7 +380,8 @@ export default {
         }
         database.ref('classes/'+className+'/groups/'+groupID+"/"+group_member_ID).remove()
         this.removeTrigger = className;
-        this.currClass = ''
+        //solve the bug
+        this.newgroup.classname = '';
         localStorage.setItem('cloud' , JSON.stringify(group_Already_In))
       }
     }
