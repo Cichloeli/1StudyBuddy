@@ -15,9 +15,13 @@ import profile_other from '@/components/profile_other'
 import groups from '@/components/groupPage'
 import setup from '@/components/setup'
 import chat from '@/components/chat'
+
+//testing pages
 import classtest from '../../test/classtest'
 import chattest from '../../test/chattest'
 import groupTest from '../../test/groupTest'
+import AccountTest from '../../test/AccountTest.vue'
+import ProfileTest from '../../test/ProfileTest.vue'
 
 import firebase from 'firebase'
 
@@ -145,6 +149,7 @@ let router = new Router({
         requiresAuth: true
     }
     },
+    //testing
     {
       path: '/classtest',
       name: 'classtest',
@@ -162,13 +167,29 @@ let router = new Router({
     }
     },
     {
-      path: '/to-do',
-      name: 'ToDo',
+      path: '/ProfileTest',
+      name: 'ProfileTest',
+      component: ProfileTest,
+      meta: {
+        requiresAuth: true
+    }
+    },
+    {
+      path: '/groupTest',
+      name: 'groupTest',
       component: groupTest,
       meta: {
         requiresAuth: true
     }
+    },
+    {
+      path: '/AccountTest',
+      name: 'AccountTest',
+      component: AccountTest,
+      meta: {
+        requiresAuth: true
     }
+    },
   ]
 })
 
